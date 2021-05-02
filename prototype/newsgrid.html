@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prototype | News Grid</title>
+        <meta charset="UTF-8">
+        <style>
+            /**/
+            body {
+                margin: 0%;
+                font-family: sans-serif;
+                background-image: url("assets/forest.jpg");
+            }
+            .title {
+                text-align: center;
+            }
+            #front, #back {position: absolute; width: 20%; height: 20%;}
+            #back {z-index: 1; }
+            #front {z-index: 2; }
+            #back {background-image: url("assets/farm.jpg"); opacity: 0;}
+            #top:hover {opacity: 0;}
+            .grid {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                column-gap: 1px;
+                grid-column-gap: 1px;
+                row-gap: 20px;
+                grid-row-gap: 20px;
+                width: 50%;
+                margin: auto;
+                grid-template-columns: repeat(2, 1fr)
+            }
+            .column {
+                height: 100%;
+                width: 100%;
+                display: inline-grid;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="title">Today's News</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <div class="grid">
+        <div class="column">
+        <div id="front" style="color: #ff0000;">
+            <p>Top</p>
+            <br>
+            <br>
+            <p>Bottom</p>
+        </div>
+        <div id="back">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        </div>
+
+        <div class="column">
+            <div id="front" style="color: #ff0000;">
+                <p>Top</p>
+                <br>
+                <br>
+                <p>Bottom</p>
+            </div>
+            <div id="back">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+        </div>
+        <hr>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </body>
+</html>

@@ -3,9 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <title>Corkboard</title>
+        <script src="https://kit.fontawesome.com/4fe9d71bae.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" type="text/css" href="index.css">        
         <script src="index.js"></script>
 <style>
+/*
+font-family: 'Montserrat', sans-serif;
+
+font-family: 'Spartan', sans-serif;
+*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Spartan', sans-serif;
+}
+p, a, span, i, b {
+    font-family: 'Montserrat', sans-serif;
+}
 .cardimg {
     width: 100%;
     height: auto;
@@ -38,20 +52,90 @@ color: #fff;
     width: 10%;
     height: auto;
     display: block;
-    margin-left: 27%;
-    margin-right: 73%;
-    margin-bottom: -5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -10px;
+}
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 </style>
 </head>
 <body>
-
-<h1>Draggable DIV Element</h1>
-<p>There are currently <span id="counttext">0</span> images on the page.</p>
-<p>Click and hold the mouse button down while moving the DIV element</p>
-<input type="file" onchange="encodeBase64(this)"/>
-
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div style="margin: 15px; color: #fff; overflow: hidden;">
+        <h1>Corkboard</h1>
+        <p>There are currently <span id="counttext">0</span> images on the page.</p>
+        <p>Click and drag the grey bar above each image to move it.<br>Drag the corner to resize the image.</p>
+        <input type="file" accept="image/*" placeholder="Select Files to Add" onchange="encodeBase64(this)"/>
+    </div>
+</div>
+<div id="main">
+    <!-- Use any element to open the sidenav -->
+    <span onclick="openNav()" style="color: #fff;"><i class="fas fa-cog"></i></span>
+</div>
 <script>
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "400px";
+  document.getElementById("main").style.marginLeft = "400px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+  document.body.style.backgroundColor = "white";
+}
+
 //Make the DIV element draggagle:
 /*dragElement(document.getElementById("mydiv"));
 dragElement(document.getElementById("mydiv2"));

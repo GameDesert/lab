@@ -133,6 +133,29 @@ color: #fff;
     <span onclick="openNav()" style="color: #fff; font-size: 30px;"><i class="fas fa-cog"></i></span>
 </div>
 <script>
+window.addEventListener("load", function(){
+  // (A) BREAK USER AGENT DOWN
+  var isMobile = navigator.userAgent.toLowerCase().match(/mobile/i),
+      isTablet = navigator.userAgent.toLowerCase().match(/tablet/i),
+      isAndroid = navigator.userAgent.toLowerCase().match(/android/i),
+      isiPhone = navigator.userAgent.toLowerCase().match(/iphone/i),
+      isiPad = navigator.userAgent.toLowerCase().match(/ipad/i);
+ 
+  // (B) DETECTED DEVICE TYPE
+  var detected = isMobile ? "Mobile | " : "Not Mobile | ";
+  detected += isTablet ? "Tablet | " : "Not Tablet | ";
+  if (isAndroid) {
+      detected += "Android";
+      alert("Your device has been detected to be of the make '" + detected + "'.\r\n\rUnfortunately, due to the technologies being used, this website is incompatible with touchscreen-based devices.")
+    }
+  else if (isiPhone || isiPad) {
+      detected += "Apple";
+      alert("Your device has been detected to be of the make '" + detected + "'.\r\n\rUnfortunately, due to the technologies being used, this website is incompatible with touchscreen-based devices.")
+    } else {
+    detected += "Nope";
+}
+});
+
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
 function openNav() {
   document.getElementById("mySidenav").style.width = "400px";

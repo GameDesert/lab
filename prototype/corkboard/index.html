@@ -5,13 +5,136 @@
         <title>Corkboard</title>
         <link rel="stylesheet" type="text/css" href="index.css">        
         <script src="index.js"></script>
-    </head>
-    <body>
-        <div id="mydiv">
-            <div id="mydivheader">Click here to move</div>
-            <p>Move</p>
-            <p>this</p>
-            <p>DIV</p>
-        </div>
-    </body>
+<style>
+.cardimg {
+    width: 100%;
+    height: auto;
+}
+.dragdiv {
+position: absolute;
+z-index: 9;
+background-color: #ffffff00;
+text-align: center;
+border: 1px solid #ffffff00;
+resize: both;
+overflow: hidden;
+max-width: 360px;
+resize: both;
+}
+
+.dragdivheader {
+padding: 10px;
+cursor: move;
+z-index: 10;
+background-color: #3d3d3d;
+color: #fff;
+}
+.dragdivheader:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+    background-color: #323232;
+}
+
+.pin {
+    width: 10%;
+    height: auto;
+    display: block;
+    margin-left: 27%;
+    margin-right: 73%;
+    margin-bottom: -5%;
+}
+</style>
+</head>
+<body>
+
+<h1>Draggable DIV Element</h1>
+<p>There are currently <span id="counttext">0</span> images on the page.</p>
+<p>Click and hold the mouse button down while moving the DIV element</p>
+<input type="file" onchange="encodeBase64(this)"/>
+
+<script>
+//Make the DIV element draggagle:
+/*dragElement(document.getElementById("mydiv"));
+dragElement(document.getElementById("mydiv2"));
+dragElement(document.getElementById("mydiv3"));*/
+
+function dragElement(elmnt) {
+var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+} else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+}
+
+function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+}
+
+function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+}
+
+function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+}
+}
+function readCount() {
+    var counttextspan = document.getElementById("counttext")
+    var counttext = document.getElementById("counttext").innerHTML
+    var count = parseInt(counttext);
+    var countstring = count.toString();
+    console.log(count)
+    var newcount = count + 1
+    var newcountstring = newcount.toString();
+    counttextspan.innerHTML = newcountstring;
+    return countstring;
+}
+function createCard(b64code) {
+    //Create the element using the createElement method.
+    var myDiv = document.createElement("div");
+    var number = readCount();
+    //Set its unique ID.
+    myDiv.id = 'mydiv' + number;
+    myDiv.className = 'dragdiv';
+
+    //Add your content to the DIV
+    myDiv.innerHTML = "<img src='pin.png' alt='pin' class='pin'><div id='mydiv" + number + "header' class='dragdivheader'></div><img id='divimg" + number + "' class='cardimg' src='" + b64code + "' alt='Image'>";
+
+    //Finally, append the element to the HTML body
+    document.body.appendChild(myDiv);
+
+    /*document.write("<div id='mydiv4' class='dragdiv'></div>")
+    document.getElementById("divimg4").setAttribute("src", b64code);*/
+    dragElement(document.getElementById("mydiv" + number));
+}
+function encodeBase64(elm) {
+    var file = elm.files[0];
+    var imgReader = new FileReader();
+    imgReader.onloadend = function() {
+    createCard(imgReader.result);
+    }
+    imgReader.readAsDataURL(file);
+}
+</script>
+
+</body>
 </html>

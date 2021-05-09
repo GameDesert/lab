@@ -17,7 +17,7 @@ font-family: 'Spartan', sans-serif;
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Spartan', sans-serif;
 }
-p, a, span, i, b {
+p, a, span, i, b, label {
     font-family: 'Montserrat', sans-serif;
 }
 .cardimg {
@@ -72,17 +72,14 @@ color: #fff;
 
 /* The navigation menu links */
 .sidenav a {
-  padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
   transition: 0.3s;
+  color: rgb(202, 202, 202);
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #ffffff;
 }
 
 /* Position and style the close button (top right corner) */
@@ -113,13 +110,23 @@ color: #fff;
     <div style="margin: 15px; color: #fff; overflow: hidden;">
         <h1>Corkboard</h1>
         <p>There are currently <span id="counttext">0</span> images on the page.</p>
-        <p>Click and drag the grey bar above each image to move it.<br><br>Drag the corner to resize the image.<br><br>At the moment, once an image is placed, it can't be deleted from the board. You need to refresh the page to remove all the images.</p>
-        <input type="file" accept="image/*" placeholder="Select Files to Add" onchange="encodeBase64(this)"/>
+        <p>Click and drag the grey bar above each image to move it.<br><br>Drag the bottom-right corner to resize the image.<br><br>At the moment, once an image is placed, it can't be deleted from the board. You need to refresh the page to remove all the images.</p>
+        <br>
+        <hr style="background-color: #fff; border-color: #fff; border-style: solid;">
+        <br>
+        <label for="imageupload">Upload an image to add it to the board:</label>
+        <input type="file" style="font-family: 'Montserrat', sans-serif;" name="imageupload" accept="image/*" placeholder="Select Files to Add" onchange="encodeBase64(this)"/>
+        <br>
+        <hr style="background-color: #fff; border-color: #fff; border-style: solid;">
+        <br>
+        <p>Corkboard background by <a href="https://unsplash.com/@sibilant">Josephine Bredehoft</a> on <a href="https://unsplash.com/photos/KsAo8ouBn8A">Unsplash</a></p>
+        <br>
+        <p>Pin photo by <a href="https://unsplash.com/@macroman">Immo Wegmann</a> on <a href="https://unsplash.com/photos/DNDHjMoxO8Q">Unsplash</a></p>
     </div>
 </div>
 <div id="main">
     <!-- Use any element to open the sidenav -->
-    <span onclick="openNav()" style="color: #fff;"><i class="fas fa-cog"></i></span>
+    <span onclick="openNav()" style="color: #fff; font-size: 30px;"><i class="fas fa-cog"></i></span>
 </div>
 <script>
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */

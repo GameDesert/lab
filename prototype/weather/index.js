@@ -1,0 +1,22 @@
+const icons = {
+"lightning":"<i class='fas fa-bolt'></i>",
+"wind":"<i class='fas fa-wind'></i>",
+"hail":"<i class='fas fa-cloud-meatball'></i>",
+"fog":"<i class='fas fa-smog'></i>",
+"rain":"<i class='fas fa-cloud-showers-heavy'></i>",
+"night-rain":"<i class='fas fa-cloud-moon-rain'></i>",
+"sunny-rain":"<i class='fas fa-cloud-sun-rain'></i>",
+"rainbow":"<i class='fas fa-rainbow'></i>",
+"snow":"<i class='far fa-snowflake'></i>",
+"night":"<i class='fas fa-moon'></i>",
+"sun":"<i class='fas fa-sun'></i>",
+"cloud":"<i class='fas fa-cloud'></i>",
+"cloudy-sun":"<i class='fas fa-cloud-sun'></i>",
+"cloudy-night":"<i class='fas fa-cloud-moon'></i>",
+"cold":"<i class='fas fa-thermometer-empty'></i>",
+"medium-cold":"<i class='fas fa-thermometer-quarter'></i>",
+"medium":"<i class='fas fa-thermometer-half'></i>",
+"medium-warm":"<i class='fas fa-thermometer-three-quarters'></i>",
+"warm":"<i class='fas fa-thermometer-full'></i>",
+"warning":"<i class='fas fa-exclamation-circle'></i>"
+} 

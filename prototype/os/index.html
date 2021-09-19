@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operating System</title>
+
+    <style>
+        html {
+            overflow: hidden;
+        }
+        
+        .screen {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            height: 100vh;
+            width: 100vw;
+            background-color: #000;
+            overflow: hidden;
+        }
+        .grid-item {
+            background-color: olive;
+            display: flex;
+            flex-direction: row;
+            width: 4vw;
+            height: 4vw;
+            overflow: hidden;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(20, 4vw);
+            grid-gap: 1vw;
+            justify-items: center;
+            align-items: center;
+            justify-content: start;
+            align-content: start;
+            grid-auto-flow: row;
+        }
+    </style>
+</head>
+<body>
+    <div class="screen" id="splash" style="z-index: 999;" aria-hidden="false">
+        <h1 style="text-align: center; font-family: 'Comic Sans MS', cursive; color: #fff; padding-top: 50vh; padding-bottom: 50vh;">Welcome to WebOS</h1>
+    </div>
+    <div class="screen" id="desktop" style="z-index: 0; background-color: rgb(52, 52, 116); color: #fff;" aria-hidden="false">
+        <div class="header" style="width: 100vw; height: 4vw; background-color: olive;"><br></div>
+        <div class="grid" id="appgrid" style="margin-left: 1vw; margin-top: 1vw;">
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+            <div class="grid-item">
+                <p>Aa</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(function() {document.getElementById("splash").style.visibility = "hidden"; document.getElementById("splash").setAttribute("aria-hidden","true");},3000);
+    </script>
+</body>
+</html>

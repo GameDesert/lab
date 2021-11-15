@@ -338,7 +338,7 @@ template {
 }
 
 html {
-  background: #fffffe;
+  background: #ffffff;
   color: #2b2c34;
   font-family: "Rubik", sans-serif;
   height: 100vh;
@@ -354,27 +354,27 @@ h1, h2, h3, h4 {
 }
 
 a {
-  border-bottom: 1px solid #6246ea;
-  color: #6246ea;
+  border-bottom: 1px solid #039;
+  color: #039;
   text-decoration: none;
 }
 a:hover {
-  border-bottom: 1px solid #8974ef;
-  color: #8974ef;
+  border-bottom: 1px solid rgb(53, 87, 153);
+  color: rgb(53, 87, 153);
 }
 
 button {
-  background: #6246ea;
+  background: #039;
   border: 0;
   border-radius: 0.5rem;
-  color: #fffffe;
+  color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Rubik", sans-serif;
+  font-family: "Lato", "Rubik", sans-serif;
   padding: 0.5rem 1rem;
 }
 button:hover {
-  background: #755ded;
+  background: #039;
   cursor: pointer;
 }
 
@@ -399,7 +399,7 @@ button:hover {
 .instructions ol li::before {
   background: #d1d1e9;
   border-radius: 50%;
-  color: #2b2c34;
+  color: #303030;
   content: counter(learnnato-instructions);
   display: inline-block;
   font-size: 0.8rem;
@@ -459,8 +459,8 @@ button:hover {
     padding: 0;
   }
   .instructions ol li:before {
-    background: #fffffe;
-    border-bottom: 2px solid #d1d1e9;
+    background: #ffffff;
+    border-bottom: 2px solid #ffffff;
     border-radius: 0;
     font-size: 1rem;
     margin: -2.5rem 0 0 0;
@@ -588,7 +588,7 @@ button:hover {
   opacity: 0.7;
 }
 .result[data-success=true]:before {
-  border-top: 3px solid #6246ea;
+  border-top: 3px solid #039;
   content: "";
   left: 0;
   opacity: 1;
@@ -616,7 +616,7 @@ button:hover {
   color: #e45858;
 }
 .notice.notice-info {
-  color: #afafd9;
+  color: #6262ff;
   font-style: italic;
 }
 

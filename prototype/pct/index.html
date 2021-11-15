@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rank Quiz</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    
+    <script src="game.js"></script>
+</head>
+<body onload="new_epaulette()" style="overflow: hidden; margin: 0; padding: 0; padding-top: 5vw;">
+    <div><img id="epaulette_img" src="" style="height: 20vh; width: 31.385vh; margin-left: auto; margin-right: auto; display: block;"></div>
+    <br>
+    <div style="margin-left: auto; margin-right: auto; display: block; text-align: center;">
+        <select name="Ranks" id="Ranks">
+            <optgroup label="Standard Ranks">
+                <option value="Constable">Constable</option>
+                <option value="Sergeant">Sergeant</option>
+                <option value="Inspector">Inspector</option>
+                <option value="Chief Inspector">Chief Inspector</option>
+                <option value="Superintendent">Superintendent</option>
+                <option value="Chief Superintendent">Chief Superintendent</option>
+                <option value="Commander">Commander</option>
+                <option value="Deputy Assistant Commissioner">Deputy Assistant Commissioner</option>
+                <option value="Assistant Commissioner">Assistant Commissioner</option>
+                <option value="Deputy Commissioner">Deputy Commissioner</option>
+                <option value="Commissioner">Commissioner</option>
+            </optgroup>
+            <optgroup label="Special Ranks">
+                <option value="Special Constable">Special Constable</option>
+                <option value="Special Sergeant">Special Sergeant</option>
+                <option value="Special Inspector">Special Inspector</option>
+                <option value="Special Chief Inspector">Special Chief Inspector</option>
+                <option value="Assistant Chief Officer">Assistant Chief Officer</option>
+                <option value="Chief Officer">Chief Officer</option>
+            </optgroup>
+        </select>
+        <button id="check" onclick="check_answer()">Check</button>
+    </div>
+    <p style="font-family: 'Lato', sans-serif; position: absolute; bottom: 10vh;">This is not an official tool. Epaulette images by Wikipedia users Chris Burns, ChrisSBurns (with derivative work from user Sodacan), and Russell Newman.</p>
+    <div style="margin-left: 0; padding-left: 0; width: 100vw; height: 10vh; background-image: url('images/pattern_sillitoe.svg'); position: absolute; bottom: 0; background-size: contain;">
+    </div>
+</body>
+</html>

@@ -6,10 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rank Quiz</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"> 
+
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
     
     <script src="game.js"></script>
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+    </style>
 </head>
 <body onload="new_epaulette()" style="overflow: hidden; margin: 0; padding: 0; padding-top: 5vw;">
     <div><img id="epaulette_img" src="" style="height: 20vh; width: 31.385vh; margin-left: auto; margin-right: auto; display: block;"></div>
@@ -40,6 +49,9 @@
         </select>
         <button id="check" onclick="check_answer()">Check</button>
     </div>
+
+    <p style="text-align: center; color: #039;"><a style="color: #039;" href="guide.html">Read The Guide</a></p>
+
     <p style="font-family: 'Lato', sans-serif; position: absolute; bottom: 10vh;">This is not an official tool.<br>Epaulette images by Wikipedia users Chris Burns, ChrisSBurns (with derivative work from user Sodacan), and Russell Newman.</p>
     <div style="margin-left: 0; padding-left: 0; width: 100vw; height: 10vh; background-image: url('images/pattern_sillitoe.svg'); position: absolute; bottom: 0; background-size: contain;">
     </div>

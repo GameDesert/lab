@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A simple tool for learning and practicing the NATO phonetic alphabet.">
+    <meta name="author" content="George Gecewicz">
+    <title>Learn the NATO Alphabet</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="dist/index.css" rel="stylesheet">
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-89440549-2');
+    </script>
+</head>
+<body>
+    <div class="game" data-active-state="intro">
+
+        <header class="game__nav">
+            <h3 class="game__title">LearnNATO</h3>
+            <button class="button" type="button" class="game__hint" data-action="hint">Hint</button>
+        </header>
+
+        <section class="intro game__state" data-state="intro">
+            <header>
+                <p class="lead">The <a href="https://en.wikipedia.org/wiki/NATO_phonetic_alphabet" target="_blank" rel="noreferrer">NATO phonetic alphabet</a> is useful and easy to learn. Practice your knowledge of it here!</p>
+            </header>
+
+            <main class="instructions">
+                <ol>
+                    <li>A random letter will appear (for example, "A").</li>
+                    <li>Enter your guess for the code word for this letter (for example, "alpha").</li>
+                    <li>If your guess is correct, another letter will appear.</li>
+                    <li>If you finish the whole alphabet, you win!</li>
+                </ol>
+            </main>
+
+            <footer class="intro__buttons">
+                <button id="bar" type="button" class="intro__button" data-action="play">Play</button>
+            </footer>
+        </section>
+
+        <section class="play game__state" data-state="play">
+            <main>
+                <div class="active-character"></div>
+                <div class="notices"></div>
+                <input class="guess" placeholder="Code word?" />
+                <button class="submit" type="button">Submit</button>
+            </main>
+
+            <footer class="progress">
+                <h3>Progress</h3>
+                <div class="results"></div>
+            </footer>
+        </section>
+
+        <section class="victory game__state" data-state="victory">
+            <main>
+                <h2>Success!</h2>
+            </main>
+        </section>
+    </div>
+
+    <footer class="credits">Free and <a href="https://github.com/ggwicz/learnnato.org" target="_blank" rel="noreferrer">open-source</a>. Made by <a href="https://ggwi.cz" target="_blank" rel="noreferrer">@ggwicz</a>.</footer>
+
+    <script src="src/js/nato.js"></script>
+    <script src="src/js/app.js"></script>
+    <script>
+        window.addEventListener( 'DOMContentLoaded', event => {
+            LearnNato.init();
+        } );
+    </script>
+</body>
+</html>

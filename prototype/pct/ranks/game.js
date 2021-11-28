@@ -315,7 +315,6 @@ function begin() {
         document.getElementById("btp_special_ranks").setAttribute("disabled","true");
         document.getElementById("btp_special_ranks").remove();
     }
-    console.log(agency)
     new_epaulette(agency);
 }
 
@@ -335,11 +334,11 @@ function new_epaulette(agency) {
     while (new_rank == false) {
         if (complete.includes(rank) == true) {
             var rank = Rand_Rank(agency);
-            console.log(rank + " | Trying Again");
-            console.log(complete);
+            /*console.log(rank + " | Trying Again");
+            console.log(complete);*/
         } else {
-            console.log(rank + " | Ready");
-            console.log(complete);
+            /*console.log(rank + " | Ready");
+            console.log(complete);*/
             var new_rank = true;
             break
         }
@@ -354,7 +353,6 @@ function new_epaulette(agency) {
         var epaulette_icon = "images/" + BTP_rtoe[rank];
         document.getElementById("epaulette_img").setAttribute("src", epaulette_icon)
     } else if (agency == "hmps") {
-        console.log("HMPS Image")
         var epaulette_icon = "images/" + HMPS_rtoe[rank];
         document.getElementById("epaulette_img").setAttribute("src", epaulette_icon)
     }

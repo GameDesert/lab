@@ -2,7 +2,8 @@ const agencies = {
     "metpol":"Metropolitan Police",
     "modpol":"Ministry of Defence Police",
     "btpol":"British Transport Police",
-    "hmps":"HM Prison Service"
+    "hmps":"HM Prison Service",
+    "hmrc":"HM Revenue and Customs"
 }
 
 /*METROPOLITAN POLICE*/
@@ -183,6 +184,27 @@ const BTP_etor = {
         "HMPS_Custodial Manager"
     ]
 
+    /*HMRC*/
+    const HMRC_etor = {
+        "HMRC_AOff.svg":"HMRC_Assistant Officer",
+        "HMRC_Off.svg":"HMRC_Officer",
+        "HMRC_HighOff.svg":"HMRC_Higher Officer",
+        "HMRC_SenOff.svg":"HMRC_Senior Officer"
+    }
+
+    const HMRC_rtoe = {
+        "HMRC_Assistant Officer":"HMRC_AOff.svg",
+        "HMRC_Officer":"HMRC_Off.svg",
+        "HMRC_Higher Officer":"HMRC_HighOff.svg",
+        "HMRC_Senior Officer":"HMRC_SenOff.svg"
+    }
+
+    const HMRC_ranks = [
+        "HMRC_Assistant Officer",
+        "HMRC_Officer",
+        "HMRC_Higher Officer",
+        "HMRC_Senior Officer"
+    ]
 
 var complete = []
 
@@ -204,11 +226,14 @@ function Rand_Rank(agency) {
     } else if (agency == "btpol") {
         var random_rank = BTP_ranks[Math.floor(Math.random() * BTP_ranks.length)];
         return random_rank;
+    } else if (agency == "hmrc") {
+        var random_rank = HMRC_ranks[Math.floor(Math.random() * HMRC_ranks.length)];
+        return random_rank;
     }
 }
 
 function endcheck() {
-    if ((complete.includes("MET_Constable") && complete.includes("MET_Sergeant") && complete.includes("MET_Inspector") && complete.includes("MET_Chief Inspector") && complete.includes("MET_Superintendent") && complete.includes("MET_Chief Superintendent") && complete.includes("MET_Commander") && complete.includes("MET_Deputy Assistant Commissioner") && complete.includes("MET_Assistant Commissioner") && complete.includes("MET_Deputy Commissioner") && complete.includes("MET_Commissioner") && complete.includes("MET_Special Constable") && complete.includes("MET_Special Sergeant") && complete.includes("MET_Special Inspector") && complete.includes("MET_Special Chief Inspector") && complete.includes("MET_Assistant Chief Officer") && complete.includes("MET_Chief Officer")) || (complete.includes("BTP_Constable") && complete.includes("BTP_Sergeant") && complete.includes("BTP_Inspector") && complete.includes("BTP_Chief Inspector") && complete.includes("BTP_Superintendent") && complete.includes("BTP_Chief Superintendent") && complete.includes("BTP_Assistant Chief Constable") && complete.includes("BTP_Deputy Chief Constable") && complete.includes("BTP_Chief Constable") && complete.includes("BTP_Special Constable") && complete.includes("BTP_Special Sergeant") && complete.includes("BTP_Special Inspector") && complete.includes("BTP_Special Chief Inspector") && complete.includes("BTP_Special Superintendent") && complete.includes("BTP_Special Chief Officer")) || (complete.includes("MOD_Constable") && complete.includes("MOD_Sergeant") && complete.includes("MOD_Inspector") && complete.includes("MOD_Chief Inspector") && complete.includes("MOD_Superintendent") && complete.includes("MOD_Chief Superintendent") && complete.includes("MOD_Assistant Chief Constable") && complete.includes("MOD_Deputy Chief Constable") && complete.includes("MOD_Chief Constable")) || (complete.includes("HMPS_Operational Support Grade") && complete.includes("HMPS_Prison Officer") && complete.includes("HMPS_Supervising Officer") && complete.includes("HMPS_Custodial Manager"))  == true) {
+    if ((complete.includes("MET_Constable") && complete.includes("MET_Sergeant") && complete.includes("MET_Inspector") && complete.includes("MET_Chief Inspector") && complete.includes("MET_Superintendent") && complete.includes("MET_Chief Superintendent") && complete.includes("MET_Commander") && complete.includes("MET_Deputy Assistant Commissioner") && complete.includes("MET_Assistant Commissioner") && complete.includes("MET_Deputy Commissioner") && complete.includes("MET_Commissioner") && complete.includes("MET_Special Constable") && complete.includes("MET_Special Sergeant") && complete.includes("MET_Special Inspector") && complete.includes("MET_Special Chief Inspector") && complete.includes("MET_Assistant Chief Officer") && complete.includes("MET_Chief Officer")) || (complete.includes("BTP_Constable") && complete.includes("BTP_Sergeant") && complete.includes("BTP_Inspector") && complete.includes("BTP_Chief Inspector") && complete.includes("BTP_Superintendent") && complete.includes("BTP_Chief Superintendent") && complete.includes("BTP_Assistant Chief Constable") && complete.includes("BTP_Deputy Chief Constable") && complete.includes("BTP_Chief Constable") && complete.includes("BTP_Special Constable") && complete.includes("BTP_Special Sergeant") && complete.includes("BTP_Special Inspector") && complete.includes("BTP_Special Chief Inspector") && complete.includes("BTP_Special Superintendent") && complete.includes("BTP_Special Chief Officer")) || (complete.includes("MOD_Constable") && complete.includes("MOD_Sergeant") && complete.includes("MOD_Inspector") && complete.includes("MOD_Chief Inspector") && complete.includes("MOD_Superintendent") && complete.includes("MOD_Chief Superintendent") && complete.includes("MOD_Assistant Chief Constable") && complete.includes("MOD_Deputy Chief Constable") && complete.includes("MOD_Chief Constable")) || (complete.includes("HMPS_Operational Support Grade") && complete.includes("HMPS_Prison Officer") && complete.includes("HMPS_Supervising Officer") && complete.includes("HMPS_Custodial Manager")) || (complete.includes("HMRC_Assistant Officer") && complete.includes("HMRC_Officer") && complete.includes("HMRC_Higher Officer") && complete.includes("HMRC_Senior Officer"))  == true) {
         return true;
     } else {
         return false;
@@ -244,6 +269,11 @@ function begin() {
         document.getElementById("hmps_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("hmps_standard_ranks").setAttribute("disabled","true");
         document.getElementById("hmps_standard_ranks").remove();
+
+        document.getElementById("hmrc_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("hmrc_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("hmrc_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("hmrc_standard_ranks").remove();
     } else if (agency == "modpol") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
@@ -269,6 +299,11 @@ function begin() {
         document.getElementById("hmps_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("hmps_standard_ranks").setAttribute("disabled","true");
         document.getElementById("hmps_standard_ranks").remove();
+
+        document.getElementById("hmrc_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("hmrc_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("hmrc_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("hmrc_standard_ranks").remove();
     } else if (agency == "btpol") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
@@ -289,6 +324,11 @@ function begin() {
         document.getElementById("hmps_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("hmps_standard_ranks").setAttribute("disabled","true");
         document.getElementById("hmps_standard_ranks").remove();
+
+        document.getElementById("hmrc_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("hmrc_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("hmrc_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("hmrc_standard_ranks").remove();
     } else if (agency == "hmps") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
@@ -314,6 +354,41 @@ function begin() {
         document.getElementById("btp_special_ranks").setAttribute("aria-hidden","true");
         document.getElementById("btp_special_ranks").setAttribute("disabled","true");
         document.getElementById("btp_special_ranks").remove();
+
+        document.getElementById("hmrc_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("hmrc_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("hmrc_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("hmrc_standard_ranks").remove();
+    } else if (agency == "hmrc") {
+        document.getElementById("met_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("met_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("met_standard_ranks").remove();
+
+        document.getElementById("met_special_ranks").setAttribute("hidden","true");
+        document.getElementById("met_special_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("met_special_ranks").setAttribute("disabled","true");
+        document.getElementById("met_special_ranks").remove();
+
+        document.getElementById("mod_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("mod_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("mod_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("mod_standard_ranks").remove();
+
+        document.getElementById("btp_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("btp_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("btp_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("btp_standard_ranks").remove();
+
+        document.getElementById("btp_special_ranks").setAttribute("hidden","true");
+        document.getElementById("btp_special_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("btp_special_ranks").setAttribute("disabled","true");
+        document.getElementById("btp_special_ranks").remove();
+
+        document.getElementById("hmps_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("hmps_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("hmps_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("hmps_standard_ranks").remove();
     }
     new_epaulette(agency);
 }
@@ -355,6 +430,9 @@ function new_epaulette(agency) {
     } else if (agency == "hmps") {
         var epaulette_icon = "images/" + HMPS_rtoe[rank];
         document.getElementById("epaulette_img").setAttribute("src", epaulette_icon)
+    } else if (agency == "hmrc") {
+        var epaulette_icon = "images/" + HMRC_rtoe[rank];
+        document.getElementById("epaulette_img").setAttribute("src", epaulette_icon)
     }
 }
 
@@ -370,6 +448,8 @@ function check_answer() {
         var current_rank = BTP_etor[document.getElementById("epaulette_img").getAttribute("src").replace("images/","")]
     } else if (agency == "hmps") {
         var current_rank = HMPS_etor[document.getElementById("epaulette_img").getAttribute("src").replace("images/","")]
+    } else if (agency == "hmrc") {
+        var current_rank = HMRC_etor[document.getElementById("epaulette_img").getAttribute("src").replace("images/","")]
     }
     if (selected_rank == current_rank) {
         complete.push(current_rank);

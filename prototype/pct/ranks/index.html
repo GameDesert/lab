@@ -93,12 +93,19 @@
                 <option value="BTP_Special Superintendent">Special Superintendent</option>
                 <option value="BTP_Special Chief Officer">Special Chief Officer</option>
             </optgroup>
-            <!--MOD POLICE-->
+            <!--HM PRISON SERVICE-->
             <optgroup label="HMPS - Standard Ranks" id="hmps_standard_ranks">
                 <option value="HMPS_Operational Support Grade">Operational Support Grade</option>
                 <option value="HMPS_Prison Officer">Prison Officer</option>
                 <option value="HMPS_Supervising Officer">Supervising Officer</option>
                 <option value="HMPS_Custodial Manager">Custodial Manager</option>
+            </optgroup>
+            <!--HM REVENUE AND CUSTOMS-->
+            <optgroup label="HMRC - Standard Ranks" id="hmrc_standard_ranks">
+                <option value="HMRC_Assistant Officer">Assistant Officer</option>
+                <option value="HMRC_Officer">Officer</option>
+                <option value="HMRC_Higher Officer">Higher Officer</option>
+                <option value="HMRC_Senior Officer">Senior Officer</option>
             </optgroup>
         </select>
         <button id="check" onclick="check_answer()" disabled>Check</button>
@@ -110,7 +117,7 @@
             <option value="modpol">Ministry of Defence Police</option>
             <option value="btpol">British Transport Police</option>
             <option value="hmps">HM Prison Service</option>
-            <option value="hmrc" hidden="true" aria-hidden="true" disabled>HM Revenue and Customs</option>
+            <option value="hmrc">HM Revenue and Customs</option>
             <option value="ie" hidden="true" aria-hidden="true" disabled>UK Immigration Enforcement</option>
         </select>
         <button id="start" onclick="begin()">Start</button>

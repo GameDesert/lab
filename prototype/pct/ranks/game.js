@@ -1,3 +1,9 @@
+const agencies = {
+    "metpol":"Metropolitan Police",
+    "modpol":"Ministry of Defence Police",
+    "btpol":"British Transport Police",
+    "hmps":"HM Prison Service"
+}
 
 /*METROPOLITAN POLICE*/
 const MET_etor = {
@@ -155,11 +161,28 @@ const BTP_etor = {
     "BTP_Special Chief Officer"
     ]
 
-const agencies = {
-    "metpol":"Metropolitan Police",
-    "modpol":"Ministry of Defence Police",
-    "btpol":"British Transport Police"
-}
+    /*HMPS*/
+    const HMPS_etor = {
+        "HMPS_OpSuppGrade.svg":"HMPS_Operational Support Grade",
+        "HMPS_PrisOff.svg":"HMPS_Prison Officer",
+        "HMPS_SuperOff.svg":"HMPS_Supervising Officer",
+        "HMPS_CustMngr.svg":"HMPS_Custodial Manager"
+    }
+
+    const HMPS_rtoe = {
+        "HMPS_Operational Support Grade":"HMPS_OpSuppGrade.svg",
+        "HMPS_Prison Officer":"HMPS_PrisOff.svg",
+        "HMPS_Supervising Officer":"HMPS_SuperOff.svg",
+        "HMPS_Custodial Manager":"HMPS_CustMngr.svg"
+    }
+
+    const HMPS_ranks = [
+        "HMPS_Operational Support Grade",
+        "HMPS_Prison Officer",
+        "HMPS_Supervising Officer",
+        "HMPS_Custodial Manager"
+    ]
+
 
 var complete = []
 
@@ -171,18 +194,21 @@ function disable_all() {
 function Rand_Rank(agency) {
     if (agency == "metpol") {
         var random_rank = MET_ranks[Math.floor(Math.random() * MET_ranks.length)];
-        return random_rank
+        return random_rank;
     } else if (agency == "modpol") {
         var random_rank = MOD_ranks[Math.floor(Math.random() * MOD_ranks.length)];
-        return random_rank
-    } else if (agency = "btpol") {
+        return random_rank;
+    } else if (agency == "hmps") {
+        var random_rank = HMPS_ranks[Math.floor(Math.random() * HMPS_ranks.length)];
+        return random_rank;
+    } else if (agency == "btpol") {
         var random_rank = BTP_ranks[Math.floor(Math.random() * BTP_ranks.length)];
-        return random_rank
+        return random_rank;
     }
 }
 
 function endcheck() {
-    if ((complete.includes("MET_Constable") && complete.includes("MET_Sergeant") && complete.includes("MET_Inspector") && complete.includes("MET_Chief Inspector") && complete.includes("MET_Superintendent") && complete.includes("MET_Chief Superintendent") && complete.includes("MET_Commander") && complete.includes("MET_Deputy Assistant Commissioner") && complete.includes("MET_Assistant Commissioner") && complete.includes("MET_Deputy Commissioner") && complete.includes("MET_Commissioner") && complete.includes("MET_Special Constable") && complete.includes("MET_Special Sergeant") && complete.includes("MET_Special Inspector") && complete.includes("MET_Special Chief Inspector") && complete.includes("MET_Assistant Chief Officer") && complete.includes("MET_Chief Officer")) || (complete.includes("BTP_Constable") && complete.includes("BTP_Sergeant") && complete.includes("BTP_Inspector") && complete.includes("BTP_Chief Inspector") && complete.includes("BTP_Superintendent") && complete.includes("BTP_Chief Superintendent") && complete.includes("BTP_Assistant Chief Constable") && complete.includes("BTP_Deputy Chief Constable") && complete.includes("BTP_Chief Constable") && complete.includes("BTP_Special Constable") && complete.includes("BTP_Special Sergeant") && complete.includes("BTP_Special Inspector") && complete.includes("BTP_Special Chief Inspector") && complete.includes("BTP_Special Superintendent") && complete.includes("BTP_Special Chief Officer")) || (complete.includes("MOD_Constable") && complete.includes("MOD_Sergeant") && complete.includes("MOD_Inspector") && complete.includes("MOD_Chief Inspector") && complete.includes("MOD_Superintendent") && complete.includes("MOD_Chief Superintendent") && complete.includes("MOD_Assistant Chief Constable") && complete.includes("MOD_Deputy Chief Constable") && complete.includes("MOD_Chief Constable"))  == true) {
+    if ((complete.includes("MET_Constable") && complete.includes("MET_Sergeant") && complete.includes("MET_Inspector") && complete.includes("MET_Chief Inspector") && complete.includes("MET_Superintendent") && complete.includes("MET_Chief Superintendent") && complete.includes("MET_Commander") && complete.includes("MET_Deputy Assistant Commissioner") && complete.includes("MET_Assistant Commissioner") && complete.includes("MET_Deputy Commissioner") && complete.includes("MET_Commissioner") && complete.includes("MET_Special Constable") && complete.includes("MET_Special Sergeant") && complete.includes("MET_Special Inspector") && complete.includes("MET_Special Chief Inspector") && complete.includes("MET_Assistant Chief Officer") && complete.includes("MET_Chief Officer")) || (complete.includes("BTP_Constable") && complete.includes("BTP_Sergeant") && complete.includes("BTP_Inspector") && complete.includes("BTP_Chief Inspector") && complete.includes("BTP_Superintendent") && complete.includes("BTP_Chief Superintendent") && complete.includes("BTP_Assistant Chief Constable") && complete.includes("BTP_Deputy Chief Constable") && complete.includes("BTP_Chief Constable") && complete.includes("BTP_Special Constable") && complete.includes("BTP_Special Sergeant") && complete.includes("BTP_Special Inspector") && complete.includes("BTP_Special Chief Inspector") && complete.includes("BTP_Special Superintendent") && complete.includes("BTP_Special Chief Officer")) || (complete.includes("MOD_Constable") && complete.includes("MOD_Sergeant") && complete.includes("MOD_Inspector") && complete.includes("MOD_Chief Inspector") && complete.includes("MOD_Superintendent") && complete.includes("MOD_Chief Superintendent") && complete.includes("MOD_Assistant Chief Constable") && complete.includes("MOD_Deputy Chief Constable") && complete.includes("MOD_Chief Constable")) || (complete.includes("HMPS_Operational Support Grade") && complete.includes("HMPS_Prison Officer") && complete.includes("HMPS_Supervising Officer") && complete.includes("HMPS_Custodial Manager"))  == true) {
         return true;
     } else {
         return false;
@@ -213,6 +239,11 @@ function begin() {
         document.getElementById("btp_special_ranks").setAttribute("aria-hidden","true");
         document.getElementById("btp_special_ranks").setAttribute("disabled","true");
         document.getElementById("btp_special_ranks").remove();
+
+        document.getElementById("hmps_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("hmps_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("hmps_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("hmps_standard_ranks").remove();
     } else if (agency == "modpol") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
@@ -233,6 +264,11 @@ function begin() {
         document.getElementById("btp_special_ranks").setAttribute("aria-hidden","true");
         document.getElementById("btp_special_ranks").setAttribute("disabled","true");
         document.getElementById("btp_special_ranks").remove();
+
+        document.getElementById("hmps_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("hmps_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("hmps_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("hmps_standard_ranks").remove();
     } else if (agency == "btpol") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
@@ -248,8 +284,38 @@ function begin() {
         document.getElementById("mod_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("mod_standard_ranks").setAttribute("disabled","true");
         document.getElementById("mod_standard_ranks").remove();
-    }
 
+        document.getElementById("hmps_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("hmps_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("hmps_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("hmps_standard_ranks").remove();
+    } else if (agency == "hmps") {
+        document.getElementById("met_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("met_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("met_standard_ranks").remove();
+
+        document.getElementById("met_special_ranks").setAttribute("hidden","true");
+        document.getElementById("met_special_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("met_special_ranks").setAttribute("disabled","true");
+        document.getElementById("met_special_ranks").remove();
+
+        document.getElementById("mod_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("mod_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("mod_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("mod_standard_ranks").remove();
+
+        document.getElementById("btp_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("btp_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("btp_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("btp_standard_ranks").remove();
+
+        document.getElementById("btp_special_ranks").setAttribute("hidden","true");
+        document.getElementById("btp_special_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("btp_special_ranks").setAttribute("disabled","true");
+        document.getElementById("btp_special_ranks").remove();
+    }
+    console.log(agency)
     new_epaulette(agency);
 }
 
@@ -269,11 +335,11 @@ function new_epaulette(agency) {
     while (new_rank == false) {
         if (complete.includes(rank) == true) {
             var rank = Rand_Rank(agency);
-            /*console.log(rank + " | Trying Again");
-            console.log(complete);*/
+            console.log(rank + " | Trying Again");
+            console.log(complete);
         } else {
-            /*console.log(rank + " | Ready");
-            console.log(complete);*/
+            console.log(rank + " | Ready");
+            console.log(complete);
             var new_rank = true;
             break
         }
@@ -286,6 +352,10 @@ function new_epaulette(agency) {
         document.getElementById("epaulette_img").setAttribute("src", epaulette_icon)
     } else if (agency == "btpol") {
         var epaulette_icon = "images/" + BTP_rtoe[rank];
+        document.getElementById("epaulette_img").setAttribute("src", epaulette_icon)
+    } else if (agency == "hmps") {
+        console.log("HMPS Image")
+        var epaulette_icon = "images/" + HMPS_rtoe[rank];
         document.getElementById("epaulette_img").setAttribute("src", epaulette_icon)
     }
 }
@@ -300,6 +370,8 @@ function check_answer() {
         var current_rank = MOD_etor[document.getElementById("epaulette_img").getAttribute("src").replace("images/","")]
     } else if (agency == "btpol") {
         var current_rank = BTP_etor[document.getElementById("epaulette_img").getAttribute("src").replace("images/","")]
+    } else if (agency == "hmps") {
+        var current_rank = HMPS_etor[document.getElementById("epaulette_img").getAttribute("src").replace("images/","")]
     }
     if (selected_rank == current_rank) {
         complete.push(current_rank);

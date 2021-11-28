@@ -7,7 +7,7 @@
    viewBox="0 0 135.46667 135.46667"
    version="1.1"
    id="svg5"
-   inkscape:export-filename="C:\Users\okcra\Documents\GitHub\lab\prototype\pct\favicon.png"
+   inkscape:export-filename="C:\Users\okcra\Documents\GitHub\lab\prototype\pct\favicon_nobg.png"
    inkscape:export-xdpi="192"
    inkscape:export-ydpi="192"
    inkscape:version="1.1 (c68e22c387, 2021-05-23)"
@@ -35,7 +35,7 @@
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="BS_x0020_Inner_x0020_Circle" />
   <defs
      id="defs2"><style
    type="text/css"
@@ -61,13 +61,6 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <rect
-       style="fill:#003399;fill-opacity:1;stroke-width:0.499999;stroke-dasharray:0.499999, 1;paint-order:markers fill stroke;stop-color:#000000"
-       id="rect846"
-       width="135.46667"
-       height="135.46667"
-       x="-2.4023439e-06"
-       y="-2.4023439e-06" />
     <g
        id="BS_x0020_Inner_x0020_Circle"
        inkscape:label="BS Inner Circle"

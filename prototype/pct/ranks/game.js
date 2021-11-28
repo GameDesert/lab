@@ -202,42 +202,52 @@ function begin() {
         document.getElementById("mod_standard_ranks").setAttribute("hidden","true");
         document.getElementById("mod_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("mod_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("mod_standard_ranks").remove();
 
         document.getElementById("btp_standard_ranks").setAttribute("hidden","true");
         document.getElementById("btp_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("btp_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("btp_standard_ranks").remove();
 
         document.getElementById("btp_special_ranks").setAttribute("hidden","true");
         document.getElementById("btp_special_ranks").setAttribute("aria-hidden","true");
         document.getElementById("btp_special_ranks").setAttribute("disabled","true");
+        document.getElementById("btp_special_ranks").remove();
     } else if (agency == "modpol") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("met_standard_ranks").remove();
 
         document.getElementById("met_special_ranks").setAttribute("hidden","true");
         document.getElementById("met_special_ranks").setAttribute("aria-hidden","true");
         document.getElementById("met_special_ranks").setAttribute("disabled","true");
+        document.getElementById("met_special_ranks").remove();
 
         document.getElementById("btp_standard_ranks").setAttribute("hidden","true");
         document.getElementById("btp_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("btp_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("btp_standard_ranks").remove();
 
         document.getElementById("btp_special_ranks").setAttribute("hidden","true");
         document.getElementById("btp_special_ranks").setAttribute("aria-hidden","true");
         document.getElementById("btp_special_ranks").setAttribute("disabled","true");
+        document.getElementById("btp_special_ranks").remove();
     } else if (agency == "btpol") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("met_standard_ranks").remove();
 
         document.getElementById("met_special_ranks").setAttribute("hidden","true");
         document.getElementById("met_special_ranks").setAttribute("aria-hidden","true");
         document.getElementById("met_special_ranks").setAttribute("disabled","true");
+        document.getElementById("met_special_ranks").remove();
 
         document.getElementById("mod_standard_ranks").setAttribute("hidden","true");
         document.getElementById("mod_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("mod_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("mod_standard_ranks").remove();
     }
 
     new_epaulette(agency);

@@ -12,6 +12,19 @@
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
+
+    
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#003399">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#003399">
+    <meta name="msapplication-config" content="favicons/browserconfig.xml">
+    <meta name="theme-color" content="#003399">
     
     <script src="game.js"></script>
     <style>
@@ -20,34 +33,79 @@
         }
     </style>
 </head>
-<body onload="new_epaulette()" style="overflow: hidden; margin: 0; padding: 0; padding-top: 5vw;">
+<body onload="disable_all()" style="overflow: hidden; margin: 0; padding: 0; padding-top: 5vw;">
     <div><img id="epaulette_img" src="" style="height: 20vh; width: 31.385vh; margin-left: auto; margin-right: auto; display: block;"></div>
     <br>
     <div style="margin-left: auto; margin-right: auto; display: block; text-align: center;">
+        <p data-agency="" id="curr_agency">Agency: <span id="agency_text">None - Please select one and press 'Start'</span></p>
         <select name="Ranks" id="Ranks">
-            <optgroup label="Standard Ranks">
-                <option value="Constable">Constable</option>
-                <option value="Sergeant">Sergeant</option>
-                <option value="Inspector">Inspector</option>
-                <option value="Chief Inspector">Chief Inspector</option>
-                <option value="Superintendent">Superintendent</option>
-                <option value="Chief Superintendent">Chief Superintendent</option>
-                <option value="Commander">Commander</option>
-                <option value="Deputy Assistant Commissioner">Deputy Assistant Commissioner</option>
-                <option value="Assistant Commissioner">Assistant Commissioner</option>
-                <option value="Deputy Commissioner">Deputy Commissioner</option>
-                <option value="Commissioner">Commissioner</option>
+            <optgroup label="MPS - Standard Ranks" id="met_standard_ranks">
+                <option value="MET_Constable">Constable</option>
+                <option value="MET_Sergeant">Sergeant</option>
+                <option value="MET_Inspector">Inspector</option>
+                <option value="MET_Chief Inspector">Chief Inspector</option>
+                <option value="MET_Superintendent">Superintendent</option>
+                <option value="MET_Chief Superintendent">Chief Superintendent</option>
+                <option value="MET_Commander">Commander</option>
+                <option value="MET_Deputy Assistant Commissioner">Deputy Assistant Commissioner</option>
+                <option value="MET_Assistant Commissioner">Assistant Commissioner</option>
+                <option value="MET_Deputy Commissioner">Deputy Commissioner</option>
+                <option value="MET_Commissioner">Commissioner</option>
             </optgroup>
-            <optgroup label="Special Ranks">
-                <option value="Special Constable">Special Constable</option>
-                <option value="Special Sergeant">Special Sergeant</option>
-                <option value="Special Inspector">Special Inspector</option>
-                <option value="Special Chief Inspector">Special Chief Inspector</option>
-                <option value="Assistant Chief Officer">Assistant Chief Officer</option>
-                <option value="Chief Officer">Chief Officer</option>
+            <optgroup label="MPS - Special Ranks" id="met_special_ranks">
+                <option value="MET_Special Constable">Special Constable</option>
+                <option value="MET_Special Sergeant">Special Sergeant</option>
+                <option value="MET_Special Inspector">Special Inspector</option>
+                <option value="MET_Special Chief Inspector">Special Chief Inspector</option>
+                <option value="MET_Assistant Chief Officer">Assistant Chief Officer</option>
+                <option value="MET_Chief Officer">Chief Officer</option>
+            </optgroup>
+            <!--MOD POLICE-->
+            <optgroup label="MDP - Standard Ranks" id="mod_standard_ranks">
+                <option value="MOD_Constable">Constable</option>
+                <option value="MOD_Sergeant">Sergeant</option>
+                <option value="MOD_Inspector">Inspector</option>
+                <option value="MOD_Chief Inspector">Chief Inspector</option>
+                <option value="MOD_Superintendent">Superintendent</option>
+                <option value="MOD_Chief Superintendent">Chief Superintendent</option>
+                <option value="MOD_Assistant Chief Constable">Assistant Chief Constable</option>
+                <option value="MOD_Deputy Chief Constable">Deputy Chief Constable</option>
+                <option value="MOD_Chief Constable">Chief Constable</option>
+            </optgroup>
+            <!--BTP-->
+            <optgroup label="BTP - Standard Ranks" id="btp_standard_ranks">
+                <option value="BTP_Constable">Constable</option>
+                <option value="BTP_Sergeant">Sergeant</option>
+                <option value="BTP_Inspector">Inspector</option>
+                <option value="BTP_Chief Inspector">Chief Inspector</option>
+                <option value="BTP_Superintendent">Superintendent</option>
+                <option value="BTP_Chief Superintendent">Chief Superintendent</option>
+                <option value="BTP_Assistant Chief Constable">Assistant Chief Constable</option>
+                <option value="BTP_Deputy Chief Constable">Deputy Chief Constable</option>
+                <option value="BTP_Chief Constable">Chief Constable</option>
+            </optgroup>
+            <optgroup label="BTP - Special Ranks" id="btp_special_ranks">
+                <option value="BTP_Special Constable">Special Constable</option>
+                <option value="BTP_Special Sergeant">Special Sergeant</option>
+                <option value="BTP_Special Inspector">Special Inspector</option>
+                <option value="BTP_Special Chief Inspector">Special Chief Inspector</option>
+                <option value="BTP_Special Superintendent">Special Superintendent</option>
+                <option value="BTP_Special Chief Officer">Special Chief Officer</option>
             </optgroup>
         </select>
-        <button id="check" onclick="check_answer()">Check</button>
+        <button id="check" onclick="check_answer()" disabled>Check</button>
+    </div>
+    <br>
+    <div style="margin-left: auto; margin-right: auto; display: block; text-align: center;">
+        <select name="Agencies" id="Agencies">
+            <option value="metpol">Metropolitan Police</option>
+            <option value="modpol">Ministry of Defence Police</option>
+            <option value="btpol">British Transport Police</option>
+            <option value="hmps" hidden="true" aria-hidden="true" disabled>HM Prison Service</option>
+            <option value="hmrc" hidden="true" aria-hidden="true" disabled>HM Revenue and Customs</option>
+            <option value="ie" hidden="true" aria-hidden="true" disabled>UK Immigration Enforcement</option>
+        </select>
+        <button id="start" onclick="begin()">Start</button>
     </div>
 
     <p style="text-align: center; color: #039;"><a style="color: #039;" href="guide.html">Read The Guide</a></p>

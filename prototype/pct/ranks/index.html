@@ -107,6 +107,27 @@
                 <option value="HMRC_Higher Officer">Higher Officer</option>
                 <option value="HMRC_Senior Officer">Senior Officer</option>
             </optgroup>
+            <!--CITY OF LONDON POLICE-->
+            <optgroup label="COLP - Standard Ranks" id="colp_standard_ranks">
+                <option value="COLP_Constable">Constable</option>
+                <option value="COLP_Sergeant">Sergeant</option>
+                <option value="COLP_Inspector">Inspector</option>
+                <option value="COLP_Chief Inspector">Chief Inspector</option>
+                <option value="COLP_Superintendent">Superintendent</option>
+                <option value="COLP_Chief Superintendent">Chief Superintendent</option>
+                <option value="COLP_Commander">Commander</option>
+                <option value="COLP_Assistant Commissioner">Assistant Commissioner</option>
+                <option value="COLP_Commissioner">Commissioner</option>
+            </optgroup>
+            <optgroup label="COLP - Special Ranks" id="colp_special_ranks">
+                <option value="COLP_Special Constable">Special Constable</option>
+                <option value="COLP_Special Sergeant">Special Sergeant</option>
+                <option value="COLP_Special Inspector">Special Inspector</option>
+                <option value="COLP_Special Chief Inspector">Special Chief Inspector</option>
+                <option value="COLP_Special Superintendent">Special Superintendent</option>
+                <option value="COLP_Special Chief Superintendent">Special Chief Superintendent</option>
+                <option value="COLP_Commander">Special Commander</option>
+            </optgroup>
         </select>
         <button id="check" onclick="check_answer()" disabled>Check</button>
     </div>
@@ -114,8 +135,9 @@
     <div style="margin-left: auto; margin-right: auto; display: block; text-align: center;">
         <select name="Agencies" id="Agencies">
             <option value="metpol">Metropolitan Police</option>
-            <option value="modpol">Ministry of Defence Police</option>
             <option value="btpol">British Transport Police</option>
+            <option value="colp">City of London Police</option>
+            <option value="modpol">Ministry of Defence Police</option>
             <option value="hmps">HM Prison Service</option>
             <option value="hmrc">HM Revenue and Customs</option>
             <option value="ie" hidden="true" aria-hidden="true" disabled>UK Immigration Enforcement</option>

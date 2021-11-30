@@ -206,6 +206,33 @@ const BTP_etor = {
         "HMRC_Senior Officer"
     ]
 
+    /*City of London Police*/
+    const COLP_etor = {
+        "HMRC_AOff.svg":"HMRC_Assistant Officer",
+        "HMRC_Off.svg":"HMRC_Officer",
+        "HMRC_HighOff.svg":"HMRC_Higher Officer",
+        "HMRC_SenOff.svg":"HMRC_Senior Officer"
+    }
+
+    const COLP_rtoe = {
+        "HMRC_Assistant Officer":"HMRC_AOff.svg",
+        "HMRC_Officer":"HMRC_Off.svg",
+        "HMRC_Higher Officer":"HMRC_HighOff.svg",
+        "HMRC_Senior Officer":"HMRC_SenOff.svg"
+    }
+
+    const COLP_ranks = [
+        "COLP_Constable",
+        "COLP_Sergeant",
+        "COLP_Inspector",
+        "COLP_Chief Inspector",
+        "COLP_Superintendent",
+        "COLP_Chief Superintendent",
+        "COLP_Commander",
+        "COLP_Assistant Commissioner",
+        "COLP_Commissioner"
+    ]
+
 var complete = []
 
 function disable_all() {

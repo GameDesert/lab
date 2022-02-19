@@ -5,7 +5,8 @@ const agencies = {
     "hmps":"HM Prison Service",
     "hmrc":"HM Revenue and Customs",
     "colp":"City of London Police",
-    "ie":"Immigration Enforcement"
+    "ie":"Immigration Enforcement",
+    "rspca":"<abbr title='Royal Society for the Prevention of Cruelty to Animals'>RSPCA</abbr>"
 }
 
 /*METROPOLITAN POLICE*/
@@ -303,6 +304,40 @@ const BTP_etor = {
         "IE_Director General"
     ]
 
+    /*RSPCA*/
+    const RSPCA_etor = {
+        "RSPCA_WelOff.png":"RSPCA_Animal Welfare Officer",
+        "RSPCA_ColOff.png":"RSPCA_Animal Collection Officer",
+        "RSPCA_TInsp.png":"RSPCA_Trainee Inspector",
+        "RSPCA_Insp.png":"RSPCA_Inspector",
+        "RSPCA_CInsp.png":"RSPCA_Chief Inspector",
+        "RSPCA_Super.png":"RSPCA_Superintendent",
+        "RSPCA_CSuper.png":"RSPCA_Chief Superintendent",
+        "RSPCA_COff.png":"RSPCA_Chief Officer"
+    }
+
+    const RSPCA_rtoe = {
+        "RSPCA_Animal Welfare Officer":"RSPCA_WelOff.png",
+        "RSPCA_Animal Collection Officer":"RSPCA_ColOff.png",
+        "RSPCA_Trainee Inspector":"RSPCA_TInsp.png",
+        "RSPCA_Inspector":"RSPCA_Insp.png",
+        "RSPCA_Chief Inspector":"RSPCA_CInsp.png",
+        "RSPCA_Superintendent":"RSPCA_Super.png",
+        "RSPCA_Chief Superintendent":"RSPCA_CSuper.png",
+        "RSPCA_Chief Officer":"RSPCA_COff.png"
+    }
+
+    const RSPCA_ranks = [
+        "RSPCA_Animal Welfare Officer",
+        "RSPCA_Animal Collection Officer",
+        "RSPCA_Trainee Inspector",
+        "RSPCA_Inspector",
+        "RSPCA_Chief Inspector",
+        "RSPCA_Superintendent",
+        "RSPCA_Chief Superintendent",
+        "RSPCA_Chief Officer"
+    ]
+
 var complete = []
 
 function disable_all() {
@@ -332,6 +367,9 @@ function Rand_Rank(agency) {
     } else if (agency == "ie") {
         var random_rank = IE_ranks[Math.floor(Math.random() * IE_ranks.length)];
         return random_rank;
+    } else if (agency == "rspca") {
+        var random_rank = RSPCA_ranks[Math.floor(Math.random() * RSPCA_ranks.length)];
+        return random_rank;
     }
 }
 
@@ -342,7 +380,8 @@ function endcheck() {
     || (complete.includes("HMPS_Operational Support Grade") && complete.includes("HMPS_Prison Officer") && complete.includes("HMPS_Supervising Officer") && complete.includes("HMPS_Custodial Manager"))
     || (complete.includes("HMRC_Assistant Officer") && complete.includes("HMRC_Officer") && complete.includes("HMRC_Higher Officer") && complete.includes("HMRC_Senior Officer"))
     || (complete.includes("COLP_Constable") && complete.includes("COLP_Sergeant") && complete.includes("COLP_Inspector") && complete.includes("COLP_Chief Inspector") && complete.includes("COLP_Superintendent") && complete.includes("COLP_Chief Superintendent") && complete.includes("COLP_Commander") && complete.includes("COLP_Assistant Commissioner") && complete.includes("COLP_Commissioner") && complete.includes("COLP_Special Constable") && complete.includes("COLP_Special Sergeant") && complete.includes("COLP_Special Inspector") && complete.includes("COLP_Special Chief Inspector") && complete.includes("COLP_Special Superintendent") && complete.includes("COLP_Special Chief Superintendent"))
-    || (complete.includes("IE_Administrative Assistant") && complete.includes("IE_Assistant Immigration Officer") && complete.includes("IE_Immigration Officer") && complete.includes("IE_Chief Immigration Officer") && complete.includes("IM_HM Inspector") && complete.includes("IE_Assistant Director") && complete.includes("IE_Deputy Director") && complete.includes("IE_Regional Director") && complete.includes("IE_Operations Director") && complete.includes("IE_Director General")) == true) {
+    || (complete.includes("IE_Administrative Assistant") && complete.includes("IE_Assistant Immigration Officer") && complete.includes("IE_Immigration Officer") && complete.includes("IE_Chief Immigration Officer") && complete.includes("IM_HM Inspector") && complete.includes("IE_Assistant Director") && complete.includes("IE_Deputy Director") && complete.includes("IE_Regional Director") && complete.includes("IE_Operations Director") && complete.includes("IE_Director General"))
+    || (complete.includes("RSPCA_Animal Welfare Officer") && complete.includes("RSPCA_Animal Collection Officer") && complete.includes("RSPCA_Trainee Inspector") && complete.includes("RSPCA_Inspector") && complete.includes("RSPCA_Chief Inspector") && complete.includes("RSPCA_Superintendent") && complete.includes("RSPCA_Chief Superintendent") && complete.includes("RSPCA_Chief Officer")) == true) {
         return true;
     } else {
         return false;
@@ -398,6 +437,11 @@ function begin() {
         document.getElementById("ie_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("ie_standard_ranks").setAttribute("disabled","true");
         document.getElementById("ie_standard_ranks").remove();
+        
+        document.getElementById("rspca_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("rspca_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("rspca_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("rspca_standard_ranks").remove();
     } else if (agency == "modpol") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
@@ -443,6 +487,11 @@ function begin() {
         document.getElementById("ie_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("ie_standard_ranks").setAttribute("disabled","true");
         document.getElementById("ie_standard_ranks").remove();
+        
+        document.getElementById("rspca_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("rspca_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("rspca_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("rspca_standard_ranks").remove();
     } else if (agency == "btpol") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
@@ -483,6 +532,11 @@ function begin() {
         document.getElementById("ie_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("ie_standard_ranks").setAttribute("disabled","true");
         document.getElementById("ie_standard_ranks").remove();
+        
+        document.getElementById("rspca_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("rspca_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("rspca_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("rspca_standard_ranks").remove();
     } else if (agency == "hmps") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
@@ -528,6 +582,11 @@ function begin() {
         document.getElementById("ie_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("ie_standard_ranks").setAttribute("disabled","true");
         document.getElementById("ie_standard_ranks").remove();
+        
+        document.getElementById("rspca_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("rspca_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("rspca_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("rspca_standard_ranks").remove();
     } else if (agency == "hmrc") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
@@ -573,6 +632,11 @@ function begin() {
         document.getElementById("ie_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("ie_standard_ranks").setAttribute("disabled","true");
         document.getElementById("ie_standard_ranks").remove();
+        
+        document.getElementById("rspca_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("rspca_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("rspca_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("rspca_standard_ranks").remove();
     } else if (agency == "colp") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
@@ -613,6 +677,11 @@ function begin() {
         document.getElementById("ie_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("ie_standard_ranks").setAttribute("disabled","true");
         document.getElementById("ie_standard_ranks").remove();
+        
+        document.getElementById("rspca_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("rspca_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("rspca_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("rspca_standard_ranks").remove();
     } else if (agency == "ie") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
@@ -653,6 +722,61 @@ function begin() {
         document.getElementById("colp_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("colp_standard_ranks").setAttribute("disabled","true");
         document.getElementById("colp_standard_ranks").remove();
+
+        document.getElementById("colp_special_ranks").setAttribute("hidden","true");
+        document.getElementById("colp_special_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("colp_special_ranks").setAttribute("disabled","true");
+        document.getElementById("colp_special_ranks").remove();
+        
+        document.getElementById("rspca_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("rspca_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("rspca_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("rspca_standard_ranks").remove();
+    } else if (agency == "rspca") {
+        document.getElementById("met_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("met_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("met_standard_ranks").remove();
+
+        document.getElementById("met_special_ranks").setAttribute("hidden","true");
+        document.getElementById("met_special_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("met_special_ranks").setAttribute("disabled","true");
+        document.getElementById("met_special_ranks").remove();
+
+        document.getElementById("mod_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("mod_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("mod_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("mod_standard_ranks").remove();
+
+        document.getElementById("btp_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("btp_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("btp_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("btp_standard_ranks").remove();
+
+        document.getElementById("btp_special_ranks").setAttribute("hidden","true");
+        document.getElementById("btp_special_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("btp_special_ranks").setAttribute("disabled","true");
+        document.getElementById("btp_special_ranks").remove();
+
+        document.getElementById("hmps_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("hmps_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("hmps_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("hmps_standard_ranks").remove();
+
+        document.getElementById("hmrc_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("hmrc_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("hmrc_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("hmrc_standard_ranks").remove();
+                
+        document.getElementById("colp_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("colp_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("colp_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("colp_standard_ranks").remove();
+                
+        document.getElementById("ie_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("ie_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("ie_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("ie_standard_ranks").remove();
 
         document.getElementById("colp_special_ranks").setAttribute("hidden","true");
         document.getElementById("colp_special_ranks").setAttribute("aria-hidden","true");
@@ -708,6 +832,9 @@ function new_epaulette(agency) {
     }  else if (agency == "ie") {
         var epaulette_icon = "images/" + IE_rtoe[rank];
         document.getElementById("epaulette_img").setAttribute("src", epaulette_icon)
+    }  else if (agency == "rspca") {
+        var epaulette_icon = "images/" + RSPCA_rtoe[rank];
+        document.getElementById("epaulette_img").setAttribute("src", epaulette_icon)
     }
 }
 
@@ -729,6 +856,8 @@ function check_answer() {
         var current_rank = COLP_etor[document.getElementById("epaulette_img").getAttribute("src").replace("images/","")]
     } else if (agency == "ie") {
         var current_rank = IE_etor[document.getElementById("epaulette_img").getAttribute("src").replace("images/","")]
+    } else if (agency == "rspca") {
+        var current_rank = RSPCA_etor[document.getElementById("epaulette_img").getAttribute("src").replace("images/","")]
     }
 
     if (selected_rank == current_rank) {

@@ -35,7 +35,7 @@
 </head>
 <body onload="disable_all()" style="overflow: hidden; margin: 0; padding: 0; padding-top: 5vw;">
     <p style="position: absolute; top: 1vh; left: 1vh; cursor: pointer; font-size: 5vh;" onclick="window.location.reload();">⟳</p>
-    <div><img id="epaulette_img" src="" style="height: 20vh; width: 31.385vh; margin-left: auto; margin-right: auto; display: block;"></div>
+    <div><img id="epaulette_img" src="" style="height: 20vh; width: auto; margin-left: auto; margin-right: auto; display: block;"></div>
     <br>
     <div style="margin-left: auto; margin-right: auto; display: block; text-align: center;">
         <p data-agency="" id="curr_agency">Agency: <span id="agency_text">None - Please select one and press 'Start'</span></p>
@@ -128,6 +128,19 @@
                 <option value="COLP_Special Chief Superintendent">Special Chief Superintendent</option>
                 <option value="COLP_Commander">Special Commander</option>
             </optgroup>
+            <!--IMMIGRATION ENFORCEMENT-->
+            <optgroup label="IE - Standard Ranks" id="ie_standard_ranks">
+                <option value="IE_Administrative Assistant">Administrative Assistant</option>
+                <option value="IE_Assistant Immigration Officer">Assistant Immigration Officer</option>
+                <option value="IE_Immigration Officer">Immigration Officer</option>
+                <option value="IE_Chief Immigration Officer">Chief Immigration Officer</option>
+                <option value="IM_HM Inspector">Her Majesty's Inspector</option>
+                <option value="IE_Assistant Director">Assistant Director</option>
+                <option value="IE_Deputy Director">Deputy Director</option>
+                <option value="IE_Regional Director">Regional Director</option>
+                <option value="IE_Operations Director">Operations Director</option>
+                <option value="IE_Director General">Director General</option>
+            </optgroup>
         </select>
         <button id="check" onclick="check_answer()" disabled>Check</button>
     </div>
@@ -140,7 +153,8 @@
             <option value="modpol">Ministry of Defence Police</option>
             <option value="hmps">HM Prison Service</option>
             <option value="hmrc">HM Revenue and Customs</option>
-            <option value="ie" hidden="true" aria-hidden="true" disabled>UK Immigration Enforcement</option>
+            <option value="ie">Immigration Enforcement</option>
+            <!--To hide: hidden="true" aria-hidden="true" disabled-->
         </select>
         <button id="start" onclick="begin()">Start</button>
     </div>

@@ -4,7 +4,8 @@ const agencies = {
     "btpol":"British Transport Police",
     "hmps":"HM Prison Service",
     "hmrc":"HM Revenue and Customs",
-    "colp":"City of London Police"
+    "colp":"City of London Police",
+    "ie":"Immigration Enforcement"
 }
 
 /*METROPOLITAN POLICE*/
@@ -262,6 +263,46 @@ const BTP_etor = {
         "COLP_Special Chief Superintendent"
     ]
 
+    /*Immigration Enforcement*/
+    const IE_etor = {
+        "IE_AdminAssist.png":"IE_Administrative Assistant",
+        "IE_AssistImmOff.png":"IE_Assistant Immigration Officer",
+        "IE_ImmOff.png":"IE_Immigration Officer",
+        "IE_CImmOff.png":"IE_Chief Immigration Officer",
+        "IE_HMInsp.png":"IM_HM Inspector",
+        "IE_AssistDir.png":"IE_Assistant Director",
+        "IE_DepDir.png":"IE_Deputy Director",
+        "IE_RegDir.png":"IE_Regional Director",
+        "IE_OpDir.png":"IE_Operations Director",
+        "IE_DirGen.png":"IE_Director General"
+    }
+
+    const IE_rtoe = {
+        "IE_Administrative Assistant":"IE_AdminAssist.png",
+        "IE_Assistant Immigration Officer":"IE_AssistImmOff.png",
+        "IE_Immigration Officer":"IE_ImmOff.png",
+        "IE_Chief Immigration Officer":"IE_CImmOff.png",
+        "IM_HM Inspector":"IE_HMInsp.png",
+        "IE_Assistant Director":"IE_AssistDir.png",
+        "IE_Deputy Director":"IE_DepDir.png",
+        "IE_Regional Director":"IE_RegDir.png",
+        "IE_Operations Director":"IE_OpDir.png",
+        "IE_Director General":"IE_DirGen.png"
+    }
+
+    const IE_ranks = [
+        "IE_Administrative Assistant",
+        "IE_Assistant Immigration Officer",
+        "IE_Immigration Officer",
+        "IE_Chief Immigration Officer",
+        "IM_HM Inspector",
+        "IE_Assistant Director",
+        "IE_Deputy Director",
+        "IE_Regional Director",
+        "IE_Operations Director",
+        "IE_Director General"
+    ]
+
 var complete = []
 
 function disable_all() {
@@ -288,6 +329,9 @@ function Rand_Rank(agency) {
     } else if (agency == "colp") {
         var random_rank = COLP_ranks[Math.floor(Math.random() * COLP_ranks.length)];
         return random_rank;
+    } else if (agency == "ie") {
+        var random_rank = IE_ranks[Math.floor(Math.random() * IE_ranks.length)];
+        return random_rank;
     }
 }
 
@@ -297,7 +341,8 @@ function endcheck() {
     || (complete.includes("MOD_Constable") && complete.includes("MOD_Sergeant") && complete.includes("MOD_Inspector") && complete.includes("MOD_Chief Inspector") && complete.includes("MOD_Superintendent") && complete.includes("MOD_Chief Superintendent") && complete.includes("MOD_Assistant Chief Constable") && complete.includes("MOD_Deputy Chief Constable") && complete.includes("MOD_Chief Constable"))
     || (complete.includes("HMPS_Operational Support Grade") && complete.includes("HMPS_Prison Officer") && complete.includes("HMPS_Supervising Officer") && complete.includes("HMPS_Custodial Manager"))
     || (complete.includes("HMRC_Assistant Officer") && complete.includes("HMRC_Officer") && complete.includes("HMRC_Higher Officer") && complete.includes("HMRC_Senior Officer"))
-    || (complete.includes("COLP_Constable") && complete.includes("COLP_Sergeant") && complete.includes("COLP_Inspector") && complete.includes("COLP_Chief Inspector") && complete.includes("COLP_Superintendent") && complete.includes("COLP_Chief Superintendent") && complete.includes("COLP_Commander") && complete.includes("COLP_Assistant Commissioner") && complete.includes("COLP_Commissioner") && complete.includes("COLP_Special Constable") && complete.includes("COLP_Special Sergeant") && complete.includes("COLP_Special Inspector") && complete.includes("COLP_Special Chief Inspector") && complete.includes("COLP_Special Superintendent") && complete.includes("COLP_Special Chief Superintendent")) == true) {
+    || (complete.includes("COLP_Constable") && complete.includes("COLP_Sergeant") && complete.includes("COLP_Inspector") && complete.includes("COLP_Chief Inspector") && complete.includes("COLP_Superintendent") && complete.includes("COLP_Chief Superintendent") && complete.includes("COLP_Commander") && complete.includes("COLP_Assistant Commissioner") && complete.includes("COLP_Commissioner") && complete.includes("COLP_Special Constable") && complete.includes("COLP_Special Sergeant") && complete.includes("COLP_Special Inspector") && complete.includes("COLP_Special Chief Inspector") && complete.includes("COLP_Special Superintendent") && complete.includes("COLP_Special Chief Superintendent"))
+    || (complete.includes("IE_Administrative Assistant") && complete.includes("IE_Assistant Immigration Officer") && complete.includes("IE_Immigration Officer") && complete.includes("IE_Chief Immigration Officer") && complete.includes("IM_HM Inspector") && complete.includes("IE_Assistant Director") && complete.includes("IE_Deputy Director") && complete.includes("IE_Regional Director") && complete.includes("IE_Operations Director") && complete.includes("IE_Director General")) == true) {
         return true;
     } else {
         return false;
@@ -348,6 +393,11 @@ function begin() {
         document.getElementById("colp_special_ranks").setAttribute("aria-hidden","true");
         document.getElementById("colp_special_ranks").setAttribute("disabled","true");
         document.getElementById("colp_special_ranks").remove();
+        
+        document.getElementById("ie_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("ie_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("ie_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("ie_standard_ranks").remove();
     } else if (agency == "modpol") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
@@ -388,6 +438,11 @@ function begin() {
         document.getElementById("colp_special_ranks").setAttribute("aria-hidden","true");
         document.getElementById("colp_special_ranks").setAttribute("disabled","true");
         document.getElementById("colp_special_ranks").remove();
+        
+        document.getElementById("ie_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("ie_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("ie_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("ie_standard_ranks").remove();
     } else if (agency == "btpol") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
@@ -423,6 +478,11 @@ function begin() {
         document.getElementById("colp_special_ranks").setAttribute("aria-hidden","true");
         document.getElementById("colp_special_ranks").setAttribute("disabled","true");
         document.getElementById("colp_special_ranks").remove();
+        
+        document.getElementById("ie_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("ie_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("ie_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("ie_standard_ranks").remove();
     } else if (agency == "hmps") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
@@ -463,6 +523,11 @@ function begin() {
         document.getElementById("colp_special_ranks").setAttribute("aria-hidden","true");
         document.getElementById("colp_special_ranks").setAttribute("disabled","true");
         document.getElementById("colp_special_ranks").remove();
+        
+        document.getElementById("ie_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("ie_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("ie_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("ie_standard_ranks").remove();
     } else if (agency == "hmrc") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
@@ -503,6 +568,11 @@ function begin() {
         document.getElementById("colp_special_ranks").setAttribute("aria-hidden","true");
         document.getElementById("colp_special_ranks").setAttribute("disabled","true");
         document.getElementById("colp_special_ranks").remove();
+        
+        document.getElementById("ie_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("ie_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("ie_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("ie_standard_ranks").remove();
     } else if (agency == "colp") {
         document.getElementById("met_standard_ranks").setAttribute("hidden","true");
         document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
@@ -538,6 +608,56 @@ function begin() {
         document.getElementById("hmrc_standard_ranks").setAttribute("aria-hidden","true");
         document.getElementById("hmrc_standard_ranks").setAttribute("disabled","true");
         document.getElementById("hmrc_standard_ranks").remove();
+        
+        document.getElementById("ie_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("ie_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("ie_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("ie_standard_ranks").remove();
+    } else if (agency == "ie") {
+        document.getElementById("met_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("met_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("met_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("met_standard_ranks").remove();
+
+        document.getElementById("met_special_ranks").setAttribute("hidden","true");
+        document.getElementById("met_special_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("met_special_ranks").setAttribute("disabled","true");
+        document.getElementById("met_special_ranks").remove();
+
+        document.getElementById("mod_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("mod_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("mod_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("mod_standard_ranks").remove();
+
+        document.getElementById("btp_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("btp_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("btp_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("btp_standard_ranks").remove();
+
+        document.getElementById("btp_special_ranks").setAttribute("hidden","true");
+        document.getElementById("btp_special_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("btp_special_ranks").setAttribute("disabled","true");
+        document.getElementById("btp_special_ranks").remove();
+
+        document.getElementById("hmps_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("hmps_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("hmps_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("hmps_standard_ranks").remove();
+
+        document.getElementById("hmrc_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("hmrc_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("hmrc_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("hmrc_standard_ranks").remove();
+                
+        document.getElementById("colp_standard_ranks").setAttribute("hidden","true");
+        document.getElementById("colp_standard_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("colp_standard_ranks").setAttribute("disabled","true");
+        document.getElementById("colp_standard_ranks").remove();
+
+        document.getElementById("colp_special_ranks").setAttribute("hidden","true");
+        document.getElementById("colp_special_ranks").setAttribute("aria-hidden","true");
+        document.getElementById("colp_special_ranks").setAttribute("disabled","true");
+        document.getElementById("colp_special_ranks").remove();
     }
     new_epaulette(agency);
 }
@@ -585,6 +705,9 @@ function new_epaulette(agency) {
     } else if (agency == "colp") {
         var epaulette_icon = "images/" + COLP_rtoe[rank];
         document.getElementById("epaulette_img").setAttribute("src", epaulette_icon)
+    }  else if (agency == "ie") {
+        var epaulette_icon = "images/" + IE_rtoe[rank];
+        document.getElementById("epaulette_img").setAttribute("src", epaulette_icon)
     }
 }
 
@@ -604,12 +727,15 @@ function check_answer() {
         var current_rank = HMRC_etor[document.getElementById("epaulette_img").getAttribute("src").replace("images/","")]
     } else if (agency == "colp") {
         var current_rank = COLP_etor[document.getElementById("epaulette_img").getAttribute("src").replace("images/","")]
+    } else if (agency == "ie") {
+        var current_rank = IE_etor[document.getElementById("epaulette_img").getAttribute("src").replace("images/","")]
     }
+
     if (selected_rank == current_rank) {
         complete.push(current_rank);
         new_epaulette(agency);
     } else {
-        alert("Incorrect, try again.")
+        alert("Incorrect, try again.");
     }
 }
 

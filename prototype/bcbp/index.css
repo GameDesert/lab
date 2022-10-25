@@ -1,0 +1,119 @@
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #000014;
+}
+
+.textinput {
+    /* This bit sets up the horizontal layout */
+    display:flex;
+    flex-direction:row;
+
+    /* This bit draws the box around it */
+    border: 1.5px solid #fff;
+
+    /* I've used padding so you can see the edges of the elements. */
+    /*padding: 2px;*/
+
+    border-radius: 8px;
+
+    margin-left: 20vw;
+    margin-right: 20vw;
+}
+
+.barcodeinput {
+    width: 60vw;
+    height: 2.5vw;
+    padding-left: 1.0vw;
+    font-family: 'Courier New', Courier, monospace;
+    /*border: 1.5px solid #fff;*/
+    color: rgb(190, 190, 190);
+    background-color: #000014;
+    transition: 0.5s;
+
+    font-size: 1vw;
+
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    flex-grow:2;
+    /* And hide the input's outline, so the form looks like the outline */
+    border:none;
+}
+
+.barcodeinput:focus {
+    outline: none;
+    transition: 0.5s;
+}
+
+.barcodeinput:hover {
+    /*border: 1.5px solid #fff;*/
+    background-color: #2d2d2d;
+    transition: 0.5s;
+}
+
+.textinput:hover {
+    /*border: 1.5px solid #fff;*/
+    background-color: #2d2d2d;
+    transition: 0.5s;
+}
+
+/*.input:hover > .barcodeinput {
+    background-color: #2d2d2d;
+    transition: 0.5s;
+}*/
+
+.submit {
+    width: 5vw;
+    /*height: 2.5vw;*/
+    font-family: 'Courier New', Courier, monospace;
+    /*border: 1.5px solid #fff;*/
+    color: #000014;
+    background-color: #fff;
+    transition: 0.5s;
+
+    font-size: 1vw;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    border: 1.5px solid #fff;
+}
+
+.submit:hover {
+    background-color: rgb(170, 170, 170);
+    transition: 0.5s;
+}
+
+.uploadbutton {
+    display:none;
+}
+
+.uploadlabel {
+    color: #fff;
+    border: 1.5px solid #fff;
+    border-radius: 8px;
+    padding: 0.5vw;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.boardingpass {
+    width: 32.8633652vw;
+    height: 13vw;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+}
+
+.luggagetag {
+    width: 9vw;
+    height: 47.614692vw;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+}

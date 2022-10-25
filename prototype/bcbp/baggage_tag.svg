@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="55mm"
+   height="238.07346mm"
+   viewBox="0 0 55 238.07345"
+   version="1.1"
+   id="svg25510"
+   sodipodi:docname="baggage_tag.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview25512"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:snap-page="true"
+     inkscape:zoom="1.0588194"
+     inkscape:cx="-47.222409"
+     inkscape:cy="531.2521"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-global="true"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true" />
+  <defs
+     id="defs25507">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect4372"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,2.1166667,0,1 @ F,0,0,1,0,2.1166667,0,1 @ F,0,0,1,0,2.1166667,0,1 @ F,0,0,1,0,2.1166667,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="8"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,54.740112)">
+    <rect
+       style="fill:#ffffff;stroke-width:1.6288;stroke-linejoin:bevel;stroke-dasharray:1.6288, 3.25762;stroke-dashoffset:4.39777;paint-order:markers fill stroke;stop-color:#000000"
+       id="rect25593"
+       width="55"
+       height="183.33334"
+       x="0"
+       y="0" />
+    <path
+       id="barcode1_bar1"
+       style="fill:#000000;stroke-width:2.55179"
+       d="m 0,111.04492 v 1.13281 1.13477 18.69336 H 30.333984 V 113.3125 H 207.87305 v -2.26758 z m 21.201172,4.1875 c 0.755518,0 1.445388,0.15218 2.068359,0.45703 0.636226,0.29161 1.17197,0.72302 1.609375,1.29297 0.45066,0.5567 0.802849,1.25285 1.054688,2.08789 0.25184,0.8218 0.376953,1.76817 0.376953,2.8418 0,1.08689 -0.125113,2.056 -0.376953,2.9043 -0.25184,0.8483 -0.604028,1.56327 -1.054688,2.14648 -0.437405,0.56995 -0.973149,1.00764 -1.609375,1.3125 -0.622971,0.29161 -1.312841,0.4375 -2.068359,0.4375 -0.755518,0 -1.451665,-0.14589 -2.087891,-0.4375 -0.622971,-0.30486 -1.158715,-0.74255 -1.609375,-1.3125 -0.437405,-0.58321 -0.783317,-1.29818 -1.035156,-2.14648 -0.25184,-0.8483 -0.376953,-1.81741 -0.376953,-2.9043 0,-1.07363 0.125113,-2.02 0.376953,-2.8418 0.25184,-0.83504 0.597752,-1.53119 1.035156,-2.08789 0.45066,-0.56995 0.986404,-1.00136 1.609375,-1.29297 0.636226,-0.30485 1.332373,-0.45703 2.087891,-0.45703 z M 4.0234375,115.4707 H 14.521484 v 1.94922 h -4.095703 v 11.05469 H 8.1191406 V 117.41992 H 4.0234375 Z m 17.1777345,1.76953 c -0.835046,0 -1.504134,0.40439 -2.007813,1.21289 -0.490424,0.80854 -0.736328,1.96121 -0.736328,3.45899 0,1.53755 0.245904,2.7255 0.736328,3.56055 0.503679,0.82179 1.172767,1.23242 2.007813,1.23242 0.835046,0 1.497857,-0.41063 1.988281,-1.23242 0.503679,-0.83505 0.75586,-2.023 0.755859,-3.56055 10e-7,-1.49778 -0.25218,-2.65045 -0.755859,-3.45899 -0.490424,-0.8085 -1.153235,-1.21289 -1.988281,-1.21289 z m 29.550781,12.52149 v 53.18555 H 157.12109 V 129.76172 Z M 0,208.54492 v 2.26758 h 207.87305 v -2.26758 z m 0,86.1543 v 2.26758 h 207.87305 v -2.26758 z m 28.345703,44.0293 V 489.9082 h 1.939453 V 338.72852 Z m 3.876953,0 V 489.9082 h 1.939453 V 338.72852 Z m 3.876953,0 V 489.9082 h 1.9375 V 338.72852 Z m 3.876953,0 V 489.9082 h 1.9375 V 338.72852 Z m 3.876954,0 V 489.9082 h 3.875 V 338.72852 Z m 7.751953,0 V 489.9082 h 3.876953 V 338.72852 Z m 7.753906,0 V 489.9082 h 1.9375 V 338.72852 Z m 3.875,0 V 489.9082 h 1.939453 V 338.72852 Z m 3.876953,0 V 489.9082 h 1.939453 V 338.72852 Z m 3.876953,0 V 489.9082 h 3.876953 V 338.72852 Z m 7.753907,0 V 489.9082 h 3.875 V 338.72852 Z m 7.751953,0 V 489.9082 h 1.939453 V 338.72852 Z m 3.876953,0 V 489.9082 h 3.876953 V 338.72852 Z m 5.814453,0 V 489.9082 H 98.125 V 338.72852 Z m 5.814453,0 V 489.9082 h 1.93945 V 338.72852 Z m 3.87695,0 V 489.9082 h 1.93946 V 338.72852 Z m 3.87696,0 V 489.9082 h 3.87695 V 338.72852 Z m 7.75195,0 V 489.9082 h 3.87695 V 338.72852 Z m 5.81641,0 V 489.9082 h 3.875 V 338.72852 Z m 5.81445,0 V 489.9082 h 1.9375 V 338.72852 Z m 5.81445,0 V 489.9082 h 1.9375 V 338.72852 Z m 3.87695,0 V 489.9082 h 1.9336 V 338.72852 Z m 5.81055,0 V 489.9082 h 3.87695 V 338.72852 Z m 5.81445,0 V 489.9082 h 1.93946 V 338.72852 Z m 5.81446,0 V 489.9082 h 3.87695 V 338.72852 Z m 7.7539,0 V 489.9082 h 1.9375 V 338.72852 Z m 3.87696,0 V 489.9082 h 1.9375 V 338.72852 Z m 3.87695,0 V 489.9082 h 3.875 V 338.72852 Z m 5.81445,0 V 489.9082 h 1.9375 V 338.72852 Z M 28.345703,498.83594 v 1.9375 H 179.52734 v -1.9375 z m 0,3.875 v 1.93945 H 179.52734 v -1.93945 z m 0,3.87695 v 1.93945 H 179.52734 v -1.93945 z m 0,3.87695 v 1.9375 H 179.52734 v -1.9375 z m 0,3.87696 v 3.87695 H 179.52734 v -3.87695 z m 0,7.75195 v 3.87695 H 179.52734 v -3.87695 z m 0,7.75391 v 1.9375 H 179.52734 v -1.9375 z m 0,3.87695 v 1.9375 H 179.52734 v -1.9375 z m 0,3.87695 v 1.9375 H 179.52734 v -1.9375 z m 0,3.875 v 3.87696 H 179.52734 v -3.87696 z m 0,7.75391 v 3.87695 H 179.52734 v -3.87695 z m 0,7.75195 v 1.93946 H 179.52734 v -1.93946 z m 0,3.87696 v 3.87695 H 179.52734 v -3.87695 z m 0,5.81445 v 1.93945 H 179.52734 v -1.93945 z m 0,5.8164 v 1.9375 H 179.52734 v -1.9375 z m 0,3.875 v 1.93946 H 179.52734 v -1.93946 z m 0,3.87696 v 3.87695 H 179.52734 v -3.87695 z m 0,7.7539 v 3.87696 H 179.52734 v -3.87696 z m 0,5.81446 v 3.87695 H 179.52734 v -3.87695 z m 0,5.81445 v 1.9375 H 179.52734 v -1.9375 z m 0,5.81445 v 1.93946 H 179.52734 v -1.93946 z m 0,3.87696 v 1.93554 H 179.52734 v -1.93554 z m 0,5.81054 v 3.87696 H 179.52734 v -3.87696 z m 0,5.81446 v 1.93945 H 179.52734 v -1.93945 z m 0,5.8164 v 3.875 H 179.52734 v -3.875 z m 0,7.75196 v 1.93945 H 179.52734 v -1.93945 z m 0,3.87695 v 1.9375 H 179.52734 v -1.9375 z m 0,3.87695 v 3.87695 H 179.52734 v -3.87695 z m 0,5.81445 v 1.9375 H 179.52734 v -1.9375 z"
+       transform="scale(0.26458333)" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.88486px;line-height:1.35;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro, Normal';stroke-width:0.0915916"
+       x="1.7166781"
+       y="5.4682508"
+       id="text26883"><tspan
+         sodipodi:role="line"
+         id="tspan26881"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';stroke-width:0.0915916"
+         x="1.7166781"
+         y="5.4682508">SMITH/JOHN</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';stroke-width:0.0915916"
+         x="1.7166781"
+         y="12.062812"
+         id="tspan27017">123456</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';stroke-width:0.0915916"
+         x="1.7166781"
+         y="18.657373"
+         id="tspan27019">NYC 01 JAN 2022</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';stroke-width:0.0915916"
+         x="1.7166781"
+         y="25.251934"
+         id="tspan27765">SEQ 0001</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14.1111px;line-height:1.75;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro, Normal';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.264583"
+       x="27.097822"
+       y="45.898537"
+       id="text32364"><tspan
+         sodipodi:role="line"
+         id="tspan32362"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.264583"
+         x="27.097822"
+         y="45.898537">JFK</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.84798px;line-height:1.75;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Medium';text-align:center;text-anchor:middle;stroke-width:0.0909"
+       x="27.560596"
+       y="52.367165"
+       id="text37684"><tspan
+         sodipodi:role="line"
+         id="tspan37682"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Medium';text-align:center;text-anchor:middle;stroke-width:0.0909"
+         x="27.560596"
+         y="52.367165">AB1234</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:6.17852px;line-height:1.75;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Medium';text-align:center;text-anchor:middle;stroke-width:0.115848"
+       x="27.642101"
+       y="64.896584"
+       id="text42093"><tspan
+         sodipodi:role="line"
+         id="tspan42091"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Bold';text-align:center;text-anchor:middle;stroke-width:0.115848"
+         x="27.642103"
+         y="64.896584">AB 0000123456</tspan></text>
+    <g
+       id="g8768"
+       transform="matrix(1.694931,0,0,1.694931,-16.74945,7.9693847)">
+      <path
+         id="rect3734"
+         style="color:#000000;fill:#ffffff;stroke-width:3.5;stroke-linejoin:bevel;-inkscape-stroke:none;paint-order:markers fill stroke"
+         d="m 85.246094,-139.83594 a 4.8811431,4.8811431 0 0 0 -4.878906,4.88086 v 13.74414 h -13.5 v 75.798831 h 63.609372 v -75.798831 h -13.49609 v -13.74414 a 4.8811431,4.8811431 0 0 0 -4.88672,-4.88086 z m 4.878906,9.75977 h 17.08984 v 8.86523 H 90.125 Z m -44.775391,8.86523 a 7.9999997,7.9999997 0 0 0 -8,8 v 59.798831 a 7.9999997,7.9999997 0 0 0 8,8 h 12.035157 v -75.798831 z m 94.609371,0 v 75.798831 h 12.03516 a 7.9999997,7.9999997 0 0 0 8,-8 v -59.798831 a 7.9999997,7.9999997 0 0 0 -8,-8 z"
+         transform="scale(0.26458333)" />
+      <text
+         xml:space="preserve"
+         style="font-size:5.73504px;line-height:1.75;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro, Normal';fill:#000014;fill-opacity:1;stroke-width:0.107532"
+         x="25.972155"
+         y="-20.201891"
+         id="text5527"><tspan
+           sodipodi:role="line"
+           id="tspan5525"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Semi-Bold';text-align:center;text-anchor:middle;fill:#000014;fill-opacity:1;stroke-width:0.107532"
+           x="25.972155"
+           y="-20.201891">999K</tspan></text>
+    </g>
+    <rect
+       style="opacity:1;fill:#00ff00;fill-opacity:1;stroke-width:2.05674;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke;stop-color:#000000"
+       id="rect8902"
+       width="5.3751884"
+       height="104.76088"
+       x="49.624809"
+       y="78.572464" />
+    <rect
+       style="opacity:1;fill:#00ff00;fill-opacity:1;stroke-width:2.05674;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke;stop-color:#000000"
+       id="rect9002"
+       width="5.3751884"
+       height="104.76088"
+       x="0"
+       y="78.572464" />
+  </g>
+</svg>

@@ -1,0 +1,198 @@
+{
+    "negative_encounters":[
+        {
+            "title":"Bovine Invasion",
+            "description":"A herd of cattle has made its way onto the railway.",
+            "effect":"The delay from clearing the tracks costs you {curr}5.",
+            "positive":false,
+            "currency_reward":0,
+            "currency_penalty":5,
+            "reroll":false,
+            "proportional":false,
+            "cargo_penalty":false,
+            "icon":"&#xF019A;"
+        },
+        {
+            "title":"Are Ewe Kidding",
+            "description":"A herd of sheep has made its way onto the railway.",
+            "effect":"The delay from clearing the tracks costs you {curr}2.",
+            "positive":false,
+            "currency_reward":0,
+            "currency_penalty":2,
+            "reroll":false,
+            "proportional":false,
+            "cargo_penalty":false,
+            "icon":"&#xF0CC6;"
+        },
+        {
+            "title":"Field Day",
+            "description":"Someone's pushed an old scarecrow onto the tracks.",
+            "effect":"The delay from clearing the tracks costs you {curr}7.",
+            "positive":false,
+            "currency_reward":0,
+            "currency_penalty":7,
+            "reroll":false,
+            "proportional":false,
+            "cargo_penalty":false,
+            "icon":"&#xF0E9B;"
+        },
+        {
+            "title":"Strike Action",
+            "description":"Railway staff have decided to strike for better working conditions.",
+            "effect":"Spend {curr}{value} on improving the staff room.",
+            "positive":false,
+            "currency_reward":0,
+            "currency_penalty":0.1,
+            "reroll":false,
+            "proportional":true,
+            "cargo_penalty":false,
+            "icon":"&#xF0849;"
+        },
+        {
+            "title":"Snow Day",
+            "description":"A blizzard has rendered almost all railways useless.",
+            "effect":"Spend {curr}{value} on snow ploughs across all lines.",
+            "positive":false,
+            "currency_reward":0,
+            "currency_penalty":0.075,
+            "reroll":false,
+            "proportional":true,
+            "cargo_penalty":false,
+            "icon":"&#xF0F36;"
+        },
+        {
+            "title":"Derailed",
+            "description":"The train got derailed in a field.",
+            "effect":"Spend {curr}12 on an engineer assist the train.",
+            "positive":false,
+            "currency_reward":0,
+            "currency_penalty":12,
+            "reroll":false,
+            "proportional":false,
+            "cargo_penalty":false,
+            "icon":"&#xF0D9D;"
+        },
+        {
+            "title":"Sleeping on the Job",
+            "description":"The driver blew past a red signal aspect, bringing the train to an automatic halt.",
+            "effect":"The delay costs you {curr}15.",
+            "positive":false,
+            "currency_reward":0,
+            "currency_penalty":15,
+            "reroll":false,
+            "proportional":false,
+            "cargo_penalty":false,
+            "icon":"&#xF1898;"
+        },
+        {
+            "title":"Rock Bottom",
+            "description":"The train crashed into a boulder that fell onto the track.",
+            "effect":"A third of the cargo was destroyed in the crash, costing you {curr}{value}.",
+            "positive":false,
+            "currency_reward":0,
+            "currency_penalty":0.3,
+            "reroll":false,
+            "proportional":false,
+            "cargo_penalty":true,
+            "icon":"&#xF1A48;"
+        },
+        {
+            "title":"Major Incident",
+            "description":"A major incident occurred at the origin station, requiring a mass emergency response.",
+            "effect":"The emergency response costs you {curr}{value}.",
+            "positive":false,
+            "currency_reward":0,
+            "currency_penalty":1.25,
+            "reroll":true,
+            "proportional":false,
+            "cargo_penalty":true,
+            "icon":"&#xF04A1;"
+        },
+        {
+            "title":"Engine Failure",
+            "description":"An engineering fault caused the engine to explode during the journey, injuring the driver.",
+            "effect":"You are being fined {curr}{value} for negligence.",
+            "positive":false,
+            "currency_reward":0,
+            "currency_penalty":0.4,
+            "reroll":true,
+            "proportional":true,
+            "cargo_penalty":false,
+            "icon":"&#xF01FA;"
+        },
+        {
+            "title":"The Great Train Robbery",
+            "description":"Along its journey, the train gets ransacked by a gang of armed robbers.",
+            "effect":"You lose three quarters of the entire shipment, totalling {curr}{value} in damage.",
+            "positive":false,
+            "currency_reward":0,
+            "currency_penalty":0.75,
+            "reroll":true,
+            "proportional":false,
+            "cargo_penalty":true,
+            "icon":"&#xF1058;"
+        },
+        {
+            "title":"Splash",
+            "description":"A particularly strong gust of wind causes the train to dump all of its cargo into a river as it goes over a bridge.",
+            "effect":"You lose the entire shipment, totalling {curr}{value}.",
+            "positive":false,
+            "currency_reward":0,
+            "currency_penalty":1,
+            "reroll":false,
+            "proportional":false,
+            "cargo_penalty":true,
+            "icon":"&#xF0618;"
+        }
+    ],
+    "positive_encounters":[
+        {
+            "title":"Ahead of Schedule",
+            "description":"The train arrives ahead of schedule, gaining an additional bonus from the client.",
+            "effect":"The client rewards you with a {curr}7 bonus.",
+            "positive":true,
+            "currency_reward":7,
+            "currency_penalty":0,
+            "reroll":false,
+            "proportional":false,
+            "cargo_penalty":false,
+            "icon":"&#xF0152;"
+        },
+        {
+            "title":"Extra Cargo",
+            "description":"Some extra cargo mysteriously appears on the train.",
+            "effect":"The client rewards you {curr}{value}.",
+            "positive":true,
+            "currency_reward":0.1,
+            "currency_penalty":0,
+            "reroll":false,
+            "proportional":false,
+            "cargo_penalty":false,
+                "icon":"&#xF1B34;"
+        },
+        {
+            "title":"Mysterious Stranger",
+            "description":"A msyterious stranger gives the driver a suitcase of money at the destination station.",
+            "effect":"The suitcase contained {curr}{value}.",
+            "positive":true,
+            "currency_reward":0.8,
+            "currency_penalty":0,
+            "reroll":true,
+            "proportional":false,
+            "cargo_penalty":false,
+            "icon":"&#xF1494;"
+        }
+    ],
+    "template":{
+        "title":"",
+        "description":"",
+        "effect":"{curr}",
+        "positive":true,
+        "currency_reward":0,
+        "currency_penalty":0,
+        "reroll":false,
+        "proportional":false,
+        "cargo_penalty":false,
+            "icon":"&#x;"
+    }
+}

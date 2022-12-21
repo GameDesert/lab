@@ -7,7 +7,7 @@ wagons = {
     "centerbeam":"&#xF1B32;",
     "full_centerbeam":"&#xF1B33;",
     "container":"&#xF1B34;",
-    "flatbead":"&#xF1B35;",
+    "flatbed":"&#xF1B35;",
     "vehicle":"&#xF1B36;",
     "tank":"&#xF1B37;",
     "gondola":"&#xF1B38;",
@@ -29,40 +29,113 @@ goods = {
     "passengers":{
         "full":"passenger",
         "empty":"passenger",
-        "icon":"&#xF1571;"
+        "icon":"&#xF1571;",
+        "car_cost":100,
+        "max_cars":10
     },
     "oil":{
         "full":"liquid_tank",
         "empty":"liquid_tank",
-        "icon":"&#xF0074;"
+        "icon":"&#xF0074;",
+        "car_cost":80,
+        "max_cars":15
     },
     "grain":{
         "full":"full_hopper",
         "empty":"hopper",
-        "icon":"&#xF0073;"
+        "icon":"&#xF0073;",
+        "car_cost":50,
+        "max_cars":20
     },
     "vehicle":{
         "full":"vehicle",
         "empty":"flatbed",
-        "icon":"&#xF010B;"
+        "icon":"&#xF010B;",
+        "car_cost":120,
+        "max_cars":5
     },
     "lumber":{
         "full":"full_centerbeam",
         "empty":"centerbeam",
-        "icon":"&#xF0405;"
+        "icon":"&#xF0405;",
+        "car_cost":40,
+        "max_cars":20
     },
     "mail":{
         "full":"full_open_boxcar",
         "empty":"empty_open_boxcar",
-        "icon":"&#xF0EE7;"
+        "icon":"&#xF0EE7;",
+        "car_cost":30,
+        "max_cars":20
     }
 }
 
 // CONFIG
-major_currency = "&Oslash;"
+//major_currency = "&Oslash;"
+major_currency = "&#xF0C65;"
 decimal_currency = "&cent;"
 starting_currency = 100
 // END CONFIG
+
+// GAME VARIABLES
+balance = 0
+owned_cars = {
+    "passengers":{
+        "qty":0
+    },
+    "oil":{
+        "qty":0
+    },
+    "grain":{
+        "qty":0
+    },
+    "vehicle":{
+        "qty":0
+    },
+    "lumber":{
+        "qty":0
+    },
+    "mail":{
+        "qty":0
+    }
+}
+// END GAME VARIABLES
+
+function startSetup() {
+    balance = starting_currency
+    updateBalanceDisplay();
+}
+
+function setCurrencyDisplays() {
+    document.querySelectorAll('span[id=currency]').forEach(function(node){
+        node.innerHTML = major_currency
+    });
+}
+
+function purchase_car(cartype) {
+    if (owned_cars[cartype]["qty"]+1 > goods[cartype]["max_cars"]) {
+        alert("You own the maximum amount of these cars.")
+    } else if (balance-goods[cartype]["car_cost"] <= 0){
+        alert("You cannot afford this car.")
+    } else {
+        balance = balance-goods[cartype]["car_cost"]
+        owned_cars[cartype]["qty"] = owned_cars[cartype]["qty"] + 1
+        updateBalanceDisplay()
+    }
+}
+
+function updateBalanceDisplay() {
+    document.getElementById("value").innerHTML = balance;
+    if (balance <= 0){
+        failGame("bankruptcy");
+    }
+}
+
+function failGame(condition) {
+    alert("You lose: " + condition)
+}
+
+
 
 /* 
 PLAN:

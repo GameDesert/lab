@@ -6,3 +6,17 @@ body {
 .icons {
     font-family: "Material Design Icons";
 }
+
+table, th, td {
+    border: solid black;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 7px;
+}
+
+td.icons {
+    padding: 4px;
+    font-size: 25px;
+}

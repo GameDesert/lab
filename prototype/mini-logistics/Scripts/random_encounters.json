@@ -168,11 +168,11 @@
             "reroll":false,
             "proportional":false,
             "cargo_penalty":false,
-                "icon":"&#xF1B34;"
+            "icon":"&#xF1B34;"
         },
         {
             "title":"Mysterious Stranger",
-            "description":"A msyterious stranger gives the driver a suitcase of money at the destination station.",
+            "description":"A msyterious stranger drops off a strange suitcase at the destination station.",
             "effect":"The suitcase contained {curr}{value}.",
             "positive":true,
             "currency_reward":0.8,
@@ -180,7 +180,7 @@
             "reroll":true,
             "proportional":false,
             "cargo_penalty":false,
-            "icon":"&#xF1494;"
+            "icon":"&#xF05F9;"
         }
     ],
     "template":{
@@ -193,6 +193,6 @@
         "reroll":false,
         "proportional":false,
         "cargo_penalty":false,
-            "icon":"&#x;"
+        "icon":"&#x;"
     }
 }

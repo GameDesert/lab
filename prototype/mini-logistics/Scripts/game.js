@@ -77,6 +77,33 @@ decimal_currency = "&cent;"
 starting_currency = 100
 // END CONFIG
 
+// TEMPLATES
+template_journey = {
+    "start_timestamp":0, // Timestamp for start
+    "end_timestamp":0, // Timestamp for end
+    "journey_length":0, // In seconds
+    "journey_reward":0,
+    "title":"", // The name of the contract
+    "goods":{
+        "passengers":0,
+        "oil":0,
+        "grain":0,
+        "vehicle":0,
+        "lumber":0,
+        "mail":0,
+    },
+    "cars":[
+        // Example Entry:
+        // {
+        //     "type":"",
+        //     "carrying":0
+        // }
+
+    ]
+
+}
+// END TEMPLATES
+
 // GAME VARIABLES
 balance = 0
 owned_cars = {
@@ -99,6 +126,8 @@ owned_cars = {
         "qty":0
     }
 }
+
+active_journeys = []
 // END GAME VARIABLES
 
 function startSetup() {

@@ -70,6 +70,110 @@ goods = {
     }
 }
 
+places = [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+]
+
+place_suffixes = [
+    "bury",
+    "-On-Sea",
+    "ham",
+    "-By-The-Sea",
+    "well",
+    "minster",
+    "field",
+    "gate",
+    "ford",
+    "cester",
+    "ton",
+    "borough",
+    "stead",
+    "worth",
+    "chester",
+    "caster",
+    "dale",
+    "field",
+    "port"
+]
+
+place_prefixes = [
+    "North ",
+    "East ",
+    "South ",
+    "West ",
+    "Royal ",
+    "St ",
+    "New ",
+    "Old "
+]
+
+vowels = [ // Plus "Y"
+    "a","e","i","o","u","y"
+]
+
+consonants = [ // Plus & minus a few more
+    "b","c","d","f","g","h","k","l","m","n","p","r","s","t","v","w" , "ch","sh","th","tr"
+]
+
 // CONFIG
 //major_currency = "&Oslash;"
 major_currency = "&#xF0C65;"
@@ -130,6 +234,29 @@ owned_cars = {
 active_journeys = []
 // END GAME VARIABLES
 
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+function generatePlaceName(){
+    var namelength = getRndInteger(0, 1)
+    if (namelength == 0) {
+        var rootword = consonants[Math.floor(Math.random()*consonants.length)] + vowels[Math.floor(Math.random()*vowels.length)] + consonants[Math.floor(Math.random()*consonants.length)] + vowels[Math.floor(Math.random()*vowels.length)]
+    } else {
+        var rootword = consonants[Math.floor(Math.random()*consonants.length)] + vowels[Math.floor(Math.random()*vowels.length)] + consonants[Math.floor(Math.random()*consonants.length)] + vowels[Math.floor(Math.random()*vowels.length)] + consonants[Math.floor(Math.random()*consonants.length)] + vowels[Math.floor(Math.random()*vowels.length)]
+    }
+
+    rootword = rootword.replace(/^./, rootword[0].toUpperCase());
+    if (getRndInteger(0,1) == 0) { // Suffix?
+        rootword = rootword + place_suffixes[Math.floor(Math.random()*place_suffixes.length)]
+    }
+
+    if (getRndInteger(0,1) == 0) { // Prefix?
+        rootword = place_prefixes[Math.floor(Math.random()*place_prefixes.length)] + rootword
+    }
+    return rootword
+}
+
 function startSetup() {
     balance = starting_currency
     updateBalanceDisplay();
@@ -164,6 +291,21 @@ function failGame(condition) {
     alert("You lose: " + condition)
 }
 
+function generateContract() {
+    // Randomly pick one of four contract grades.
+    // For low grades, use only ~1/4 of the player's total cars.
+    // High grades should go up to 80-100% (rounded down).
+    // DON'T account for cars currently on other contracts, make the player wait to finish those first.
+    // Times & Payout:
+    // Grade 1: 5-15 minutes & 10-15% of player's current balance.
+    // Grade 2: 15-45 minutes & 15-30% of player's current balance.
+    // Grade 3: 45-90 minutes & 30-50% of player's current balance.
+    // Grade 4: 90-180 minutes & 50-65% of player's current balance.
+
+    // Don't generate a start time, just the contract length. Make sure start time is calculated upon despatch.
+    // Use place name generator for start and end.
+    // Calculate random encounter upon despatch.
+}
 
 
 /* 

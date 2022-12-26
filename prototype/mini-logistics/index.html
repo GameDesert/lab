@@ -11,8 +11,12 @@
     <script src="scripts/game.js"></script>
 </head>
 <body onload="startSetup(); setCurrencyDisplays();">
+    <div class="info">
+        <p style="margin-bottom: 0;">Mini Logistics</p>
+        <p style="margin-top: 0;">v<span id="version"></span></p>
+    </div>
     <p class="balance" id="balance">Balance: <span id="currency" class="icons"></span><span id="value"></span></p>
-    <p class="icons" style="text-align: center; font-size: 60px;" id="train">&#xF1B2E;&#xF1B35;&#xF1B3E;</p>
+    <p class="icons" style="text-align: center; font-size: 60px;" id="train"><span id="vehicle_carspace">&#xF1B36;</span><span id="passenger_carspace">&#xF1733;</span><span id="oil_carspace">&#xF1B3E;</span><span id="grain_carspace">&#xF1B3C;</span><span id="lumber_carspace">&#xF1B33;</span>&#xF1B2F;<span id="mail_carspace"></span>&#xF1B31;</p>
     <div class="shop" id="shop">
         <table style="border: solid black;">
             <tr>
@@ -30,7 +34,7 @@
                 <td>Mail Car</td>
                 <td title="Letters">15 <span class="icons">&#xF0EE7;</span></td>
                 <td><span id="currency" class="icons"></span>30</td>
-                <td><span id="mail-cars"></span>/20</td>
+                <td><span id="mail-cars">0</span>/20</td>
                 <td><button onclick="purchase_car('mail')">+</button></td>
             </tr>
             <tr>
@@ -38,7 +42,7 @@
                 <td>Lumber Car</td>
                 <td title="Logs">10 <span class="icons">&#xF0405;</span></td>
                 <td><span id="currency" class="icons"></span>40</td>
-                <td><span id="lumber-cars"></span>/20</td>
+                <td><span id="lumber-cars">0</span>/20</td>
                 <td><button onclick="purchase_car('lumber')">+</button></td>
             </tr>
             <tr>
@@ -46,7 +50,7 @@
                 <td>Hopper Car</td>
                 <td title="Grain">10 <span class="icons">&#xF0073;</span></td>
                 <td><span id="currency" class="icons"></span>50</td>
-                <td><span id="hopper-cars"></span>/20</td>
+                <td><span id="grain-cars">0</span>/20</td>
                 <td><button onclick="purchase_car('grain')">+</button></td>
             </tr>
             <tr>
@@ -54,7 +58,7 @@
                 <td>Tank Car</td>
                 <td title="Oil">5 <span class="icons">&#xF0074;</span></td>
                 <td><span id="currency" class="icons"></span>80</td>
-                <td><span id="tank-cars"></span>/15</td>
+                <td><span id="oil-cars">0</span>/15</td>
                 <td><button onclick="purchase_car('oil')">+</button></td>
             </tr>
             <tr>
@@ -62,7 +66,7 @@
                 <td>Passenger Car</td>
                 <td title="Passengers">5 <span class="icons">&#xF1571;</span></td>
                 <td><span id="currency" class="icons"></span>100</td>
-                <td><span id="passenger-cars"></span>/10</td>
+                <td><span id="passengers-cars">0</span>/10</td>
                 <td><button onclick="purchase_car('passengers')">+</button></td>
             </tr>
             <tr>
@@ -70,7 +74,7 @@
                 <td>Flatbed Car</td>
                 <td title="Cars">1 <span class="icons">&#xF010B;</span></td>
                 <td><span id="currency" class="icons"></span>120</td>
-                <td><span id="flatbed-cars"></span>/5</td>
+                <td><span id="vehicle-cars">0</span>/5</td>
                 <td><button onclick="purchase_car('vehicle')">+</button></td>
             </tr>
         </table>

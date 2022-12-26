@@ -74,9 +74,7 @@ goods = {
 
 place_suffixes = [
     "bury",
-    "-On-Sea",
     "ham",
-    "-By-The-Sea",
     "well",
     "minster",
     "field",
@@ -91,7 +89,12 @@ place_suffixes = [
     "caster",
     "dale",
     "field",
-    "port"
+    "port",
+    "don",
+    "ley",
+    "mouth",
+    "nd",
+    "mpton"
 ]
 
 place_prefixes = [
@@ -102,7 +105,14 @@ place_prefixes = [
     "Royal ",
     "St ",
     "New ",
-    "Old "
+    "Old ",
+    "Upper ",
+    "Lower "
+]
+
+place_infixes = [
+    " upon ",
+    " & "
 ]
 
 vowels = [ // Plus "Y"
@@ -110,7 +120,7 @@ vowels = [ // Plus "Y"
 ]
 
 consonants = [ // Plus & minus a few more
-    "b","c","d","f","g","h","k","l","m","n","p","r","s","t","v","w" , "ch","sh","th","tr"
+    "b","c","d","f","g","h","k","l","m","n","p","r","s","t","w" , "ch","sh","th","tr"
 ]
 
 // CONFIG
@@ -118,6 +128,7 @@ consonants = [ // Plus & minus a few more
 major_currency = "&#xF0C65;"
 decimal_currency = "&cent;"
 starting_currency = 100
+version = "0.1"
 // END CONFIG
 
 // TEMPLATES
@@ -177,6 +188,11 @@ function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
+function getRndFloat(min, max, decimals) {
+    const str = (Math.random() * (max - min) + min).toFixed(decimals);
+    return parseFloat(str);
+  }
+
 function generatePlaceName(){
     var namelength = getRndInteger(0, 1)
     if (namelength == 0) {
@@ -186,12 +202,29 @@ function generatePlaceName(){
     }
 
     rootword = rootword.replace(/^./, rootword[0].toUpperCase());
-    if (getRndInteger(0,1) == 0) { // Suffix?
-        rootword = rootword + place_suffixes[Math.floor(Math.random()*place_suffixes.length)]
-    }
+    rootword = rootword + place_suffixes[Math.floor(Math.random()*place_suffixes.length)] // Suffixes are mandatory now.
 
     if (getRndInteger(0,1) == 0) { // Prefix?
         rootword = place_prefixes[Math.floor(Math.random()*place_prefixes.length)] + rootword
+    }
+
+    if (getRndInteger(0,1) == 0) { // Infix?
+        infix_decider = getRndInteger(0,2)
+        if (infix_decider == 0) {
+            var secondNamelength = getRndInteger(0, 1)
+            if (secondNamelength == 0) {
+                var secondword = consonants[Math.floor(Math.random()*consonants.length)] + vowels[Math.floor(Math.random()*vowels.length)] + consonants[Math.floor(Math.random()*consonants.length)]
+            } else {
+                var secondword = consonants[Math.floor(Math.random()*consonants.length)] + vowels[Math.floor(Math.random()*vowels.length)] + consonants[Math.floor(Math.random()*consonants.length)] + vowels[Math.floor(Math.random()*vowels.length)] + consonants[Math.floor(Math.random()*consonants.length)]
+            }
+
+            secondword = secondword.replace(/^./, secondword[0].toUpperCase());
+            rootword = rootword + place_infixes[Math.floor(Math.random()*place_infixes.length)] + secondword
+        } else if (infix_decider == 1) {
+            rootword = rootword + "-by-the-Sea"
+        } else {
+            rootword = rootword + "-on-Sea"
+        }
     }
     return rootword
 }
@@ -199,6 +232,8 @@ function generatePlaceName(){
 function startSetup() {
     balance = starting_currency
     updateBalanceDisplay();
+    // Set version info:
+    document.getElementById("version").innerHTML = version
 }
 
 function setCurrencyDisplays() {
@@ -216,6 +251,7 @@ function purchase_car(cartype) {
         balance = balance-goods[cartype]["car_cost"]
         owned_cars[cartype]["qty"] = owned_cars[cartype]["qty"] + 1
         updateBalanceDisplay()
+        document.getElementById(cartype+"-cars").innerHTML = owned_cars[cartype]["qty"]
     }
 }
 
@@ -232,8 +268,27 @@ function failGame(condition) {
 
 function generateContract() {
     // Randomly pick one of four contract grades.
+    var grade = getRndInteger(1,4);
+    var totalCars = parseInt(owned_cars["oil"]["qty"]) + parseInt(owned_cars["passengers"]["qty"]) + parseInt(owned_cars["vehicle"]["qty"]) + parseInt(owned_cars["grain"]["qty"]) + parseInt(owned_cars["mail"]["qty"]) + parseInt(owned_cars["lumber"]["qty"])
     // For low grades, use only ~1/4 of the player's total cars.
     // High grades should go up to 80-100% (rounded down).
+    var contractCars = 0
+    // Add check so if player has 5 cars or less, exactly 100% are used (to prevent rounding errors causing 0 cargo contracts).
+    if (grade == 1) {
+        contractCars = Math.floor(getRndFloat(0.1, 0.25, 2) * totalCars)
+    } else if (grade == 2) {
+        contractCars = Math.floor(getRndFloat(0.25, 0.45, 2) * totalCars)
+    } else if (grade == 3) {
+        contractCars = Math.floor(getRndFloat(0.45, 0.6, 2) * totalCars)
+    } else {
+        contractCars = Math.floor(getRndFloat(0.6, 0.9, 2) * totalCars)
+    }
+
+    if (contractCars == 0) {
+        contractCars = totalCars
+    }
+    // Create array with all cars as individual objects (maximum 90), select one at random, and remove it from the array. Iterate "contractCars" times.
+
     // DON'T account for cars currently on other contracts, make the player wait to finish those first.
     // Times & Payout:
     // Grade 1: 5-15 minutes & 10-15% of player's current balance.
@@ -244,6 +299,7 @@ function generateContract() {
     // Don't generate a start time, just the contract length. Make sure start time is calculated upon despatch.
     // Use place name generator for start and end.
     // Calculate random encounter upon despatch.
+    return [contractCars, grade]
 }
 
 

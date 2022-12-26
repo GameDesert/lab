@@ -33,7 +33,7 @@
                 <td class="icons">&#xF1B2F;</td>
                 <td>Mail Car</td>
                 <td title="Letters">15 <span class="icons">&#xF0EE7;</span></td>
-                <td><span id="currency" class="icons"></span>30</td>
+                <td><span id="currency" class="icons"></span>25</td>
                 <td><span id="mail-cars">0</span>/20</td>
                 <td><button onclick="purchase_car('mail')">+</button></td>
             </tr>
@@ -41,7 +41,7 @@
                 <td class="icons">&#xF1B33;</td>
                 <td>Lumber Car</td>
                 <td title="Logs">10 <span class="icons">&#xF0405;</span></td>
-                <td><span id="currency" class="icons"></span>40</td>
+                <td><span id="currency" class="icons"></span>50</td>
                 <td><span id="lumber-cars">0</span>/20</td>
                 <td><button onclick="purchase_car('lumber')">+</button></td>
             </tr>
@@ -49,7 +49,7 @@
                 <td class="icons">&#xF1B3C;</td>
                 <td>Hopper Car</td>
                 <td title="Grain">10 <span class="icons">&#xF0073;</span></td>
-                <td><span id="currency" class="icons"></span>50</td>
+                <td><span id="currency" class="icons"></span>100</td>
                 <td><span id="grain-cars">0</span>/20</td>
                 <td><button onclick="purchase_car('grain')">+</button></td>
             </tr>
@@ -57,7 +57,7 @@
                 <td class="icons">&#xF1B3E;</td>
                 <td>Tank Car</td>
                 <td title="Oil">5 <span class="icons">&#xF0074;</span></td>
-                <td><span id="currency" class="icons"></span>80</td>
+                <td><span id="currency" class="icons"></span>500</td>
                 <td><span id="oil-cars">0</span>/15</td>
                 <td><button onclick="purchase_car('oil')">+</button></td>
             </tr>
@@ -65,7 +65,7 @@
                 <td class="icons">&#xF1733;</td>
                 <td>Passenger Car</td>
                 <td title="Passengers">5 <span class="icons">&#xF1571;</span></td>
-                <td><span id="currency" class="icons"></span>100</td>
+                <td><span id="currency" class="icons"></span>1000</td>
                 <td><span id="passengers-cars">0</span>/10</td>
                 <td><button onclick="purchase_car('passengers')">+</button></td>
             </tr>
@@ -73,9 +73,28 @@
                 <td class="icons">&#xF1B36;</td>
                 <td>Flatbed Car</td>
                 <td title="Cars">1 <span class="icons">&#xF010B;</span></td>
-                <td><span id="currency" class="icons"></span>120</td>
+                <td><span id="currency" class="icons"></span>1500</td>
                 <td><span id="vehicle-cars">0</span>/5</td>
                 <td><button onclick="purchase_car('vehicle')">+</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="shop" id="shop">
+        <table style="border: solid black;">
+            <tr>
+                <th>Required Cars</th>
+                <th>Duration</th>
+                <th>Payout</th>
+                <th>From</th>
+                <th>To</th>
+            </tr>
+            <tr>
+                <td class="icons">3&#xF1B36;</td>
+                <td>12 minutes</td>
+                <td><span id="currency" class="icons"></span>1500</td>
+                <td>Origin</td>
+                <td>Destination</td>
             </tr>
         </table>
     </div>

@@ -30,42 +30,42 @@ goods = {
         "full":"passenger",
         "empty":"passenger",
         "icon":"&#xF1571;",
-        "car_cost":100,
+        "car_cost":1000,
         "max_cars":10
     },
     "oil":{
         "full":"liquid_tank",
         "empty":"liquid_tank",
         "icon":"&#xF0074;",
-        "car_cost":80,
+        "car_cost":500,
         "max_cars":15
     },
     "grain":{
         "full":"full_hopper",
         "empty":"hopper",
         "icon":"&#xF0073;",
-        "car_cost":50,
+        "car_cost":100,
         "max_cars":20
     },
     "vehicle":{
         "full":"vehicle",
         "empty":"flatbed",
         "icon":"&#xF010B;",
-        "car_cost":120,
+        "car_cost":1500,
         "max_cars":5
     },
     "lumber":{
         "full":"full_centerbeam",
         "empty":"centerbeam",
         "icon":"&#xF0405;",
-        "car_cost":40,
+        "car_cost":50,
         "max_cars":20
     },
     "mail":{
         "full":"full_open_boxcar",
         "empty":"empty_open_boxcar",
         "icon":"&#xF0EE7;",
-        "car_cost":30,
+        "car_cost":25,
         "max_cars":20
     }
 }
@@ -242,11 +242,21 @@ function setCurrencyDisplays() {
     });
 }
 
+function powerOfTen(number) {
+    var currentlyOn = 0
+    for (var startingValue = 1; startingValue <= number;) {
+        currentlyOn = startingValue
+        //console.log(startingValue)
+        startingValue = startingValue*10
+    }
+    return currentlyOn
+}
+
 function purchase_car(cartype) {
     if (owned_cars[cartype]["qty"]+1 > goods[cartype]["max_cars"]) {
         alert("You own the maximum amount of these cars.")
     } else if (balance-goods[cartype]["car_cost"] <= 0){
-        alert("You cannot afford this car.")
+        alert("Buying this car would bankrupt you.")
     } else {
         balance = balance-goods[cartype]["car_cost"]
         owned_cars[cartype]["qty"] = owned_cars[cartype]["qty"] + 1
@@ -274,32 +284,79 @@ function generateContract() {
     // High grades should go up to 80-100% (rounded down).
     var contractCars = 0
     // Add check so if player has 5 cars or less, exactly 100% are used (to prevent rounding errors causing 0 cargo contracts).
+    var paymentBracket = powerOfTen(balance)
+    if (paymentBracket < 10) {
+        paymentBracket = 10
+    } 
     if (grade == 1) {
         contractCars = Math.floor(getRndFloat(0.1, 0.25, 2) * totalCars)
+        duration = getRndInteger(600, 900)
+        payout = Math.ceil(paymentBracket*getRndFloat(0.1, 0.15, 2))
     } else if (grade == 2) {
         contractCars = Math.floor(getRndFloat(0.25, 0.45, 2) * totalCars)
+        duration = getRndInteger(900, 2700)
+        payout = Math.ceil(paymentBracket*getRndFloat(0.15, 0.4, 2))
     } else if (grade == 3) {
         contractCars = Math.floor(getRndFloat(0.45, 0.6, 2) * totalCars)
+        duration = getRndInteger(2700, 5400)
+        payout = Math.ceil(paymentBracket*getRndFloat(0.4, 0.6, 2))
     } else {
         contractCars = Math.floor(getRndFloat(0.6, 0.9, 2) * totalCars)
+        duration = getRndInteger(5400, 10800)
+        payout = Math.ceil(paymentBracket*getRndFloat(0.6, 0.75, 2))
     }
+
+    duration = Math.ceil(duration/60)*60;
 
     if (contractCars == 0) {
         contractCars = totalCars
     }
-    // Create array with all cars as individual objects (maximum 90), select one at random, and remove it from the array. Iterate "contractCars" times.
 
-    // DON'T account for cars currently on other contracts, make the player wait to finish those first.
     // Times & Payout:
     // Grade 1: 5-15 minutes & 10-15% of player's current balance.
     // Grade 2: 15-45 minutes & 15-30% of player's current balance.
     // Grade 3: 45-90 minutes & 30-50% of player's current balance.
     // Grade 4: 90-180 minutes & 50-65% of player's current balance.
 
+    availableCars = []
+
+    for (let passengers_i = 1; passengers_i <= owned_cars["passengers"]["qty"]; passengers_i++) {
+        availableCars.push("passengers")
+    }
+    for (let oil_i = 1; oil_i <= owned_cars["oil"]["qty"]; oil_i++) {
+        availableCars.push("oil")
+    }
+    for (let grain_i = 1; grain_i <= owned_cars["grain"]["qty"]; grain_i++) {
+        availableCars.push("grain")
+    }
+    for (let vehicle_i = 1; vehicle_i <= owned_cars["vehicle"]["qty"]; vehicle_i++) {
+        availableCars.push("vehicle")
+    }
+    for (let lumber_i = 1; lumber_i <= owned_cars["lumber"]["qty"]; lumber_i++) {
+        availableCars.push("lumber")
+    }
+    for (let mail_i = 1; mail_i <= owned_cars["mail"]["qty"]; mail_i++) {
+        availableCars.push("mail")
+    }
+
+    selectedCars = []
+    for (car_i = 0; car_i < contractCars; car_i++) {
+        selectionIndex = Math.floor(Math.random()*availableCars.length)
+        selectedCars.push(availableCars[selectionIndex])
+        availableCars = availableCars.splice(selectionIndex, 1);
+    }
+
+    origin_place = generatePlaceName()
+    destination_place = generatePlaceName()
+    // Create array with all cars as individual objects (maximum 90), select one at random, and remove it from the array. Iterate "contractCars" times.
+
+    // DON'T account for cars currently on other contracts, make the player wait to finish those first.
+    
+
     // Don't generate a start time, just the contract length. Make sure start time is calculated upon despatch.
     // Use place name generator for start and end.
     // Calculate random encounter upon despatch.
-    return [contractCars, grade]
+    return [payout, selectedCars, duration, origin_place, destination_place, grade]
 }
 
 

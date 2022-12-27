@@ -306,7 +306,7 @@ function generateContract() {
         payout = Math.ceil(paymentBracket*getRndFloat(0.6, 0.75, 2))
     }
 
-    duration = Math.ceil(duration/60)*60;
+    var duration = Math.ceil(duration/60)*60;
 
     if (contractCars == 0) {
         contractCars = totalCars
@@ -318,7 +318,7 @@ function generateContract() {
     // Grade 3: 45-90 minutes & 30-50% of player's current balance.
     // Grade 4: 90-180 minutes & 50-65% of player's current balance.
 
-    availableCars = []
+    var availableCars = []
 
     for (let passengers_i = 1; passengers_i <= owned_cars["passengers"]["qty"]; passengers_i++) {
         availableCars.push("passengers")
@@ -339,15 +339,17 @@ function generateContract() {
         availableCars.push("mail")
     }
 
-    selectedCars = []
+    var selectedCars = []
     for (car_i = 0; car_i < contractCars; car_i++) {
-        selectionIndex = Math.floor(Math.random()*availableCars.length)
+        var selectionIndex = Math.floor(Math.random()*availableCars.length)
         selectedCars.push(availableCars[selectionIndex])
         availableCars = availableCars.splice(selectionIndex, 1);
     }
 
-    origin_place = generatePlaceName()
-    destination_place = generatePlaceName()
+    var origin_place = generatePlaceName()
+    var destination_place = generatePlaceName()
+
+    var id = "contract-" + self.crypto.randomUUID()
     // Create array with all cars as individual objects (maximum 90), select one at random, and remove it from the array. Iterate "contractCars" times.
 
     // DON'T account for cars currently on other contracts, make the player wait to finish those first.
@@ -356,7 +358,7 @@ function generateContract() {
     // Don't generate a start time, just the contract length. Make sure start time is calculated upon despatch.
     // Use place name generator for start and end.
     // Calculate random encounter upon despatch.
-    return [payout, selectedCars, duration, origin_place, destination_place, grade]
+    return [payout, selectedCars, duration, origin_place, destination_place, id, grade]
 }
 
 

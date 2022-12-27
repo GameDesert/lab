@@ -181,7 +181,9 @@ owned_cars = {
     }
 }
 
-active_journeys = []
+var possibleContracts = {}
+
+var active_journeys = []
 // END GAME VARIABLES
 
 function getRndInteger(min, max) {
@@ -312,6 +314,7 @@ function generateContract() {
         contractCars = totalCars
     }
 
+    console.log(contractCars)
     // Times & Payout:
     // Grade 1: 5-15 minutes & 10-15% of player's current balance.
     // Grade 2: 15-45 minutes & 15-30% of player's current balance.
@@ -341,10 +344,20 @@ function generateContract() {
 
     var selectedCars = []
     for (car_i = 0; car_i < contractCars; car_i++) {
-        var selectionIndex = Math.floor(Math.random()*availableCars.length)
-        selectedCars.push(availableCars[selectionIndex])
-        availableCars = availableCars.splice(selectionIndex, 1);
+        // Pick random element from availableCars
+        var selected_index = Math.floor(Math.random()*availableCars.length)
+        var car_selection = availableCars[selected_index]
+        // Add it to selectedCars
+        selectedCars.push(car_selection)
+        // Delete it from availableCars
+        availableCars.splice(selected_index, 1);
     }
+
+    // var selectionIndex = Math.floor(Math.random()*availableCars.length)
+    // selectedCars.push(availableCars[selectionIndex])
+    // console.log(selectedCars)
+    // availableCars = availableCars.splice(selectionIndex, 1);
+    // console.log(availableCars)
 
     var origin_place = generatePlaceName()
     var destination_place = generatePlaceName()
@@ -358,9 +371,116 @@ function generateContract() {
     // Don't generate a start time, just the contract length. Make sure start time is calculated upon despatch.
     // Use place name generator for start and end.
     // Calculate random encounter upon despatch.
-    return [payout, selectedCars, duration, origin_place, destination_place, id, grade]
+    var contract_output = {}
+    contract_details = {"cars":selectedCars,
+    "duration":duration,
+    "payout":payout,
+    "origin":origin_place,
+    "destination":destination_place,
+    "grade":grade,
+    "id":id}
+    contract_output[id] = contract_details
+    possibleContracts = {...contract_output,...possibleContracts}
+
+    console.log(contract_output)
+    console.log("================================")
+    console.log(possibleContracts)
+    return contract_details
 }
 
+function displayContract() {
+    contract = generateContract()
+    console.log(contract["id"])
+    console.log(contract["cars"])
+    cars_to_display = {
+        "mail":0,
+        "lumber":0,
+        "grain":0,
+        "oil":0,
+        "passengers":0,
+        "vehicle":0
+    }
+    for (car = 0; car < contract["cars"].length; car++) {
+        cars_to_display[contract["cars"][car]] += 1;
+    }
+    var contract_cars_html = ""
+    if (cars_to_display["mail"] != 0) {
+        contract_cars_html += cars_to_display["mail"] + '<span class="icons">&#xF1B2F;</span><br>'
+    }
+    if (cars_to_display["lumber"] != 0) {
+        contract_cars_html += cars_to_display["lumber"] + '<span class="icons">&#xF1B33;</span><br>'
+    }
+    if (cars_to_display["grain"] != 0) {
+        contract_cars_html += cars_to_display["grain"] + '<span class="icons">&#xF1B3C;</span><br>'
+    }
+    if (cars_to_display["oil"] != 0) {
+        contract_cars_html += cars_to_display["oil"] + '<span class="icons">&#xF1B3E;</span><br>'
+    }
+    if (cars_to_display["passengers"] != 0) {
+        contract_cars_html += cars_to_display["passengers"] + '<span class="icons">&#xF1733;</span><br>'
+    }
+    if (cars_to_display["vehicle"] != 0) {
+        contract_cars_html += cars_to_display["vehicle"] + '<span class="icons">&#xF1B36;</span><br>'
+    }
+
+    var stars = ""
+
+    switch (contract["grade"]) {
+        case 1:
+            stars = "&#xF04CE;&#xF04D2;&#xF04D2;&#xF04D2;"
+            break;
+        case 2:
+            stars = "&#xF04CE;&#xF04CE;&#xF04D2;&#xF04D2;"
+            break;
+        case 3:
+            stars = "&#xF04CE;&#xF04CE;&#xF04CE;&#xF04D2;"
+            break;
+        case 4:
+            stars = "&#xF04CE;&#xF04CE;&#xF04CE;&#xF04CE;"
+            break;
+    }
+
+    console.log(contract_cars_html)
+    contractHtmlTemplate = '<tr id="CONTRACT_ID"><td class="icons">CONTRACT_CARS</td><td>CONTRACT_DURATION minutes</td><td><span id="currency" class="icons"></span>CONTRACT_PAYOUT</td><td>CONTRACT_ORIGIN <span class="icons">&#xF0444;</span> CONTRACT_DESTINATION</td><td><span class="icons">CONTRACT_STARS</span></td><td><button onclick="startContract(\'CONTRACT_ID\');"><span class="icons">&#xF012C;</span></button></td></tr>'
+    contractHtml = contractHtmlTemplate.replace("CONTRACT_CARS",contract_cars_html).replace("CONTRACT_DURATION", Math.floor(contract["duration"]/60)).replace("CONTRACT_PAYOUT",contract["payout"]).replace("CONTRACT_ORIGIN",contract["origin"]).replace("CONTRACT_STARS",stars).replace("CONTRACT_DESTINATION",contract["destination"]).replace("CONTRACT_ID", contract["id"])
+    document.getElementById('contracts').innerHTML += contractHtml
+    setCurrencyDisplays()
+}
+
+function startContract(contract_id) {
+    // Retrieve contract from dict by ID
+    contract = possibleContracts[contract_id]
+    timestamp = Date.now()
+    start_timestamp_seconds = timestamp * 1000
+    end_timestamp_seconds = start_timestamp_seconds + contract["duration"]
+    console.log(contract["duration"])
+    console.log(end_timestamp_seconds)
+
+    
+    journey_details = {"start_timestamp":0, // Timestamp for start
+    "end_timestamp":0, // Timestamp for end
+    "journey_length":0, // In seconds
+    "journey_reward":0,
+    "title":"", // The name of the contract
+    "goods":{
+        "passengers":0,
+        "oil":0,
+        "grain":0,
+        "vehicle":0,
+        "lumber":0,
+        "mail":0,
+    },
+    "cars":[
+        // Example Entry:
+        // {
+        //     "type":"",
+        //     "carrying":0
+        // }
+
+    ]}
+    // Then note the current time, add the duration, and calculate then end time.
+    // Also, calculate random encounter (only to be displayed upon) arrival.
+}
 
 /* 
 PLAN:

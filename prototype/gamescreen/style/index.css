@@ -1,4 +1,5 @@
 @import url(materialdesignicons.css);
+@import url(fonts.css);
 
 body {
     margin: 0;
@@ -20,4 +21,10 @@ body {
     height: 100%;
     backdrop-filter: blur(7.5px); /* apply the blur */
     pointer-events: none; /* make the overlay click-through */
-  }
+}
+
+.fullscreen {
+    position: absolute;
+    font-family: 'Material Design Icons';
+    font-size: 10vw;
+}

@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700;800;900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url(../style/fonts/typefaces/Cinzel/Cinzel-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Cinzel Decorative';
+    src: url(../style/fonts/typefaces/Cinzel_Decorative/CinzelDecorative-Black.ttf);
+    font-weight: bolder;
+}
+
+@font-face {
+    font-family: 'Cinzel Decorative';
+    src: url(../style/fonts/typefaces/Cinzel_Decorative/CinzelDecorative-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Cinzel Decorative';
+    src: url(../style/fonts/typefaces/Cinzel_Decorative/CinzelDecorative-Regular.ttf);
+    font-weight: normal;
+}
+
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url(../style/fonts/typefaces/Source_Code_Pro/SourceCodePro-VariableFont_wght.ttf);
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url(../style/fonts/typefaces/Source_Code_Pro/SourceCodePro-VariableFont_wght.ttf);
+    font-style: italic;
+}
+
+
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url(../style/fonts/typefaces/Source_Sans_Pro/SourceSansPro-Black.ttf);
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url(../style/fonts/typefaces/Source_Sans_Pro/SourceSansPro-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url(../style/fonts/typefaces/Source_Sans_Pro/SourceSansPro-SemiBold.ttf);
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url(../style/fonts/typefaces/Source_Sans_Pro/SourceSansPro-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url(../style/fonts/typefaces/Source_Sans_Pro/SourceSansPro-Light.ttf);
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url(../style/fonts/typefaces/Source_Sans_Pro/SourceSansPro-ExtraLight.ttf);
+    font-weight: 200;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url(../style/fonts/typefaces/Source_Sans_Pro/SourceSansPro-BlackItalic.ttf);
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url(../style/fonts/typefaces/Source_Sans_Pro/SourceSansPro-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url(../style/fonts/typefaces/Source_Sans_Pro/SourceSansPro-SemiBoldItalic.ttf);
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url(../style/fonts/typefaces/Source_Sans_Pro/SourceSansPro-Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url(../style/fonts/typefaces/Source_Sans_Pro/SourceSansPro-LightItalic.ttf);
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url(../style/fonts/typefaces/Source_Sans_Pro/SourceSansPro-ExtraLightItalic.ttf);
+    font-weight: 200;
+    font-style: italic;
+}
+
+
+
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url(../style/fonts/typefaces/Source_Serif_Pro/SourceSerifPro-Black.ttf);
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url(../style/fonts/typefaces/Source_Serif_Pro/SourceSerifPro-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url(../style/fonts/typefaces/Source_Serif_Pro/SourceSerifPro-SemiBold.ttf);
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url(../style/fonts/typefaces/Source_Serif_Pro/SourceSerifPro-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url(../style/fonts/typefaces/Source_Serif_Pro/SourceSerifPro-Light.ttf);
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url(../style/fonts/typefaces/Source_Serif_Pro/SourceSerifPro-ExtraLight.ttf);
+    font-weight: 200;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url(../style/fonts/typefaces/Source_Serif_Pro/SourceSerifPro-BlackItalic.ttf);
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url(../style/fonts/typefaces/Source_Serif_Pro/SourceSerifPro-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url(../style/fonts/typefaces/Source_Serif_Pro/SourceSerifPro-SemiBoldItalic.ttf);
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url(../style/fonts/typefaces/Source_Serif_Pro/SourceSerifPro-Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url(../style/fonts/typefaces/Source_Serif_Pro/SourceSerifPro-LightItalic.ttf);
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url(../style/fonts/typefaces/Source_Serif_Pro/SourceSerifPro-ExtraLightItalic.ttf);
+    font-weight: 200;
+    font-style: italic;
+}
+
+/*
+font-family: 'Cinzel', serif;
+font-family: 'Cinzel Decorative', cursive;
+font-family: 'Source Code Pro', monospace;
+font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Source Serif Pro', serif;
+*/

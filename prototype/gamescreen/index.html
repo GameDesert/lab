@@ -14,8 +14,39 @@
     <div class="bg" id="bg" style="background-image: url(assets/backgrounds/square.png);"></div>
     <div class="main" id="main">
         <div class="buttonbar" id="buttonbar"><div class="fullscreen" id="fullscreen" onclick="toggleFullscreen();"><span id="fullscreen-icon" class="mdi mdi-fullscreen"></span></div><div class="settingsButton" id="settingsButton" onclick="openSettings();"><span id="settings-icon" class="mdi mdi-cog"></span></div></div>
-        
+        <div class="roller" id="roller">
+            <div class="roller-interface" id="roller-interface">
+                <div class="roller-display" id="roller-display"></div>
+                <div class="roller-dice-select" id="roller-dice-select">
+                    <div class="die-select d2" id="d2"><span class="mdi mdi-numeric-2-circle"></span></div> <!-- or mdi-crown-circle -->
+                    <div class="die-select d4" id="d4"><span class="mdi mdi-dice-d4"></span></div>
+                    <div class="die-select d6" id="d6"><span class="mdi mdi-dice-d6"></span></div>
+                    <div class="die-select d8" id="d8"><span class="mdi mdi-dice-d8"></span></div>
+                    <div class="die-select d10" id="d10"><span class="mdi mdi-dice-d10"></span></div>
+                    <div class="die-select d12" id="d12"><span class="mdi mdi-dice-d12"></span></div>
+                    <div class="die-select d20 selected" id="d20"><span class="mdi mdi-dice-d20"></span></div>
+                </div>
+            </div>
+            <div class="roller-hover-bar" id="roller-hover-bar"><span class="dice-icon mdi mdi-dice-multiple"></span></div>
+        </div>
         <div class="clock" id="clock"></div>
+        <div class="tile-grid" id="tile-grid">
+            <div class="tile tile1" id="tile1"><br></div>
+            <div class="tile tile2" id="tile2"><br></div>
+            <div class="tile tile3" id="tile3"><br></div>
+            <div class="tile tile4" id="tile4"><br></div>
+            <div class="tile tile5" id="tile5"><br></div>
+            <div class="tile tile6" id="tile6"><br></div>
+            <div class="tile tile7" id="tile7"><br></div>
+            <div class="tile tile8" id="tile8"><br></div>
+            <div class="tile tile9" id="tile9"><br></div>
+            <div class="tile tile10" id="tile10"><br></div>
+            <div class="tile tile11" id="tile11"><br></div>
+            <div class="tile tile12" id="tile12"><br></div>
+            <div class="tile tile13" id="tile13"><br></div>
+            <div class="tile tile14" id="tile14"><br></div>
+            <div class="tile tile15" id="tile15"><br></div>
+        </div>
     </div>
 
     <div id="settings" class="settings">

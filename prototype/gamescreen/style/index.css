@@ -3,9 +3,17 @@
 
 body {
     margin: 0;
+    overflow: hidden;
 }
 
-.main {
+p, caption, label {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.bg {
+    position: absolute;
+    z-index: -999;
+
     width: 100vw;
     height: 100vh;
 
@@ -13,18 +21,113 @@ body {
     background-size: cover;
 }
 
-.main:after {
-    content: "";
-    opacity: 1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(7.5px); /* apply the blur */
-    pointer-events: none; /* make the overlay click-through */
+.main {
+    position:relative;
+    z-index: 0;
 }
 
-.fullscreen {
+.buttonbar {
+    cursor: pointer;
+    top: 0.75vw;
+    left: 0.75vw;
     position: absolute;
     font-family: 'Material Design Icons';
-    font-size: 10vw;
+    font-size: 2.25vw;
+    height: 2.5vw;
+    width: 2.5vw;
+    transition: 0.35s;
 }
+
+#fullscreen-icon {
+    transition: 0.35s;
+}
+
+#settingsButton {
+    transition: 0.35s;
+}
+
+#fullscreen-icon:hover {
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+#settingsButton:hover > #settings-icon {
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+/* html {
+    --iframe-scale: 0.5
+}
+
+.iframe-wrap {
+    width: 30vw;
+    height: 20vw;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.iframe-wrap iframe {
+    width: 200% !important;
+    height: 200% !important;
+    /* This scales all the content by 4%, the equivalent of the original being 30% larger than the embedded version. (The width/height percentages of course need to be adjusted accordingly (1/scale_factor)) */
+    /*overflow-y: scroll;
+    zoom: var(--iframe-scale);
+    transform: scale(var(--iframe-scale));
+    transform-origin: 0 0;
+    -ms-zoom: var(--iframe-scale);
+    -moz-transform: scale(var(--iframe-scale));
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(var(--iframe-scale));
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(var(--iframe-scale));
+    -webkit-transform-origin: 0 0;
+} */
+
+.clock {
+    background-color: rgba(0, 0, 0, 0);
+    width: 100vw;
+    color: #fff;
+    text-align: center;
+    font-family: 'Cinzel Decorative', sans-serif;
+    font-weight: normal;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 5vw;
+}
+
+/* ============================================================= */
+
+.settings {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .settings-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border-radius: 0.5vw;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }

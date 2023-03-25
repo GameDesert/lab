@@ -17,3 +17,6 @@
 - ~~Mountain~~
 - ~~Desert~~
 - ~~Drawer of dungeoneering kit~~
+
+TODO:
+- Save settings to cookies

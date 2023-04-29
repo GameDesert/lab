@@ -183,7 +183,7 @@ function getCookie(cname) {
 function executesavedsettings() {
     updateBackground(document.getElementById('background-selection').value)
     // Carries out functions based on saved cookies.
-    if (getCookie("background") != "") {updateBackground(getCookie("background"));}
+    if (getCookie("background") != false) {updateBackground(getCookie("background"));}
     console.log("Background saved as " + getCookie("background"))
 
     if (getCookie("blur") == "true") {

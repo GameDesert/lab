@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 24 24"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="template.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs16" />
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="26.604893"
+     inkscape:cx="9.9793675"
+     inkscape:cy="10.599554"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <path
+     id="path10"
+     d="M 12 2 C 11.79 2 11.589687 2.0596876 11.429688 2.1796875 L 3.5292969 6.6191406 C 3.2092972 6.7891405 3 7.1200004 3 7.5 L 3 16.5 C 3 16.88 3.2092972 17.21086 3.5292969 17.380859 L 11.429688 21.820312 C 11.589687 21.940312 11.79 22 12 22 C 12.21 22 12.410313 21.940312 12.570312 21.820312 L 20.470703 17.380859 C 20.790703 17.21086 21 16.88 21 16.5 L 21 7.5 C 21 7.1200004 20.790703 6.7891405 20.470703 6.6191406 L 12.570312 2.1796875 C 12.410313 2.0596876 12.21 2 12 2 z " />
+  <text
+     xml:space="preserve"
+     style="font-size:12.4204px;line-height:1.75;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro, Normal';fill:#ff0000;stroke-width:1"
+     x="8.88869"
+     y="15.943477"
+     id="text306"><tspan
+       sodipodi:role="line"
+       id="tspan304"
+       x="8.88869"
+       y="15.943477"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Bold';fill:#ff0000;stroke-width:1">3</tspan></text>
+</svg>

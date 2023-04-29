@@ -10,28 +10,51 @@
         .bg:after {content: ""; opacity: 1; position: absolute; width: 100%; height: 100%; backdrop-filter: blur(0px); /* apply the blur */ pointer-events: none; /* make the overlay click-through */}
     </style>
 </head>
-<body onload="checkFullscreen();">
-    <div class="bg" id="bg" style="background-image: url(assets/backgrounds/square.png);"></div>
+<body onload="checkFullscreen(); executesavedsettings(); rolldie('d20');">
+    <div class="bg" id="bg" style="background-image: url(assets/backgrounds/square_night.png);"></div>
     <div class="main" id="main">
         <div class="buttonbar" id="buttonbar"><div class="fullscreen" id="fullscreen" onclick="toggleFullscreen();"><span id="fullscreen-icon" class="mdi mdi-fullscreen"></span></div><div class="settingsButton" id="settingsButton" onclick="openSettings();"><span id="settings-icon" class="mdi mdi-cog"></span></div></div>
         <div class="roller" id="roller">
             <div class="roller-interface" id="roller-interface">
                 <div class="roller-display" id="roller-display"></div>
                 <div class="roller-dice-select" id="roller-dice-select">
-                    <div class="die-select d2" id="d2"><span class="mdi mdi-numeric-2-circle"></span></div> <!-- or mdi-crown-circle -->
-                    <div class="die-select d4" id="d4"><span class="mdi mdi-dice-d4"></span></div>
-                    <div class="die-select d6" id="d6"><span class="mdi mdi-dice-d6"></span></div>
-                    <div class="die-select d8" id="d8"><span class="mdi mdi-dice-d8"></span></div>
-                    <div class="die-select d10" id="d10"><span class="mdi mdi-dice-d10"></span></div>
-                    <div class="die-select d12" id="d12"><span class="mdi mdi-dice-d12"></span></div>
-                    <div class="die-select d20 selected" id="d20"><span class="mdi mdi-dice-d20"></span></div>
+                    <div onclick="selectsides(this.id)" class="die-select d2" id="d2"><span class="mdi mdi-numeric-2-circle"></span></div> <!-- or mdi-crown-circle -->
+                    <div onclick="selectsides(this.id)" class="die-select d4" id="d4"><span class="mdi mdi-dice-d4"></span></div>
+                    <div onclick="selectsides(this.id)" class="die-select d6" id="d6"><span class="mdi mdi-dice-d6"></span></div>
+                    <div onclick="selectsides(this.id)" class="die-select d8" id="d8"><span class="mdi mdi-dice-d8"></span></div>
+                    <div onclick="selectsides(this.id)" class="die-select d10" id="d10"><span class="mdi mdi-dice-d10"></span></div>
+                    <div onclick="selectsides(this.id)" class="die-select d12" id="d12"><span class="mdi mdi-dice-d12"></span></div>
+                    <div onclick="selectsides(this.id)" class="die-select d20 selected-die" id="d20"><span class="mdi mdi-dice-d20"></span></div>
                 </div>
             </div>
             <div class="roller-hover-bar" id="roller-hover-bar"><span class="dice-icon mdi mdi-dice-multiple"></span></div>
         </div>
         <div class="clock" id="clock"></div>
         <div class="tile-grid" id="tile-grid">
-            <div class="tile tile1" id="tile1"><br></div>
+            <div class="tile tile1" id="tile1">
+                <div class="currencyconverter" id="currencyconverter">
+                    <form autocomplete="off">
+                        <fieldset>
+                            <legend>Currency Converter</legend>
+                            <select onchange="convertCurrencies();" name="Starting Currency" id="starting-currency">
+                                <option value="dcrown">Đ</option>
+                                <option value="crown" selected>₢</option>
+                                <option value="tenth">ŧ</option>
+                                <option value="piece">ƥ</option>
+                            </select>
+                            <input onchange="convertCurrencies();" style="width: 30%;" type="number" name="Starting Currency Amount" id="starting-currency-amount" placeholder="Amount"  min="0" step="1">
+                            =
+                            <select onchange="convertCurrencies();" name="Final Currency" id="final-currency">
+                                <option value="dcrown">Đ</option>
+                                <option value="crown">₢</option>
+                                <option value="tenth">ŧ</option>
+                                <option value="piece" selected>ƥ</option>
+                            </select>
+                            <code id="currency-out" class="currency-out"></code>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
             <div class="tile tile2" id="tile2"><br></div>
             <div class="tile tile3" id="tile3"><br></div>
             <div class="tile tile4" id="tile4"><br></div>
@@ -54,27 +77,32 @@
         <!-- Modal content -->
         <div class="settings-content">
             <span class="close">&times;</span>
-            <h1>Settings:</h1>
-            <label for="cars">Background Image:</label>
+            <h1><span class="mdi mdi-cog"></span> Settings:</h1>
+            <label for="cars"><span class="mdi mdi-image"></span> Background Image:</label>
             <br>
             <select name="background-selection" id="background-selection" onchange="updateBackground(document.getElementById('background-selection').value)">
                 <option value="alley">Alley</option>
                 <option value="desert">Desert</option>
                 <option value="desk">Desk</option>
                 <option value="square">Square (Day)</option>
-                <option value="square_night">Square (Night)</option>
+                <option value="square_night" selected>Square (Night)</option>
                 <option value="tavern">Tavern</option>
                 <option value="valley">Valley</option>
-                <option value="custom" disabled><i>Upload Custom</i> (Coming Soon)</option>
+                <option value="custom" disabled><i>Upload Custom</i> (Under Construction)</option>
             </select>
             <br>
             <br>
-            <input type="checkbox" id="blur-option" name="blur-option" value="Blur" onchange="changeBlur(document.getElementById('blur-option'))">
-            <label for="blur-option">Blur background image?</label><br>
-            <br>
+            <input type="checkbox" id="blur-option" name="blur-option" value="Blur" onchange="changeBlur(document.getElementById('blur-option'))" checked="true">
+            <label for="blur-option"><span class="mdi mdi-blur"></span> Blur background image?</label><br>
             <br>
             <input type="checkbox" id="time-option" name="time-option" value="Time Format" onchange="changeTimeFormat(document.getElementById('time-option'))">
-            <label for="time-option">Use 24 hour time format?</label><br>
+            <label for="time-option"><span class="mdi mdi-hours-24"></span> Use 24 hour time format?</label><br>
+            <br>
+            <label for="save-settings"><span class="mdi mdi-content-save-cog"></span></label>
+            <button name="save-settings" id="settings-save" class="settings-save" onclick="savesettings();">Save Settings</button>
+            <hr>
+            <p>Created by Oliver K. Copyright &copy 2023-<span id="copyright-current-year"></span> All Rights Reserved.
+            <br>Icons from Material Design Icons.</p>
         </div>
       
     </div>

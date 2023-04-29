@@ -104,18 +104,21 @@ p, caption, label {
 }
 
 .tile {
-    background-color: aqua;
+    background-color: none;
+    opacity: 1;
     width: 20vw;
     height: 25vh;
 }
 
+/* ROLLER */
+
 .roller {
-    width: 10vw;
-    height: 11vw;
+    min-width: 10vw;
+    height: 11vh;
     background-color: #505050;
     position: absolute;
     right: 1vw;
-    top: -9vw;
+    top: -24vh;
     border-radius: 0 0 8px 8px;
     transition: 1s;
 }
@@ -125,7 +128,7 @@ p, caption, label {
 }
 
 .roller-interface {
-    height: 9vw;
+    height: 24vh;
     box-shadow: inset 0px 0px 10px black;
     background-image: url(../assets/map-texture.png);
     background-repeat: repeat;
@@ -133,21 +136,22 @@ p, caption, label {
 }
 
 .roller-hover-bar {
-    height: 2vw;
+    height: 3.5vh;
     background-color: #000000;
     border-radius: 0 0 8px 8px;
 }
 
 .dice-icon {
+    margin-top: 0.5vh;
     color: #fff;
     text-align: center;
     width: 10vw;
     display: inline-block;
-    font-size: 1.5vw;
+    font-size: 2vh;
 }
 
 .roller-dice-select {
-    height: 1vw;
+    height: 2vh;
     display: inline-grid;
     grid-template-columns: auto auto auto auto auto auto auto;
     width: 10vw;
@@ -167,20 +171,33 @@ p, caption, label {
     color: #b1b1b1;
 }
 
-.die-select.selected {
+.die-select.selected-die {
     cursor: pointer;
     background-color: #505050;
     color: #ffffff;
 }
 
 .roller-display {
-    height: 7.77vw;
+    height: 21.5vh;
+}
+
+@-moz-keyframes spindie {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(720deg); }
+}
+@-webkit-keyframes spindie {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(720deg); }
+}
+@keyframes spindie {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(720deg);}
 }
 
 /* ============================================================= */
 
 
-  
+/* Make entirety of dice roller box dependent on VH, not VW to prevent brokenness. */
 
 
 
@@ -222,3 +239,13 @@ p, caption, label {
     text-decoration: none;
     cursor: pointer;
   }
+
+/* ============================================================= */
+/* ===========================MODULES=========================== */
+/* ============================================================= */
+
+.currencyconverter {
+    padding: 5px;
+    background-color: #fff;
+    opacity: 1;
+}

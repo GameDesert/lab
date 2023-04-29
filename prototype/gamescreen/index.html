@@ -55,7 +55,41 @@
                     </form>
                 </div>
             </div>
-            <div class="tile tile2" id="tile2"><br></div>
+            <div class="tile tile2" id="tile2">
+                <div class="wikiviewer" id="wikiviewer">
+                    <div class="wikisearch" id="wikisearch">
+                        <div class="wikisearchinputs" id="wikisearchinputs">
+                            <form autocomplete="on">
+                                <fieldset>
+                                    <legend>Search Expanse Wiki</legend>
+                                    <input onchange="searchWiki();" style="width: 100%;" type="search" name="Wiki Search Text" id="wikisearchtext" placeholder="Search">
+                                    <button name="Search" id="wikisearchbutton" class="wikisearchbutton" type="button" onclick="searchWiki();">Search</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="wikisearchresults" id="wikisearchresults">
+                            <ul class="wikisearchresultstext" id="wikisearchresultstext">
+                                <li>TEST</li>
+                                <li>TEST</li>
+                                <li>TEST</li>
+                                <li>TEST</li>
+                                <li>TEST</li>
+                                <li>TEST</li>
+                                <li>TEST</li>
+                                <li>TEST</li>
+                                <li>TEST</li>
+                                <li>TEST</li>
+                                <li>TEST</li>
+                                <li>TEST</li>
+                                <li>TEST</li>
+                                <li>TEST</li>
+                                <li>TEST</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="wikiviewport" id="wikiviewport"></div>
+                </div>
+            </div>
             <div class="tile tile3" id="tile3"><br></div>
             <div class="tile tile4" id="tile4"><br></div>
             <div class="tile tile5" id="tile5"><br></div>

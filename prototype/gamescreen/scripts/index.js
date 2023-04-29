@@ -282,3 +282,29 @@ function convertCurrencies() {
     multiplier = currency_relativity[document.getElementById("starting-currency").value] / currency_relativity[document.getElementById("final-currency").value]
     document.getElementById("currency-out").innerHTML = document.getElementById("starting-currency-amount").value * multiplier
 }
+
+/* WIKI VIEWER */
+
+search_url = "https://expanse.kotla.eu/api.php"
+
+function searchWiki(searchquery) {
+    var params = new URLSearchParams({
+        action: "query",
+        list: "search",
+        srsearch: searchquery,
+        srprop: "titlesnippet",
+        format: "json",
+        origin: location.origin
+    });
+    
+    fetch(`${search_url}?${params}`)
+        .then(function(response){return response.json();})
+        .then(function(response) {
+            if (response.query.searchinfo.totalhits != 0){
+                for (let resultcount = 0; resultcount < response.query.searchinfo.totalhits; resultcount++) {
+                    console.log(response.query.search[resultcount].title)
+                } 
+            }
+        })
+        .catch(function(error){console.log(error);});
+}

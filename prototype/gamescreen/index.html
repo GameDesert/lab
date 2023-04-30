@@ -33,7 +33,7 @@
         <div class="tile-grid" id="tile-grid">
             <div class="tile tile1" id="tile1">
                 <div class="currencyconverter" id="currencyconverter">
-                    <form autocomplete="off">
+                    <form autocomplete="off" onSubmit="return false;">
                         <fieldset>
                             <legend>Currency Converter</legend>
                             <select onchange="convertCurrencies();" name="Starting Currency" id="starting-currency">
@@ -59,38 +59,23 @@
                 <div class="wikiviewer" id="wikiviewer">
                     <div class="wikisearch" id="wikisearch">
                         <div class="wikisearchinputs" id="wikisearchinputs">
-                            <form autocomplete="on">
+                            <form autocomplete="on" onSubmit="return false;">
                                 <fieldset>
                                     <legend>Search Expanse Wiki</legend>
-                                    <input onchange="searchWiki();" style="width: 100%;" type="search" name="Wiki Search Text" id="wikisearchtext" placeholder="Search">
-                                    <button name="Search" id="wikisearchbutton" class="wikisearchbutton" type="button" onclick="searchWiki();">Search</button>
+                                    <input onchange="searchWiki(document.getElementById('wikisearchtext').value);" style="width: 100%;" type="search" name="Wiki Search Text" id="wikisearchtext" placeholder="Search">
+                                    <button name="Search" id="wikisearchbutton" class="wikisearchbutton" type="button" onclick="searchWiki(document.getElementById('wikisearchtext').value);">Search</button>
                                 </fieldset>
                             </form>
                         </div>
                         <div class="wikisearchresults" id="wikisearchresults">
+                            <h3 style="margin: 0; padding: 0;" id="wikisearchresultstitle">Results</h3>
                             <ul class="wikisearchresultstext" id="wikisearchresultstext">
-                                <li>TEST</li>
-                                <li>TEST</li>
-                                <li>TEST</li>
-                                <li>TEST</li>
-                                <li>TEST</li>
-                                <li>TEST</li>
-                                <li>TEST</li>
-                                <li>TEST</li>
-                                <li>TEST</li>
-                                <li>TEST</li>
-                                <li>TEST</li>
-                                <li>TEST</li>
-                                <li>TEST</li>
-                                <li>TEST</li>
-                                <li>TEST</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="wikiviewport" id="wikiviewport"></div>
                 </div>
             </div>
-            <div class="tile tile3" id="tile3"><br></div>
+            <div class="tile tile3" id="tile3"><p>Statblock viewer, with statblock namespace on wiki, and parser for template here.</p></div>
             <div class="tile tile4" id="tile4"><br></div>
             <div class="tile tile5" id="tile5"><br></div>
             <div class="tile tile6" id="tile6"><br></div>

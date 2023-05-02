@@ -1,0 +1,14 @@
+.wikiviewer {
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 25vh;
+    background-color: #fff;
+    border: solid #fff 3px;
+}
+.wikisearchinputs {
+    height: 11vh;
+}
+.wikisearchresults {
+    overflow-y: scroll;
+    height: 14vh;
+}

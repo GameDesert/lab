@@ -104,7 +104,8 @@ p, caption, label {
 }
 
 .tile {
-    background-color: none;
+    background-color: aqua;
+    border-radius: 8px;
     opacity: 1;
     width: 20vw;
     height: 25vh;
@@ -244,24 +245,12 @@ p, caption, label {
 /* ===========================MODULES=========================== */
 /* ============================================================= */
 
-.currencyconverter {
-    padding: 5px;
-    background-color: #fff;
-    opacity: 1;
-    border: solid #fff 3px;
+.moduletile {
+    border-radius: 8px;
+    box-shadow: #2b2b2b 2px 2px 5px;
+    transition: 0.2s;
 }
 
-.wikiviewer {
-    padding-left: 5px;
-    padding-right: 5px;
-    height: 25vh;
-    background-color: #fff;
-    border: solid #fff 3px;
-}
-.wikisearchinputs {
-    height: 11vh;
-}
-.wikisearchresults {
-    overflow-y: scroll;
-    height: 14vh;
+.moduletile:hover {
+    box-shadow: #000 4px 4px 5px;
 }

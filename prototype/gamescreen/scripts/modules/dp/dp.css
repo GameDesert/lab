@@ -1,0 +1,10 @@
+.diceparser {
+    padding: 5px;
+    background-color: #fff;
+    opacity: 1;
+    border: solid #fff 3px;
+}
+
+#dice-expression {
+    width: 100vw;
+}

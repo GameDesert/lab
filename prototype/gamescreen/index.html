@@ -100,12 +100,28 @@
             <div class="tile tile5" id="tile5"><p>Challenge Rating Finder & Attribute Modifier Finder</p></div>
             <div class="tile tile6" id="tile6"><p>Spell Lookup</p></div>
             <div class="tile tile7" id="tile7"><p>Ability Modifiers</p></div>
-            <div class="tile tile8" id="tile8"><p>Dice Pattern Roller</p></div>
+            <div class="tile tile8" id="tile8">
+                <div class="diceparser moduletile" id="diceparser">
+                    <form autocomplete="off" onSubmit="return false;">
+                        <fieldset>
+                            <legend>Dice Parser</legend>
+                            <input style="width: 100%;" type="text" name="Dice Expression" id="dice-expression" placeholder="Dice Expression">
+                            <!--onchange="document.getElementById('dice-out').innerHTML = parsedice(this.value);"-->
+                            <button onclick="document.getElementById('dice-out').innerHTML = parsedice(document.getElementById('dice-expression').value);"><span class="mdi mdi-dice-multiple"></span></button>
+                            <code id="dice-out" class="dice-out"></code>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
             <div class="tile tile9" id="tile9"><p>Treasure Table Randomiser</p></div>
             <div class="tile tile10" id="tile10">
                 <div class="notepad moduletile" id="notepad">
-                    <label for="notepad-txt">Notepad</label>
-                    <textarea name="Notepad" id="notepad-txt" cols="34" rows="8"></textarea>
+                <form autocomplete="off" onSubmit="return false;">
+                    <fieldset>
+                        <legend>Notepad</legend>
+                        <textarea name="Notepad" id="notepad-txt" cols="30" rows="7"></textarea>
+                    </fieldset>
+                </form>
                 </div>
             </div>
             <div class="tile tile11" id="tile11"><br></div>

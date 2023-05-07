@@ -1,0 +1,13 @@
+.notepad {
+    padding: 5px;
+    background-color: #fff;
+    opacity: 1;
+    border: solid #fff 3px;
+    height: 23vh;
+}
+
+.notepad textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

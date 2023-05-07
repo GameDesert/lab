@@ -98,8 +98,10 @@ p, caption, label {
     gap: 2vh 1vw;
     grid-template-columns: auto auto auto auto auto;
 
-    width: 100vw;
+    width: 96vw;
     height: calc(100vh-2.5vw);
+    margin-left: auto;
+    margin-right: auto;
     /* background-color: brown; */
 }
 
@@ -107,7 +109,7 @@ p, caption, label {
     background-color: aqua;
     border-radius: 8px;
     opacity: 1;
-    width: 20vw;
+    width: 18.4vw;
     height: 25vh;
 }
 

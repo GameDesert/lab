@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+
+body {
+    background-color: #403935;
+    color: #D9D4CC;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    text-align: center;
+}
+
+p {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    text-align: left;
+}
+
+.link {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    text-align: left;
+    text-decoration: underline;
+    font-style: italic;
+    color: #A69F94;
+}

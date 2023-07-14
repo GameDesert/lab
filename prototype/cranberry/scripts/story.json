@@ -1,0 +1,82 @@
+{
+    "template":{
+        "title":"",
+        "body":"",
+        "sound":""
+    },
+    "start":{
+        "title":"The Corner Office",
+        "body":"A cigar lies smouldering in a crystal ashtray as grey clouds gather in the sky above the tall brick building. You can hear the busy clamour of the street outside.\n/#desk/-A small brass lamp with a green lampshade sits on the desk.-/",
+        "sound":""
+    },
+    "desk":{
+        "title":"A Desk",
+        "body":"On top of the large mahogany desk lies the lamp, a notepad next to an inkwell, and a beige telephone.\n/#telephone/-The telephone rings.-/",
+        "sound":""
+    },
+    "telephone":{
+        "title":"A Call",
+        "body":"You pick up the phone and a tinny voice emits from the speaker.\n'Hello Monsieur Powell, can you hear me?'\n/#conversation/-'Yes?'-/",
+        "sound":"telephone"
+    },
+    "conversation":{
+        "title":"A Request",
+        "body":"'Your assistance is required at the Institute. Please come down here at once.'\nThe line falls dead.\n/#explore/-You put down the receiver.-/",
+        "sound":""
+    },
+    "explore":{
+        "title":"An Interesting Office",
+        "body":"By the exit stands an /#coatrack/-old wooden coat rack-/.\nBy the other wall stands a /#cabinet/-green filing cabinet-/ and a /#poster/-poster-/ is pasted to the wall.",
+        "sound":""
+    },
+    "cabinet":{
+        "title":"Filing Cabinet",
+        "body":"You pull open the top drawer of the filing cabinet and fish out an /+cabinetletter/-old document-/.\n/#explore/-You look around the room further.-/",
+        "sound":""
+    },
+    "poster":{
+        "title":"Poster",
+        "body":"You look at the bright /+poster/-poster-/; it immediately improves the room's atomsphere.\n/#explore/-You look around the room further.-/",
+        "sound":""
+    },
+    "coatrack":{
+        "title":"Time To Leave",
+        "body":"You begin to reach for the /#leave/-door handle-/, but /#explore/-decide to turn back-/.",
+        "sound":""
+    },
+    "leave":{
+        "title":"Way Out",
+        "body":"You pull down on the door handle and swing the door open. You /#hallway/-run down the hallway-/, locking the door behind you.",
+        "sound":""
+    },
+    "hallway":{
+        "title":"Unrest",
+        "body":"You hear the roars of the infuriated outside. As you reach the double doors, you can see a crowd gathering /#outside/-outside-/.",
+        "sound":""
+    },
+    "outside":{
+        "title":"Outside",
+        "body":"You scan over the crowd, it seems to be a labour protest. You push through, trying to avoid /#constable/-the inevitable-/.",
+        "sound":""
+    },
+    "constable":{
+        "title":"Crowd Control",
+        "body":"On a wall next to you is a /+warning/-small metal sign-/. You see a line of constables dressed in helmets and gas masks, wielding tall shields and heavy truncheons. As they push back against a raging crowd, you see one walk towards a police box and open the door. /#valve/-You quicken your pace.-/",
+        "sound":""
+    },
+    "valve":{
+        "title":"A Whistling Sound",
+        "body":"The constable unscrews a valve and jets of red fog emerge from the storm drains. The crowd starts panicking and people claw at their throats, blood seeping from their eyes. People drop to the ground, the barricade of officers unmoving. You struggle to breathe and your /#final/-vision begins to fade-/.",
+        "sound":"ending"
+    },
+    "final":{
+        "title":"A Cruel Punishment",
+        "body":"The red fog rises as the red mist descends. People are strewn across the road, paralysed.",
+        "sound":""
+    },
+    "credits":{
+        "title":"Credits",
+        "body":"SFX:\n- TheScarlettWitch89 (Freesound - Modified)\n- FreqMan (Freesound - Modified)\n- Spleencast (Freesound - Modified)",
+        "sound":""
+    }
+}

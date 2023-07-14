@@ -11,6 +11,36 @@ h1 {
     text-align: center;
 }
 
+h1:before, h1:after {
+    content: " ";
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    border-top: 1px solid #D9D4CC;
+    border-bottom: 1px solid #D9D4CC;
+}
+h1:before {
+    margin: 20px 0 0 -60px;
+}
+h1:after {
+    margin: 20px 0 0 10px;
+}
+
+.hp:before, .hp:after {
+    content: " ";
+    position: absolute;
+    width: 12.5px;
+    height: 5px;
+    border-top: none;
+    border-bottom: 1px solid #D9D4CC;
+}
+.hp:before {
+    margin: 7px 0 0 -20px;
+}
+.hp:after {
+    margin: 7px 0 0 5px;
+}
+
 p {
     font-family: 'Playfair Display', serif;
     font-weight: 400;
@@ -23,5 +53,67 @@ p {
     text-align: left;
     text-decoration: underline;
     font-style: italic;
-    color: #A69F94;
+    color: #C6C1B8;
+    cursor: pointer;
+}
+
+.file {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    text-align: left;
+    text-decoration: dotted;
+    font-style: italic;
+    color: #C6C1B8;
+    cursor: pointer;
+}
+
+.close {
+    fill: #59514A;
+}
+
+.close:hover {
+    fill: #403935;
+    cursor: pointer;
+}
+
+.start {
+    background-color: #D9D4CC;
+    color: #403935;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    text-align: center;
+    min-width: 32px;
+    min-height: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 10%;
+
+    transition: 0.5s;
+}
+
+.start:hover {
+    background-color: #8C8279;
+    color: #D9D4CC;
+    cursor: pointer;
+}
+
+.start:before, .start:after {
+    content: " ";
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    border-top: 1px solid #D9D4CC;
+    border-bottom: 1px solid #D9D4CC;
+}
+.start:before {
+    margin: 7px 0 0 -80px;
+}
+.start:after {
+    margin: 7px 0 0 30px;
 }

@@ -1,17 +1,30 @@
+let story = {}
+fetch('scripts/story.json')
+    .then((response) => response.json())
+    .then((json) => story = json);
+
+console.log(story)
+    
 function convertLinks(text) {
-    text = text.replace("/#","<span class='link' onclick='gamemove(`")
-    text = text.replace("/+","<span class='file' onclick='getfile(`")
-    text = text.replace("/-","`);'>")
-    text = text.replace("-/","</span>")
+    text = text.replaceAll("/#","<span class='link' onclick='gamemove(`")
+    text = text.replaceAll("/+","<span class='file' onclick='getfile(`")
+    text = text.replaceAll("/-","`);'>")
+    text = text.replaceAll("-/","</span>")
+    return text
 }
 
 function retrieveSounds(name) {
-    var audio = new Audio(`assets/soundscape/${name}.mp3`);
-    audio.play();
+    if (name != "") {
+        var audio = new Audio(`assets/soundscape/${name}.mp3`);
+        audio.play();
+    }
 }
 
-function gamemove() {
-
+function gamemove(page) {
+    nexttext = story[page]["body"]
+    nexttext = convertLinks(nexttext)
+    document.getElementById("gametext").innerHTML = nexttext;
+    retrieveSounds(story[page]["sound"])
 }
 
 function getfile(title) {

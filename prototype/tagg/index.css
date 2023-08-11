@@ -1,0 +1,15 @@
+@import url('https://kotla.eu/fonts/mdi/materialdesignicons.css');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Varela+Round&family=Yeseva+One&display=swap');
+/*
+font-family: 'Poiret One', cursive;
+font-family: 'Varela Round', sans-serif;
+font-family: 'Yeseva One', serif;
+*/
+
+.wordmark {
+    font-family: 'Poiret One', cursive;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Varela Round', sans-serif;
+}

@@ -25,11 +25,23 @@ img.onload=function(){
 const updateImage = index => {
   img.src = currentFrame(index);
   context.drawImage(img, 0, 0);
+  console.log(index)
+  if (index >= 144 ) {
+    console.log("SWITCH")
+    document.getElementById("hero-lightpass").style.position = "relative";
+    document.getElementById("hero-lightpass").style.top = "0px";
+    document.getElementById("scroll-indicator").style.opacity = 0;
+  } else {
+    document.getElementById("hero-lightpass").style.position = "fixed";
+    document.getElementById("hero-lightpass").style.top = "50%";
+    document.getElementById("scroll-indicator").style.opacity = 1;
+  }
 }
 
 window.addEventListener('scroll', () => {  
   const scrollTop = html.scrollTop;
-  const maxScrollTop = html.scrollHeight - window.innerHeight;
+  // const maxScrollTop = html.scrollHeight - window.innerHeight;
+  const maxScrollTop = 4*window.innerHeight;
   const scrollFraction = scrollTop / maxScrollTop;
   const frameIndex = Math.min(
     frameCount - 1,

@@ -6,16 +6,19 @@ font-family: 'Varela Round', sans-serif;
 font-family: 'Yeseva One', serif;
 */
 
-/* .wordmark {
+.wordmark {
     font-family: 'Poiret One', cursive;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Varela Round', sans-serif;
-} */
+}
 
 html {
     height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 body {
@@ -23,8 +26,11 @@ body {
     height: 500vh;
 }
 
-canvas {
-    position: fixed;
+#scroll-indicator {
+    transition: 0.5s;
+}
+
+canvas#hero-lightpass {
     left: 50%;
     top: 50%;
     max-height: 100vh;
@@ -33,12 +39,28 @@ canvas {
     z-index: -1000;
 }
 
-p {
+p.flyby {
     position: absolute;
     color: #fff;
     font-family: 'Poiret One', cursive;
-    font-size: 3vw;
+    font-size: 2vw;
     z-index: 1000;
+}
+
+p.flyby {
+    /* background-color:hsla(264,71%,46%,1);
+    background-image:
+    radial-gradient(at 0% 47%, hsla(285,45%,54%,1) 0px, transparent 50%),
+    radial-gradient(at 66% 100%, hsla(285,45%,54%,1) 0px, transparent 50%),
+    radial-gradient(at 24% 65%, hsla(285,45%,54%,1) 0px, transparent 50%),
+    radial-gradient(at 48% 100%, hsla(285,45%,54%,1) 0px, transparent 50%),
+    radial-gradient(at 23% 100%, hsla(285,45%,54%,1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(285,45%,54%,1) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(285,47%,54%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(285,46%,54%,1) 0px, transparent 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
 }
 
 p.fixed-p {
@@ -47,4 +69,55 @@ p.fixed-p {
     font-family: 'Poiret One', cursive;
     font-size: 4vw;
     z-index: 1000;
+}
+
+div.after-canvas {
+    /* background-color:hsla(264,71%,46%,1); */
+    /* background-image:
+    radial-gradient(at 0% 47%, hsla(285,45%,54%,1) 0px, transparent 50%),
+    radial-gradient(at 66% 100%, hsla(285,45%,54%,1) 0px, transparent 50%),
+    radial-gradient(at 24% 65%, hsla(285,45%,54%,1) 0px, transparent 50%),
+    radial-gradient(at 48% 100%, hsla(285,45%,54%,1) 0px, transparent 50%),
+    radial-gradient(at 23% 100%, hsla(285,45%,54%,1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(285,45%,54%,1) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(285,47%,54%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(285,46%,54%,1) 0px, transparent 50%); */
+
+    background-color: #000;
+
+    background-size: 100% auto;
+    background-position: top;
+
+    min-height: 100vh;
+    width: 100vw;
+
+    position: static;
+    display: block;
+    margin-top: 350vh;
+}
+
+.zigzag-container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.zig {
+    width: 50vw;
+    min-height: 50vh;
+}
+
+.videocontainer {
+    width: 32vw;
+    height: 18vw;
+    background-color: #000;
+    border-radius: 16px;
+    box-shadow: #000 2px 2px 1px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vidcontent {
+    width: 32vw;
+    height: 18vw;
 }

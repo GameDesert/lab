@@ -6,10 +6,45 @@ font-family: 'Varela Round', sans-serif;
 font-family: 'Yeseva One', serif;
 */
 
-.wordmark {
+/* .wordmark {
     font-family: 'Poiret One', cursive;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Varela Round', sans-serif;
+} */
+
+html {
+    height: 100vh;
+}
+
+body {
+    background: #000;
+    height: 500vh;
+}
+
+canvas {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    max-height: 100vh;
+    max-width: 100vw;
+    transform: translate(-50%, -50%);
+    z-index: -1000;
+}
+
+p {
+    position: absolute;
+    color: #fff;
+    font-family: 'Poiret One', cursive;
+    font-size: 3vw;
+    z-index: 1000;
+}
+
+p.fixed-p {
+    position: fixed;
+    color: #fff;
+    font-family: 'Poiret One', cursive;
+    font-size: 4vw;
+    z-index: 1000;
 }

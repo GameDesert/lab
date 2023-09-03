@@ -28,6 +28,7 @@ function main() {
 
     const scene = new THREE.Scene();
 
+    
     const boxWidth = 1;
     const boxHeight = 0.84837941768907;
     const boxDepth = 0.025;

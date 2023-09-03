@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tagg</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1 style="text-align: center; color: #fff; font-size: 5vw;"><span class="wordmark">tagg</span></h1>
+    <!-- <h1>Welcome to <span class="wordmark">tagg</span>, the universal travel tool.</h1> -->
+    <!-- <p class="fixed-p" style="display: block; margin-left: auto; margin-right: auto; text-align: center; text-align: center; width: 100%; margin-top: 40vh;"><b>This is</b> tagg</p> -->
+    <svg xmlns="http://www.w3.org/2000/svg" id="scroll-indicator" viewBox="0 0 36 36" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="z-index:-1; opacity: 1; fill: #fff; width: 3vw; height: auto; position: fixed; margin-left: auto; margin-right: auto; margin-top: 90vh; left: 47vw;"><path xmlns="http://www.w3.org/2000/svg" d="M18 34A10 10 0 0 1 8 24V12a10 10 0 0 1 20 0v12a10 10 0 0 1-10 10zm0-30a8 8 0 0 0-8 8v12a8 8 0 0 0 16 0V12a8 8 0 0 0-8-8z" class="clr-i-outline clr-i-outline-path-1"></path><path xmlns="http://www.w3.org/2000/svg" d="M18 15a1 1 0 0 1-1-1v-4a1 1 0 0 1 2 0v4a1 1 0 0 1-1 1z" class="clr-i-outline clr-i-outline-path-2"></path><path xmlns="http://www.w3.org/2000/svg" fill="none" d="M0 0h36v36H0z"></path></svg>
+    <p class="flyby" style="color: #fff; margin-top: 110vh; margin-left: 10vw;">Travelling made easier</p>
+    <p class="flyby" style="color: #fff; margin-top: 160vh; margin-left: 60vw;">Anywhere in the world</p>
+    <p class="flyby" style="color: #fff; margin-top: 220vh; margin-left: 10vw; max-width: 30vw;">Making sure your bag gets to where it needs to be</p>
+    <p class="flyby" style="color: #fff; margin-top: 300vh; margin-left: 60vw; max-width: 30vw;">Safe and sound</p>
+    <div style="min-height: 100vh;">
+        <canvas style="position: fixed; z-index: -2;" id="hero-lightpass" />
+    </div>
+    <div class="after-canvas">
+        <svg
+        id="visual"
+        viewBox="0 0 900 126"
+        style="fill: #000; -webkit-transform: translateY(-90%); transform: translateY(-90%); width: 100vw; height: auto;"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:svg="http://www.w3.org/2000/svg">
+        <defs
+            id="defs1" />
+        <path
+            d="m 0,23 30,6.2 c 30,6.1 90,18.5 150,25.6 60,7.2 120,9.2 180,2.5 60,-6.6 120,-22 180,-21.5 60,0.5 120,16.9 180,13.5 C 780,46 840,23 870,11.5 L 900,0 v 126 h -30 c -30,0 -90,0 -150,0 -60,0 -120,0 -180,0 -60,0 -120,0 -180,0 -60,0 -120,0 -180,0 -60,0 -120,0 -150,0 H 0 Z"
+            stroke-linecap="round"
+            stroke-linejoin="miter"
+            id="path1" />
+        </svg>
+
+        <h1 style="color: #fff; position: relative; font-family: 'Varela Round', sans-serif; font-size: 5vw; text-align: center;"><b>This is</b> <span class="wordmark">tagg</span></h1>
+        <div class="zigzag-container">
+            <div class="zig">
+                <h2 style="font-family: 'Poiret One', cursive; color: #fff; font-size: 2vw; margin-left: 1vw; max-width: 49vw;">Durable</h2>
+                <p style="font-family: 'Varela Round', sans-serif; font-size: 1.5vw; max-width: 48vw; color: #fff; margin-left: 2vw;">Securely attaches to your luggage to make sure your details are always on hand.</p>
+            </div>
+            <div class="zig">
+                <div class="videocontainer">
+                    <video class="vidcontent" autoplay loop onmouseover="this.play()" onmouseout="this.pause();" >
+                        <source src="assets/video/Explode.webm">
+                    </video>
+                </div>
+            </div>
+            <div class="zig">
+                <div class="videocontainer">
+                    <video class="vidcontent" autoplay loop onmouseover="this.play()" onmouseout="this.pause();" >
+                        <source src="assets/video/Charge.webm">
+                    </video>
+                </div>
+            </div>
+            <div class="zig">
+                <h2 style="font-family: 'Poiret One', cursive; color: #fff; font-size: 2vw; margin-left: 1vw; max-width: 49vw;">Long-Lasting</h2>
+                <p style="font-family: 'Varela Round', sans-serif; font-size: 1.5vw; max-width: 48vw; color: #fff; margin-left: 2vw;">A lithium-ion battery provides over a week of continuous charge with the <span class="wordmark">tagg</span>'s low-power display. After that, the <span class="wordmark">tagg</span> can be charged wirelessly with any qi-compatible charger.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

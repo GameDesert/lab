@@ -1,0 +1,64 @@
+@import url('https://kotla.eu/fonts/mdi/materialdesignicons.css');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Varela+Round&family=Yeseva+One&display=swap');
+/*
+font-family: 'Poiret One', cursive;
+font-family: 'Varela Round', sans-serif;
+font-family: 'Yeseva One', serif;
+*/
+
+.wordmark {
+    font-family: 'Poiret One', cursive;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Varela Round', sans-serif;
+}
+
+#myVideo {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    max-height: 75vh;
+    max-width: 75vw;
+    border-radius: 32px;
+    box-shadow: #000 1px 1px 32px;
+}
+
+/* Add some content at the bottom of the video/page */
+.overlaycontent {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+@keyframes bouncemouse {
+    0% {transform: translateY(0);}
+    5% {transform: translateY(0.75vh);}
+    10% {transform: translateY(0);}
+    15% {transform: translateY(0.75vh);}
+    20% {transform: translateY(0);}
+    100% {transform: translateY(0);}
+}
+
+.scrollindicator svg {
+    animation: bouncemouse 5s ease-in-out 2s infinite;
+}
+
+.section {
+    background-color: #fff;
+    height: 10vh;
+    margin-top: -0.5vh;
+    margin-bottom: -0.5vh;
+}

@@ -4,64 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tagg</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
+    
+    
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="/favicons/favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#35363a">
+    <link rel="shortcut icon" href="/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#35363a">
+
+
 </head>
 <body>
-    <h1 style="text-align: center; color: #fff; font-size: 5vw;"><span class="wordmark">tagg</span></h1>
-    <!-- <h1>Welcome to <span class="wordmark">tagg</span>, the universal travel tool.</h1> -->
-    <!-- <p class="fixed-p" style="display: block; margin-left: auto; margin-right: auto; text-align: center; text-align: center; width: 100%; margin-top: 40vh;"><b>This is</b> tagg</p> -->
-    <svg xmlns="http://www.w3.org/2000/svg" id="scroll-indicator" viewBox="0 0 36 36" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="z-index:-1; opacity: 1; fill: #fff; width: 3vw; height: auto; position: fixed; margin-left: auto; margin-right: auto; margin-top: 90vh; left: 47vw;"><path xmlns="http://www.w3.org/2000/svg" d="M18 34A10 10 0 0 1 8 24V12a10 10 0 0 1 20 0v12a10 10 0 0 1-10 10zm0-30a8 8 0 0 0-8 8v12a8 8 0 0 0 16 0V12a8 8 0 0 0-8-8z" class="clr-i-outline clr-i-outline-path-1"></path><path xmlns="http://www.w3.org/2000/svg" d="M18 15a1 1 0 0 1-1-1v-4a1 1 0 0 1 2 0v4a1 1 0 0 1-1 1z" class="clr-i-outline clr-i-outline-path-2"></path><path xmlns="http://www.w3.org/2000/svg" fill="none" d="M0 0h36v36H0z"></path></svg>
-    <p class="flyby" style="color: #fff; margin-top: 110vh; margin-left: 10vw;">Travelling made easier</p>
-    <p class="flyby" style="color: #fff; margin-top: 160vh; margin-left: 60vw;">Anywhere in the world</p>
-    <p class="flyby" style="color: #fff; margin-top: 220vh; margin-left: 10vw; max-width: 30vw;">Making sure your bag gets to where it needs to be</p>
-    <p class="flyby" style="color: #fff; margin-top: 300vh; margin-left: 60vw; max-width: 30vw;">Safe and sound</p>
-    <div style="min-height: 100vh;">
-        <canvas style="position: fixed; z-index: -2;" id="hero-lightpass" />
+    <video autoplay muted playsinline id="myVideo" onplay="document.getElementById('myVideo').playbackRate = 0.7;">
+        <source src="assets/video/Spin.mp4" type="video/mp4">
+    </video>
+    <div class="overlaycontent">
+        <h1 style="text-align: center; font-size: 3vh; color: #dbdbdb;">Welcome to<br><span class="wordmark" style="font-size: 6vh; color: #fff;">tagg</span></h1>
     </div>
-    <div class="after-canvas">
-        <svg
-        id="visual"
-        viewBox="0 0 900 126"
-        style="fill: #000; -webkit-transform: translateY(-90%); transform: translateY(-90%); width: 100vw; height: auto;"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:svg="http://www.w3.org/2000/svg">
-        <defs
-            id="defs1" />
-        <path
-            d="m 0,23 30,6.2 c 30,6.1 90,18.5 150,25.6 60,7.2 120,9.2 180,2.5 60,-6.6 120,-22 180,-21.5 60,0.5 120,16.9 180,13.5 C 780,46 840,23 870,11.5 L 900,0 v 126 h -30 c -30,0 -90,0 -150,0 -60,0 -120,0 -180,0 -60,0 -120,0 -180,0 -60,0 -120,0 -180,0 -60,0 -120,0 -150,0 H 0 Z"
-            stroke-linecap="round"
-            stroke-linejoin="miter"
-            id="path1" />
-        </svg>
-
-        <h1 style="color: #fff; position: relative; font-family: 'Varela Round', sans-serif; font-size: 5vw; text-align: center;"><b>This is</b> <span class="wordmark">tagg</span></h1>
-        <div class="zigzag-container">
-            <div class="zig">
-                <h2 style="font-family: 'Poiret One', cursive; color: #fff; font-size: 2vw; margin-left: 1vw; max-width: 49vw;">Durable</h2>
-                <p style="font-family: 'Varela Round', sans-serif; font-size: 1.5vw; max-width: 48vw; color: #fff; margin-left: 2vw;">Securely attaches to your luggage to make sure your details are always on hand.</p>
-            </div>
-            <div class="zig">
-                <div class="videocontainer">
-                    <video class="vidcontent" autoplay loop onmouseover="this.play()" onmouseout="this.pause();" >
-                        <source src="assets/video/Explode.webm">
-                    </video>
-                </div>
-            </div>
-            <div class="zig">
-                <div class="videocontainer">
-                    <video class="vidcontent" autoplay loop onmouseover="this.play()" onmouseout="this.pause();" >
-                        <source src="assets/video/Charge.webm">
-                    </video>
-                </div>
-            </div>
-            <div class="zig">
-                <h2 style="font-family: 'Poiret One', cursive; color: #fff; font-size: 2vw; margin-left: 1vw; max-width: 49vw;">Long-Lasting</h2>
-                <p style="font-family: 'Varela Round', sans-serif; font-size: 1.5vw; max-width: 48vw; color: #fff; margin-left: 2vw;">A lithium-ion battery provides over a week of continuous charge with the <span class="wordmark">tagg</span>'s low-power display. After that, the <span class="wordmark">tagg</span> can be charged wirelessly with any qi-compatible charger.</p>
-            </div>
-        </div>
+    <div class="scrollindicator">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill: #fff; height: 3vh; width: auto; margin-left: auto; margin-right: auto; display: block;"><path xmlns="http://www.w3.org/2000/svg" d="M18 34A10 10 0 0 1 8 24V12a10 10 0 0 1 20 0v12a10 10 0 0 1-10 10zm0-30a8 8 0 0 0-8 8v12a8 8 0 0 0 16 0V12a8 8 0 0 0-8-8z" class="clr-i-outline clr-i-outline-path-1"></path><path xmlns="http://www.w3.org/2000/svg" d="M18 15a1 1 0 0 1-1-1v-4a1 1 0 0 1 2 0v4a1 1 0 0 1-1 1z" class="clr-i-outline clr-i-outline-path-2"></path><path xmlns="http://www.w3.org/2000/svg" fill="none" d="M0 0h36v36H0z"></path></svg>
+        <p style="color: #fff; text-align: center; font-family: 'Varela Round', sans-serif; font-weight: 300; width: 100%; display: block; margin-left: auto; margin-right: auto;">SCROLL</p>
     </div>
-
-    <script src="script.js"></script>
+    <svg
+    viewBox="0 0 1920 52"
+    style="width: 100%; height: auto;"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:svg="http://www.w3.org/2000/svg">
+    <path
+        d="m 0,4 106.7,3 c 106.6,3 320,9 533.3,12 213.3,3 426.7,3 640,-0.7 213.3,-3.6 426.7,-11 533.3,-14.6 L 1920,0 v 52 h -106.7 c -106.6,0 -320,0 -533.3,0 -213.3,0 -426.7,0 -640,0 -213.3,0 -426.7,0 -533.3,0 H 0 Z"
+        fill="#ffffff"/>
+    </svg>
+    <div class="section">
+    </div>
+    <svg
+    id="visual"
+    viewBox="0 0 1920 62.37138"
+    style="width: 100%; height: auto;"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:svg="http://www.w3.org/2000/svg">
+    <path
+        d="m 0,35 106.7,3.7 c 106.6,3.6 320,11 533.3,16.6 213.3,5.7 426.7,9.7 640,5 213.3,-4.6 426.7,-18 533.3,-24.6 L 1920,29 V 0 H 1813.3 C 1706.7,0 1493.3,0 1280,0 1066.7,0 853.3,0 640,0 426.7,0 213.3,0 106.7,0 H 0 Z"
+        fill="#ffffff"/>
+    </svg>
 </body>
 </html>

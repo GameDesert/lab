@@ -74,6 +74,20 @@ function findCommon(letter, ...arrays) {
     return results;
 }
 
+function updateNameSize() {
+    words = document.getElementById("name-label").innerText.trim().split(/\s+/).length;
+    if (words == 1) {
+        document.getElementById("name-label").style.fontSize = "2vw";
+        document.getElementById("name-label").style.marginTop = "0.5vw";
+    } else if (3 >= words >= 2) {
+        document.getElementById("name-label").style.fontSize = "1.5vw";
+        document.getElementById("name-label").style.marginTop = "0.3vw";
+    } else if (letters > 3) {
+        document.getElementById("name-label").style.fontSize = "1vw";
+        document.getElementById("name-label").style.marginTop = "0vw";
+    }
+}
+
 async function crossRefRoutes(routes, letter) {
     if ((letter == null) || (letter == "")) {
         letter = prompt("Please provide a stop letter to narrow down results.")
@@ -98,7 +112,18 @@ async function crossRefRoutes(routes, letter) {
     const finalStops = Array.from(results)
     const list = document.getElementById("results-list")
     for (let stopindex = 0; stopindex < finalStops.length; stopindex++) {
-        list.innerHTML += '<li>' + finalStops[stopindex]["commonName"] + '</li>';
+        let name = finalStops[stopindex]["commonName"]
+        console.log(name);
+        let naptan = finalStops[stopindex]["naptanId"]
+        console.log(naptan);
+        list.innerHTML += `<li onclick="signs('${name}', '${letter}', '${naptan}');" style="cursor: pointer;">${finalStops[stopindex]["commonName"]}</li>`;
         
     }
+}
+function signs(name, letter, naptan) {
+    document.getElementById("name-label").innerText = name;
+    document.getElementById("point-letter").innerText = letter;
+    document.getElementById("towards-label").innerText = naptan;
+    updateNameSize();
+    updatePointLetterSize();
 }

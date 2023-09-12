@@ -28,7 +28,7 @@
     </header>
     <div class="sign-wrapper">
         <div class="sign">
-            <div class="sign-segment flag">
+            <div class="sign-segment flag" style="border-top: #e32119 solid 2vh;">
                 <!-- <svg style="height: 80%; width: auto; margin-left: auto; margin-right: auto; display: block; margin-top: 1.5vw;" viewBox="0 0 135.46666 135.46667" version="1.1" id="svg1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
                 <g
                     id="layer1"
@@ -41,24 +41,25 @@
                     clip-path="url(#clipPath37)" />
                 </g>
                 </svg> -->
-                <h1 class="point-letter" id="point-letter" style="font-size: 2vw;" title="Stop Letter">?</h1>
+                <h1 class="point-letter" id="point-letter" style="font-size: 2vw;" title="Stop Letter" onclick="setLetter(this)">?</h1>
             </div>
-            <div class="sign-segment name"><h2 class="name-label" id="name-label" title="Stop Name">Trafalgar Square</h2></div>
-            <div class="sign-segment towards"><h2 class="towards-label" id="towards-label" title="Naptan Code">Isle of Dogs Or Leamouth</h2></div>
-            <div class="sign-segment tile"><p class="route-num" id="route-num-1">1</p></div>
-            <div class="sign-segment tile"><p class="route-num" id="route-num-2">51</p></div>
-            <div class="sign-segment tile"><p class="route-num" id="route-num-3">53</p></div>
-            <div class="sign-segment tile"><p class="route-num" id="route-num-4">135</p></div>
-            <div class="sign-segment tile"><p class="route-num" id="route-num-5">277</p></div>
-            <div class="sign-segment tile"><p class="route-num" id="route-num-6">N550</p></div>
+            <div class="sign-segment name" onclick="crossRefRoutes(routes, document.getElementById('point-letter').innerText)"><h2 class="name-label" id="name-label" title="Stop Name">[CLICK TO SEARCH]</h2></div>
+            <div class="sign-segment towards"><h2 class="towards-label" id="towards-label" title="NaPTAN Code">-</h2></div>
+            <div class="sign-segment tile" onclick="removeRoute(this.childNodes[0].innerText)"><p class="route-num" id="route-num-0"></p></div>
+            <div class="sign-segment tile" onclick="removeRoute(this.childNodes[0].innerText)"><p class="route-num" id="route-num-1"></p></div>
+            <div class="sign-segment tile" onclick="removeRoute(this.childNodes[0].innerText)"><p class="route-num" id="route-num-2"></p></div>
+            <div class="sign-segment tile" onclick="removeRoute(this.childNodes[0].innerText)"><p class="route-num" id="route-num-3"></p></div>
+            <div class="sign-segment tile" onclick="removeRoute(this.childNodes[0].innerText)"><p class="route-num" id="route-num-4"></p></div>
+            <div class="sign-segment tile" onclick="removeRoute(this.childNodes[0].innerText)"><p class="route-num" id="route-num-5"></p></div>
         </div>
-        <div class="results" style="background-color: #e32119; width: 50vw;">
+        <div class="results" style="width: 50vw;">
+            <input type="text" name="Route" id="addroute" placeholder="Add Route"> <button onclick="addRoute(document.getElementById('addroute').value)">ADD</button>
             <p>Click on a stop to display.</p>
             <ul id="results-list">
             </ul>
         </div>
     </div>
-    <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; position: absolute; bottom: 0; margin-bottom: -0.01vh;">Click on a tile or the stop letter to change its value. Double click a route to delete it. Click the bus stop name to find the top match.</p>
+    <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; position: absolute; bottom: 0; margin-bottom: -0.01vh;">Click on the stop letter to change its value. Click a route tile to delete it. Click the bus stop name to find the top match.</p>
     <script src="script.js"></script>
 </body>
 </html>

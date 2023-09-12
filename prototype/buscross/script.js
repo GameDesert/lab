@@ -2,7 +2,7 @@
 // Get specific bus route: https://api.tfl.gov.uk/line/{route}
 // Get all stops on a route: https://api.tfl.gov.uk/line/{route}/stoppoints
 
-alert("This is still in development and does not currently function.")
+// alert("This is still in development and does not currently function.")
 
 function updatePointLetterSize() {
     letters = document.getElementById("point-letter").innerText.length
@@ -36,7 +36,43 @@ async function returnStops(route) {
     return RouteValidJson
 } // Call as `await checkRouteValid(route)`
 
-routes = [""] //ROUTES HERE
+let routes = [] //ROUTES HERE
+
+function addRoute(route) {
+    route = route.toUpperCase()
+    if (routes.length < 6) {
+        if (routes.includes(route)) {
+            alert("Route already added.")
+        } else {
+            routes.push(route.toString().substring(0,4))
+            console.log("Added " + route)
+
+            updateETiles(routes, "route-num-")
+        }
+    } else {
+        alert("Too many routes added.")
+        updateETiles(routes, "route-num-")
+    }
+}
+
+function removeRoute(route) {
+    routes.splice(routes.indexOf(route.toString().substring(0,4)), 1)
+    console.log("Removed " + route)
+    updateETiles(routes, "route-num-")
+}
+
+function updateETiles(routes, idprefix) {
+    for (let index = 0; index < 6; index++) {
+        document.getElementById(idprefix+index.toString()).innerText = "";
+        
+    }
+    for (let index = 0; index < routes.length; index++) {
+        if (index < 6) {
+            const element = routes[index];
+            document.getElementById(idprefix+index.toString()).innerText = element.toString()
+        } else {break}
+    }
+}
 
 function findCommon(letter, ...arrays) {
     // sort arrays by length so we optimize and iterate first by the shortest array
@@ -55,7 +91,7 @@ function findCommon(letter, ...arrays) {
             }
         }
         if (found) {
-            if ((letter != null) || (letter != "")) {
+            if ((letter != null) || (letter != "") || (letter != "?")) {
                 try {
                     if (letter == item["stopLetter"]) {
                         results.add(item);
@@ -74,6 +110,16 @@ function findCommon(letter, ...arrays) {
     return results;
 }
 
+function setLetter(object) {
+    let letter = prompt("Enter stop letter (1-3 Chars): ")
+    if ((letter != null) || (letter != "") || (letter != "?")) {
+        letter = letter.toUpperCase().substring(0,3)
+        object.innerText = letter
+    } else {
+        alert("Please enter a letter.")
+    }
+}
+
 function updateNameSize() {
     words = document.getElementById("name-label").innerText.trim().split(/\s+/).length;
     if (words == 1) {
@@ -85,13 +131,17 @@ function updateNameSize() {
     } else if (letters > 3) {
         document.getElementById("name-label").style.fontSize = "1vw";
         document.getElementById("name-label").style.marginTop = "0vw";
+    } else {
+        document.getElementById("name-label").style.fontSize = "2vw";
+        document.getElementById("name-label").style.marginTop = "0.5vw";
     }
 }
 
 async function crossRefRoutes(routes, letter) {
-    if ((letter == null) || (letter == "")) {
-        letter = prompt("Please provide a stop letter to narrow down results.")
-        if ((letter == null) || (letter == "")) {
+    if ((letter == null) || (letter == "") || (letter == "?")) {
+        setLetter(document.getElementById("point-letter"))
+        letter = document.getElementById("point-letter").innerText
+        if ((letter == null) || (letter == "") || (letter == "?")) {
             alert("You must provide a stop letter. Try again and do this by clicking the red question mark.")
             return
         }
@@ -111,6 +161,7 @@ async function crossRefRoutes(routes, letter) {
     console.log(Array.from(results));
     const finalStops = Array.from(results)
     const list = document.getElementById("results-list")
+    list.innerHTML = ""
     for (let stopindex = 0; stopindex < finalStops.length; stopindex++) {
         let name = finalStops[stopindex]["commonName"]
         console.log(name);

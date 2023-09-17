@@ -64,3 +64,20 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: -1vh;
     margin-bottom: -0.5vh;
 }
+
+.grid-segment > video {
+    width: 65%;
+    border-radius: 12px !important;
+}
+
+.grid-segment > p {
+    font-family: 'Poiret One', cursive;
+    font-weight: 700;
+    margin-left: 1vw;
+    padding-top: 1vw;
+    text-align: center;
+}
+
+.grid-segment {
+    margin-top: 3vw;
+}

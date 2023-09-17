@@ -57,8 +57,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section {
+    display: grid;
+    grid-template-columns: auto auto;
     background-color: #fff;
-    height: 10vh;
-    margin-top: -0.5vh;
+    min-height: 10vh;
+    margin-top: -1vh;
     margin-bottom: -0.5vh;
 }

@@ -24,11 +24,10 @@ class Hand {
 
     dealRiggedHand() {
         const randomHand = named_hands[Math.floor(Math.random() * named_hands.length)];
-        const hand = new Hand();
         switch (randomHand) {
             case "Royal Flush":
                 const royalFlushSuit = suits[Math.floor(Math.random() * suits.length)];
-                hand.dealt_hand = [
+                this.dealt_hand = [
                     { suit: royalFlushSuit, value: "10" },
                     { suit: royalFlushSuit, value: "J" },
                     { suit: royalFlushSuit, value: "Q" },
@@ -38,7 +37,7 @@ class Hand {
                 break;
             case "Straight Flush":
                 const startValue = Math.floor(Math.random() * (values.length - 4));
-                hand.dealt_hand = [
+                this.dealt_hand = [
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values[startValue] },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values[startValue + 1] },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values[startValue + 2] },
@@ -48,7 +47,7 @@ class Hand {
                 break;
             case "Four of a Kind":
                 const fourOfAKindValue = values[Math.floor(Math.random() * values.length)];
-                hand.dealt_hand = [
+                this.dealt_hand = [
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: fourOfAKindValue },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: fourOfAKindValue },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: fourOfAKindValue },
@@ -59,7 +58,7 @@ class Hand {
             case "Full House":
                 const fhthreeOfAKindValue = values[Math.floor(Math.random() * values.length)];
                 const pairValue = values.find(value => value !== fhthreeOfAKindValue);
-                hand.dealt_hand = [
+                this.dealt_hand = [
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: fhthreeOfAKindValue },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: fhthreeOfAKindValue },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: fhthreeOfAKindValue },
@@ -69,7 +68,7 @@ class Hand {
                 break;
             case "Flush":
                 const flushSuit = suits[Math.floor(Math.random() * suits.length)];
-                hand.dealt_hand = [
+                this.dealt_hand = [
                     { suit: flushSuit, value: values[Math.floor(Math.random() * values.length)] },
                     { suit: flushSuit, value: values[Math.floor(Math.random() * values.length)] },
                     { suit: flushSuit, value: values[Math.floor(Math.random() * values.length)] },
@@ -79,7 +78,7 @@ class Hand {
                 break;
             case "Straight":
                 const straightStartValue = Math.floor(Math.random() * (values.length - 4));
-                hand.dealt_hand = [
+                this.dealt_hand = [
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values[straightStartValue] },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values[straightStartValue + 1] },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values[straightStartValue + 2] },
@@ -89,7 +88,7 @@ class Hand {
                 break;
             case "Three of a Kind":
                 const threeOfAKindValue = values[Math.floor(Math.random() * values.length)];
-                hand.dealt_hand = [
+                this.dealt_hand = [
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: threeOfAKindValue },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: threeOfAKindValue },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: threeOfAKindValue },
@@ -100,7 +99,7 @@ class Hand {
             case "Two Pair":
                 const pair1Value = values[Math.floor(Math.random() * values.length)];
                 const pair2Value = values.find(value => value !== pair1Value);
-                hand.dealt_hand = [
+                this.dealt_hand = [
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: pair1Value },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: pair1Value },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: pair2Value },
@@ -110,7 +109,7 @@ class Hand {
                 break;
             case "One Pair":
                 const onepairValue = values[Math.floor(Math.random() * values.length)];
-                hand.dealt_hand = [
+                this.dealt_hand = [
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: onepairValue },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: onepairValue },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values.find(value => value !== onepairValue) },
@@ -119,7 +118,7 @@ class Hand {
                 ];
                 break;
             case "High Card":
-                hand.dealt_hand = [
+                this.dealt_hand = [
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values[Math.floor(Math.random() * values.length)] },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values[Math.floor(Math.random() * values.length)] },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values[Math.floor(Math.random() * values.length)] },
@@ -128,7 +127,6 @@ class Hand {
                 ];
                 break;
         }
-        return hand;
     }
 }
 

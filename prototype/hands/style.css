@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+body {
+    margin: 0;
+    background-color: #007700;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0.5em;
+    background-color: #323232;
+    border-bottom: 1px solid #ccc;
+    font-family: 'Lobster', cursive;
+    color: #F1F1F1;
+}
+
+#hand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.card {
+    background-color: #F1F1F1;
+    padding-block: 16px;
+    width: 40px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 6px 6px #00000032;
+    font-family: "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+p {
+    margin-left: 8px;
+    padding: 0;
+    font-family: "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+}
+
+button {
+    background-color: #323232;
+    color: #F1F1F1;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 800;
+    font-style: normal;
+    cursor: pointer;
+    margin: 4px;
+}

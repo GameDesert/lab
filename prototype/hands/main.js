@@ -160,7 +160,7 @@ function play() {
         button.innerHTML = hand_name;
         button.onclick = () => {
             if (hand_name === named_hand) {
-                alert("Correct!");
+                // alert("Correct!");
                 disableButtons(hand_buttons);
                 checkGameCompletion(hand_buttons, beat);
             } else {

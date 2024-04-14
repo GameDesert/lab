@@ -183,13 +183,13 @@ function play() {
             play();
         }
         no_button.onclick = () => {
-            alert("Correct!");
+            // alert("Correct!");
             disableButtons(beat);
             checkGameCompletion(hand_buttons, beat);
         }
     } else {
         yes_button.onclick = () => {
-            alert("Correct!");
+            // alert("Correct!");
             disableButtons(beat);
             checkGameCompletion(hand_buttons, beat);
         }

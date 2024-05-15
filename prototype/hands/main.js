@@ -34,6 +34,7 @@ class Hand {
                     { suit: royalFlushSuit, value: "K" },
                     { suit: royalFlushSuit, value: "A" }
                 ];
+                console.log(this.dealt_hand);
                 break;
             case "Straight Flush":
                 const startValue = Math.floor(Math.random() * (values.length - 4));
@@ -44,6 +45,7 @@ class Hand {
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values[startValue + 3] },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values[startValue + 4] }
                 ];
+                console.log(this.dealt_hand);
                 break;
             case "Four of a Kind":
                 const fourOfAKindValue = values[Math.floor(Math.random() * values.length)];
@@ -54,6 +56,7 @@ class Hand {
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: fourOfAKindValue },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values.find(value => value !== fourOfAKindValue) }
                 ];
+                console.log(this.dealt_hand);
                 break;
             case "Full House":
                 const fhthreeOfAKindValue = values[Math.floor(Math.random() * values.length)];
@@ -65,6 +68,7 @@ class Hand {
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: pairValue },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: pairValue }
                 ];
+                console.log(this.dealt_hand);
                 break;
             case "Flush":
                 const flushSuit = suits[Math.floor(Math.random() * suits.length)];
@@ -75,6 +79,7 @@ class Hand {
                     { suit: flushSuit, value: values[Math.floor(Math.random() * values.length)] },
                     { suit: flushSuit, value: values[Math.floor(Math.random() * values.length)] }
                 ];
+                console.log(this.dealt_hand);
                 break;
             case "Straight":
                 const straightStartValue = Math.floor(Math.random() * (values.length - 4));
@@ -85,6 +90,7 @@ class Hand {
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values[straightStartValue + 3] },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values[straightStartValue + 4] }
                 ];
+                console.log(this.dealt_hand);
                 break;
             case "Three of a Kind":
                 const threeOfAKindValue = values[Math.floor(Math.random() * values.length)];
@@ -95,6 +101,7 @@ class Hand {
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values.find(value => value !== threeOfAKindValue) },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values.find(value => value !== threeOfAKindValue) }
                 ];
+                console.log(this.dealt_hand);
                 break;
             case "Two Pair":
                 const pair1Value = values[Math.floor(Math.random() * values.length)];
@@ -106,6 +113,7 @@ class Hand {
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: pair2Value },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values.find(value => value !== pair1Value && value !== pair2Value) }
                 ];
+                console.log(this.dealt_hand);
                 break;
             case "One Pair":
                 const onepairValue = values[Math.floor(Math.random() * values.length)];
@@ -116,6 +124,7 @@ class Hand {
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values.find(value => value !== onepairValue) },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values.find(value => value !== onepairValue) }
                 ];
+                console.log(this.dealt_hand);
                 break;
             case "High Card":
                 this.dealt_hand = [
@@ -125,8 +134,10 @@ class Hand {
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values[Math.floor(Math.random() * values.length)] },
                     { suit: suits[Math.floor(Math.random() * suits.length)], value: values[Math.floor(Math.random() * values.length)] }
                 ];
+                console.log(this.dealt_hand);
                 break;
         }
+        this.dealt_hand.sort(() => Math.random() - 0.5);
     }
 }
 

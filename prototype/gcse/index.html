@@ -63,7 +63,7 @@
 </table>
 
 <script>
-function weighted(onescore_id, twoscore_id, weight) {
+function weighted(onescore_id, twoscore_id) {
   const one = parseFloat(document.getElementById(onescore_id).value) * 0.6;
   const two = parseFloat(document.getElementById(twoscore_id).value) * 0.4;
   const overall = one + two;
@@ -71,6 +71,10 @@ function weighted(onescore_id, twoscore_id, weight) {
   document.getElementById("c1").innerHTML = one;
   document.getElementById("c2").innerHTML = two;
   document.getElementById("overall").innerHTML = overall;
+}
+
+function calculategrades() {
+  weighted("component1", "component2");
 }
 </script>
 

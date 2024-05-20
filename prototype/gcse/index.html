@@ -79,9 +79,12 @@ const bounds = {
 }
 
 function getgradebyboundary(year, overall_score) {
-  for (let index = bounds[year].length; index < bounds[year].length; index++) {
+  for (let index = 0; index < bounds[year].length; index++) {
     if (overall_score >= bounds[year][index] && overall_score < bounds[year][index+1]) {
-      return index
+      console.log(index);
+      return index;
+    } else {
+      console.log(index);
     }
   }
 }

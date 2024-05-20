@@ -64,7 +64,18 @@
 
 <script>
 const bounds = {
-"2023":[],
+  "2023":[0, 8, 20, 33, 46, 53, 60, 68, 74, 80, 96, 97],
+  "2022":[0, 8, 20, 32, 45, 52, 59, 67, 74, 81, 96, 97],
+  "2019":[0, 9, 22, 35, 48, 54, 61, 68, 74, 81, 96, 97],
+  "2018":[0, 9, 21, 34, 47, 54, 61, 68, 74, 81, 96, 97]
+}
+
+function getgradebyboundary(year, overall_score) {
+  for (let index = bounds[year].length; index < bounds[year].length; index++) {
+    if (overall_score >= bounds[year][index] && overall_score < bounds[year][index+1]) {
+      return index
+    }
+  }
 }
 
 function weighted(onescore_id, twoscore_id) {
@@ -75,10 +86,17 @@ function weighted(onescore_id, twoscore_id) {
   document.getElementById("c1").innerHTML = one;
   document.getElementById("c2").innerHTML = two;
   document.getElementById("overall").innerHTML = overall;
+
+  return overall;
 }
 
 function calculategrades() {
-  weighted("component1", "component2");
+  const overall = weighted("component1", "component2");
+
+  document.getElementById("2023b").innerHTML = getgradebyboundary("2023", overall);
+  document.getElementById("2022b").innerHTML = getgradebyboundary("2022", overall);
+  document.getElementById("2019b").innerHTML = getgradebyboundary("2019", overall);
+  document.getElementById("2018b").innerHTML = getgradebyboundary("2018", overall);
 }
 </script>
 

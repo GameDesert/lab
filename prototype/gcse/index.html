@@ -13,6 +13,55 @@
 <label for="component2">Component 2 raw marks (up to 96):</label>
 <input type="number" id="component2" name="conponent2" min="1" max="96">
 
+<button onclick="calculategrades()">Calculate Grades</button>
+
+<h2>Your marks</h2>
+<p>(Scaled by component weight [1: 60%, 2: 40%])</p>
+<table>
+  <tr>
+    <th>Component</th>
+    <th>Score</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td id="c1"></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td id="c2"></td>
+  </tr>
+  <tr>
+    <td>Overall</td>
+    <td id="overall"></td>
+  </tr>
+</table>
+
+
+<h2>Predicted Grades</h2>
+<p>(By historical boundaries)</p>
+<table>
+  <tr>
+    <th>Boundary Year</th>
+    <th>Grade</th>
+  </tr>
+  <tr>
+    <td>2023</td>
+    <td id="2023b"></td>
+  </tr>
+  <tr>
+    <td>2022</td>
+    <td id="2022b"></td>
+  </tr>
+  <tr>
+    <td>2019</td>
+    <td id="2019b"></td>
+  </tr>
+  <tr>
+    <td>2018</td>
+    <td id="2018b"></td>
+  </tr>
+</table>
+
 </body>
 
 </html>
